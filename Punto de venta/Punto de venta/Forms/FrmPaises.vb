@@ -53,12 +53,12 @@ Public Class FrmPaises
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        If MessageBox.Show("Está seguro ??", "CONFIRMAR", MessageBox.YesNo) = WindowsFormsSection.Forms.DialogResult.Yes Then
+        If MessageBox.Show("Está seguro ??", "CONFIRMAR", MessageBoxButtons.YesNo) = System.Windows.Forms.DialogResult.Yes Then
             Dim paises As New ClasePaises(Txt_idpais.Text, TxtDescripcion.Text)
             paises.eliminaPais()
             MessageBox.Show("Registro Eliminado")
             paises.poblarDataGridPaises(DGVPaises)
-            cnx.close()
+            cnx.Close()
         End If
     End Sub
 

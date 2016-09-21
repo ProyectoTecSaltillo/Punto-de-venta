@@ -1,6 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class conexion
-    Private cnx As MySqlConnection
     Public Sub New()
         'Dim cnx As New MySqlConnection
         cnx.ConnectionString = "server=localhost; user=adminVentas; password=ventas; database=clase1"
