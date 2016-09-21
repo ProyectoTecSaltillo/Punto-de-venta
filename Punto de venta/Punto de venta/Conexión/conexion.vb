@@ -1,7 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class conexion
     Public Sub New()
-        Dim cnx As New MySqlConnection
         cnx.ConnectionString = "server=localhost; user=adminVentas; password=ventas; database=clase1"
         'cnx = New OdbcConnection("DRIVER={MySQL ODBC 5.1 Driver}; SERVER=127.0.0.1; DATABASE=; UID=root; PWD=")
         If cnx.State <> ConnectionState.Open Then
@@ -19,7 +18,6 @@ Public Class conexion
 
     'SELECT
     Public Function objetoDataAdapter(ByVal query As String) As DataTable
-        'hola 
         Dim DA As MySqlDataAdapter
         Dim DT As DataTable
         Try

@@ -33,9 +33,10 @@ Partial Class FrmPaises
         '
         'BtnLimpia
         '
-        Me.BtnLimpia.Location = New System.Drawing.Point(23, 30)
+        Me.BtnLimpia.Location = New System.Drawing.Point(31, 37)
+        Me.BtnLimpia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnLimpia.Name = "BtnLimpia"
-        Me.BtnLimpia.Size = New System.Drawing.Size(75, 23)
+        Me.BtnLimpia.Size = New System.Drawing.Size(100, 28)
         Me.BtnLimpia.TabIndex = 0
         Me.BtnLimpia.Text = "Limpia"
         Me.BtnLimpia.UseVisualStyleBackColor = True
@@ -43,54 +44,60 @@ Partial Class FrmPaises
         'DGVPaises
         '
         Me.DGVPaises.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVPaises.Location = New System.Drawing.Point(255, 181)
+        Me.DGVPaises.Location = New System.Drawing.Point(223, 107)
+        Me.DGVPaises.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DGVPaises.Name = "DGVPaises"
-        Me.DGVPaises.Size = New System.Drawing.Size(123, 68)
+        Me.DGVPaises.Size = New System.Drawing.Size(305, 201)
         Me.DGVPaises.TabIndex = 1
         '
         'Txt_idpais
         '
-        Me.Txt_idpais.Location = New System.Drawing.Point(52, 100)
+        Me.Txt_idpais.Location = New System.Drawing.Point(69, 123)
+        Me.Txt_idpais.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Txt_idpais.Name = "Txt_idpais"
-        Me.Txt_idpais.Size = New System.Drawing.Size(100, 20)
+        Me.Txt_idpais.Size = New System.Drawing.Size(132, 22)
         Me.Txt_idpais.TabIndex = 2
         '
         'TxtDescripcion
         '
-        Me.TxtDescripcion.Location = New System.Drawing.Point(52, 126)
+        Me.TxtDescripcion.Location = New System.Drawing.Point(69, 155)
+        Me.TxtDescripcion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TxtDescripcion.Name = "TxtDescripcion"
-        Me.TxtDescripcion.Size = New System.Drawing.Size(100, 20)
+        Me.TxtDescripcion.Size = New System.Drawing.Size(132, 22)
         Me.TxtDescripcion.TabIndex = 3
         '
         'BtnEliminar
         '
-        Me.BtnEliminar.Location = New System.Drawing.Point(121, 30)
+        Me.BtnEliminar.Location = New System.Drawing.Point(161, 37)
+        Me.BtnEliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnEliminar.Name = "BtnEliminar"
-        Me.BtnEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnEliminar.Size = New System.Drawing.Size(100, 28)
         Me.BtnEliminar.TabIndex = 4
         Me.BtnEliminar.Text = "Elimina"
         Me.BtnEliminar.UseVisualStyleBackColor = True
         '
         'BtnGuardar
         '
-        Me.BtnGuardar.Location = New System.Drawing.Point(225, 30)
+        Me.BtnGuardar.Location = New System.Drawing.Point(300, 37)
+        Me.BtnGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnGuardar.Size = New System.Drawing.Size(100, 28)
         Me.BtnGuardar.TabIndex = 5
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
         '
         'FrmPaises
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(390, 261)
+        Me.ClientSize = New System.Drawing.Size(577, 366)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.BtnEliminar)
         Me.Controls.Add(Me.TxtDescripcion)
         Me.Controls.Add(Me.Txt_idpais)
         Me.Controls.Add(Me.DGVPaises)
         Me.Controls.Add(Me.BtnLimpia)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "FrmPaises"
         Me.Text = "Form1"
         CType(Me.DGVPaises, System.ComponentModel.ISupportInitialize).EndInit()
