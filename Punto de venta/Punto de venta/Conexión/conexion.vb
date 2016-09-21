@@ -19,6 +19,7 @@ Public Class conexion
 
     'SELECT
     Public Function objetoDataAdapter(ByVal query As String) As DataTable
+        'hola 
         Dim DA As MySqlDataAdapter
         Dim DT As DataTable
         Try
