@@ -73,12 +73,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conexión\cnx.vb" />
-    <Compile Include="Forms\Form1.vb">
+    <Compile Include="Clases\ClasePaises.vb" />
+    <Compile Include="Conexión\conexion.vb" />
+    <Compile Include="Forms\FrmPaises.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Forms\FrmPaises.Designer.vb">
+      <DependentUpon>FrmPaises.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\Globales.vb" />
@@ -99,8 +100,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\FrmPaises.resx">
+      <DependentUpon>FrmPaises.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -121,9 +122,7 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Clases\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
