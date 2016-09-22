@@ -34,6 +34,7 @@ Public Class FrmPaises
             MessageBox.Show("Capturar nombre de la carrera")
         Else
             Dim paises As New ClasePaises(Txt_idpais.Text, TxtDescripcion.Text)
+            cnx.Close()
             paises.getSetidPais = Txt_idpais.Text
             If paises.consultaUnPais() = False Then
                 paises.consultaMaxPais()
@@ -96,5 +97,9 @@ Public Class FrmPaises
             End If
             cnx.close()
         End If
+    End Sub
+
+    Private Sub Txt_idpais_TextChanged(sender As Object, e As EventArgs) Handles Txt_idpais.TextChanged
+
     End Sub
 End Class

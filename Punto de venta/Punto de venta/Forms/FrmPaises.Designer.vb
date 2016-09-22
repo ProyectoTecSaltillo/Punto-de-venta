@@ -34,7 +34,7 @@ Partial Class FrmPaises
         'BtnLimpia
         '
         Me.BtnLimpia.Location = New System.Drawing.Point(31, 37)
-        Me.BtnLimpia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnLimpia.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnLimpia.Name = "BtnLimpia"
         Me.BtnLimpia.Size = New System.Drawing.Size(100, 28)
         Me.BtnLimpia.TabIndex = 0
@@ -45,7 +45,7 @@ Partial Class FrmPaises
         '
         Me.DGVPaises.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVPaises.Location = New System.Drawing.Point(223, 107)
-        Me.DGVPaises.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DGVPaises.Margin = New System.Windows.Forms.Padding(4)
         Me.DGVPaises.Name = "DGVPaises"
         Me.DGVPaises.Size = New System.Drawing.Size(305, 201)
         Me.DGVPaises.TabIndex = 1
@@ -53,7 +53,7 @@ Partial Class FrmPaises
         'Txt_idpais
         '
         Me.Txt_idpais.Location = New System.Drawing.Point(69, 123)
-        Me.Txt_idpais.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_idpais.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_idpais.Name = "Txt_idpais"
         Me.Txt_idpais.Size = New System.Drawing.Size(132, 22)
         Me.Txt_idpais.TabIndex = 2
@@ -61,7 +61,7 @@ Partial Class FrmPaises
         'TxtDescripcion
         '
         Me.TxtDescripcion.Location = New System.Drawing.Point(69, 155)
-        Me.TxtDescripcion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtDescripcion.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDescripcion.Name = "TxtDescripcion"
         Me.TxtDescripcion.Size = New System.Drawing.Size(132, 22)
         Me.TxtDescripcion.TabIndex = 3
@@ -69,7 +69,7 @@ Partial Class FrmPaises
         'BtnEliminar
         '
         Me.BtnEliminar.Location = New System.Drawing.Point(161, 37)
-        Me.BtnEliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnEliminar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(100, 28)
         Me.BtnEliminar.TabIndex = 4
@@ -79,7 +79,7 @@ Partial Class FrmPaises
         'BtnGuardar
         '
         Me.BtnGuardar.Location = New System.Drawing.Point(300, 37)
-        Me.BtnGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(100, 28)
         Me.BtnGuardar.TabIndex = 5
@@ -97,7 +97,7 @@ Partial Class FrmPaises
         Me.Controls.Add(Me.Txt_idpais)
         Me.Controls.Add(Me.DGVPaises)
         Me.Controls.Add(Me.BtnLimpia)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FrmPaises"
         Me.Text = "Form1"
         CType(Me.DGVPaises, System.ComponentModel.ISupportInitialize).EndInit()

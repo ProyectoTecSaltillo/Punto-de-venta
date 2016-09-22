@@ -41,6 +41,7 @@ Public Class ClasePaises
         Else
             MsgBox("Faltan datos del país", MsgBoxStyle.Critical)
         End If
+        cnx.Close()
     End Sub
 
     Public Sub actualizaPais()
@@ -53,6 +54,7 @@ Public Class ClasePaises
         Else
             MsgBox("Faltan datos del país", MsgBoxStyle.Critical)
         End If
+        cnx.Close()
     End Sub
 
     Public Function consultaUnPais() As Boolean
@@ -78,6 +80,7 @@ Public Class ClasePaises
             End If
             consultaUnPais = True
         End If
+        cnx.Close()
     End Function
 
     Public Function consultaNombrePais() As Boolean
@@ -102,6 +105,7 @@ Public Class ClasePaises
             End If
             consultaNombrePais = True
         End If
+        cnx.Close()
     End Function
 
     Public Function consultaMaxPais() As Boolean
@@ -118,6 +122,7 @@ Public Class ClasePaises
             idPais = 1
         End If
         consultaMaxPais = True
+        cnx.Close()
     End Function
 
     Public Function consultaTodosPaises() As Object
@@ -126,13 +131,14 @@ Public Class ClasePaises
 
         strSQL = "SELECT id_pais AS ID, nombre AS País FROM paises ORDER BY nombre ASC"
         consultaTodosPaises = xCnx.objetoDataAdapter(strSQL)
+        cnx.Close()
     End Function
 
     Public Sub poblarDataGridPaises(ByVal DGVpaises As DataGridView)
         DGVpaises.DataSource = consultaTodosPaises()
         DGVpaises.Refresh()
-        DGVpaises.Columns.Item(0).Width = 200
-        DGVpaises.Columns.Item(1).Width = 900
+        DGVpaises.Columns.Item(0).Width = 50
+        DGVpaises.Columns.Item(1).Width = 100
     End Sub
 
     Public Sub poblarComboCarreras(ByVal objeto As ComboBox)
@@ -147,6 +153,7 @@ Public Class ClasePaises
             objeto.Items.Add(Lista.GetValue(0))
         End While
         Lista.Close()
+        cnx.Close()
     End Sub
 
     Public Sub eliminaPais()
@@ -159,6 +166,7 @@ Public Class ClasePaises
         Else
             MsgBox("Faltan datos del país", MsgBoxStyle.Critical)
         End If
+        cnx.Close()
     End Sub
 
     Public Function consultaUnEstado() As Boolean
@@ -172,5 +180,6 @@ Public Class ClasePaises
         If xDT.Rows.Count >= 1 Then
             consultaUnEstado = True
         End If
+        cnx.Close()
     End Function
 End Class

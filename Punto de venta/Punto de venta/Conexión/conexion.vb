@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class conexion
+
     Public Sub New()
         cnx.ConnectionString = "server=localhost; user=adminVentas; password=ventas; database=clase1"
         'cnx = New OdbcConnection("DRIVER={MySQL ODBC 5.1 Driver}; SERVER=127.0.0.1; DATABASE=; UID=root; PWD=")
@@ -10,8 +11,8 @@ Public Class conexion
             Catch ex As Exception
                 MsgBox("No")
                 'Throw New Exception("No se pudo establecer la conexión.", ex)
-            Finally
-                cnx.Close()
+                'Finally
+
             End Try
         End If
     End Sub
