@@ -7,7 +7,7 @@ Public Class conexion
         If cnx.State <> ConnectionState.Open Then
             Try
                 cnx.Open()
-                MsgBox("Sí")
+                'MsgBox("Sí")
             Catch ex As Exception
                 MsgBox("No")
                 'Throw New Exception("No se pudo establecer la conexión.", ex)

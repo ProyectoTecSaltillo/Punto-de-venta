@@ -90,7 +90,7 @@ Public Class FrmPaises
         Else
             Dim paises As New ClasePaises(Txt_idpais.Text, TxtDescripcion.Text)
             If paises.consultaNombrePais() = True Then
-                MsgBox("Nombre de pais ya está siendo usado.")
+                MsgBox("Nombre o ID de pais ya está siendo usado.")
                 BtnGuardar.Enabled = False
             Else
                 BtnGuardar.Enabled = True
