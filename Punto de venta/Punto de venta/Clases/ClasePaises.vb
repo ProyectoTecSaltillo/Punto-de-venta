@@ -116,7 +116,7 @@ Public Class ClasePaises
         strSQL = "SELECT MAX(id_pais) AS IDMAX FROM paises"
         consultaMaxPais = False
         xDT = xCnx.objetoDataAdapter(strSQL)
-        If xDT.Rows.Count = 1 Then
+        If (xDT.Rows.Count = 1) Then
             idPais = CStr(xDT.Rows(0)("IDMAX")) + 1
         Else
             idPais = 1
