@@ -1,6 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class FrmPaises
+
     Dim flag As Boolean = True
+    Private cnx As New MySqlConnection
 
     Private Sub FrmPaises_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtDescripcion.Enabled = False
@@ -55,6 +57,7 @@ Public Class FrmPaises
             TxtDescripcion.Text = ""
             Txt_idpais.Focus()
             Restablecer()
+            cnx.Close()
         End If
     End Sub
 
@@ -103,13 +106,14 @@ Public Class FrmPaises
         If flag = True And TxtDescripcion.Text <> "" Then
             Dim paises As New ClasePaises(Txt_idpais.Text, TxtDescripcion.Text)
             If paises.consultaNombrePais() = True Then
-                MsgBox("Ese pais ya esta registrado")
+                MsgBox("Ese pais ya está registrado")
                 BtnGuardar.Enabled = False
                 TxtDescripcion.Focus()
             Else
                 BtnGuardar.Enabled = True
             End If
         Else
+            cnx.Close()
         End If
     End Sub
 

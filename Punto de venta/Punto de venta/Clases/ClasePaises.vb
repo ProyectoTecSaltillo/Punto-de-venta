@@ -76,7 +76,7 @@ Public Class ClasePaises
                 nombre = ""
             Else
                 nombre = CStr(xDT.Rows(0)("nombre"))
-                El_nombre = CStr(xDT.Rows(0)("nombre"))
+                EL_nombre = CStr(xDT.Rows(0)("nombre"))
             End If
             consultaUnPais = True
         End If
@@ -101,7 +101,7 @@ Public Class ClasePaises
                 nombre = ""
             Else
                 nombre = CStr(xDT.Rows(0)("nombre"))
-                El_nombre = CStr(xDT.Rows(0)("nombre"))
+                EL_nombre = CStr(xDT.Rows(0)("nombre"))
             End If
             consultaNombrePais = True
         End If

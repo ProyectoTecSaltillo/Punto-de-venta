@@ -73,8 +73,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\ClasePais.vb" />
     <Compile Include="Clases\ClasePaises.vb" />
     <Compile Include="Conexión\conexion.vb" />
+    <Compile Include="Forms\FrmPais.Designer.vb">
+      <DependentUpon>FrmPais.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPais.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FrmPaises.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +107,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\FrmPais.resx">
+      <DependentUpon>FrmPais.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmPaises.resx">
       <DependentUpon>FrmPaises.vb</DependentUpon>
     </EmbeddedResource>
