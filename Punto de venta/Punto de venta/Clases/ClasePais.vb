@@ -11,10 +11,10 @@ Public Class ClasePais
     Public Sub New(ByVal nuevoNombre As String)
         nombre = nuevoNombre
     End Sub
-
-    Public Sub New(ByVal id As Integer)
-        idPais = id
-    End Sub
+    ' No se utiliza
+    '   Public Sub New(ByVal id As Integer)
+    '      idPais = id
+    ' End Sub
 
     Public Property getSetidPais() As Integer
         Get
@@ -45,9 +45,9 @@ Public Class ClasePais
     End Function
 
     'Rellena el DataGridView con los paises de la base de datos
-    Public Sub poblarDataGridPaises(ByVal DGVpaises As DataGridView)
-        DGVpaises.DataSource = consultaTodosPaises()
-        DGVpaises.Refresh()
+    Public Sub poblarComboPaises(ByVal ComboP As ComboBox)
+        ComboP.DataSource = consultaTodosPaises()
+        ComboP.Refresh()
     End Sub
 
     'Consulta todos los estados de la base de datos que estén relacionados con el nombre del país brindado
@@ -90,7 +90,7 @@ Public Class ClasePais
         Dim strSql As String
         Dim xCnx As New conexion
 
-        strSql = "INSERT INTO paises VALUES(" & "'" & nombre & "');"
+        strSql = "INSERT INTO paises (nombre) VALUES('" & nombre & "');"
         xCnx.objetoCommand(strSql)
         cnx.Close()
     End Sub
@@ -99,7 +99,7 @@ Public Class ClasePais
         Dim strSql As String
         Dim xCnx As New conexion
 
-        strSql = "UPDATE paises SET nombre = '" & nombre & "' WHERE id_pais = " & idPais
+        strSql = "UPDATE paises SET nombre = '" & nombre & "' WHERE nombre = " & nombre
         xCnx.objetoCommand(strSql)
         cnx.Close()
     End Sub

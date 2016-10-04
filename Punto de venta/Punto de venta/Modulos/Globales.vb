@@ -5,4 +5,5 @@ Module Globales
     Public cnx As New MySqlConnection
     Public EL_nombre As String
     Public idpais As String
+    Public inc As Integer
 End Module
