@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmPais
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FrmPais
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPais))
         Me.Label1 = New System.Windows.Forms.Label()
@@ -52,14 +52,14 @@ Partial Class FrmPais
         Me.BtnActualizarCo = New System.Windows.Forms.Button()
         Me.TxtColonia = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
+        Me.GBPais = New System.Windows.Forms.GroupBox()
+        Me.GBEstado = New System.Windows.Forms.GroupBox()
+        Me.GBCiudad = New System.Windows.Forms.GroupBox()
+        Me.GBColonia = New System.Windows.Forms.GroupBox()
+        Me.GBPais.SuspendLayout()
+        Me.GBEstado.SuspendLayout()
+        Me.GBCiudad.SuspendLayout()
+        Me.GBColonia.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -75,7 +75,7 @@ Partial Class FrmPais
         'TxtPais
         '
         Me.TxtPais.Location = New System.Drawing.Point(239, 16)
-        Me.TxtPais.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtPais.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPais.Name = "TxtPais"
         Me.TxtPais.Size = New System.Drawing.Size(225, 22)
         Me.TxtPais.TabIndex = 1
@@ -83,7 +83,7 @@ Partial Class FrmPais
         'BtnActualizarP
         '
         Me.BtnActualizarP.Location = New System.Drawing.Point(473, 49)
-        Me.BtnActualizarP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnActualizarP.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnActualizarP.Name = "BtnActualizarP"
         Me.BtnActualizarP.Size = New System.Drawing.Size(100, 28)
         Me.BtnActualizarP.TabIndex = 2
@@ -93,7 +93,7 @@ Partial Class FrmPais
         'BtnEliminarP
         '
         Me.BtnEliminarP.Location = New System.Drawing.Point(581, 49)
-        Me.BtnEliminarP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnEliminarP.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnEliminarP.Name = "BtnEliminarP"
         Me.BtnEliminarP.Size = New System.Drawing.Size(100, 28)
         Me.BtnEliminarP.TabIndex = 3
@@ -103,7 +103,7 @@ Partial Class FrmPais
         'BtnInsertarP
         '
         Me.BtnInsertarP.Location = New System.Drawing.Point(473, 15)
-        Me.BtnInsertarP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnInsertarP.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnInsertarP.Name = "BtnInsertarP"
         Me.BtnInsertarP.Size = New System.Drawing.Size(100, 28)
         Me.BtnInsertarP.TabIndex = 6
@@ -113,8 +113,9 @@ Partial Class FrmPais
         'ComboPais
         '
         Me.ComboPais.FormattingEnabled = True
+        Me.ComboPais.Items.AddRange(New Object() {""})
         Me.ComboPais.Location = New System.Drawing.Point(239, 52)
-        Me.ComboPais.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboPais.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboPais.Name = "ComboPais"
         Me.ComboPais.Size = New System.Drawing.Size(225, 24)
         Me.ComboPais.TabIndex = 7
@@ -141,7 +142,7 @@ Partial Class FrmPais
         '
         Me.ComboEstado.FormattingEnabled = True
         Me.ComboEstado.Location = New System.Drawing.Point(239, 52)
-        Me.ComboEstado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboEstado.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboEstado.Name = "ComboEstado"
         Me.ComboEstado.Size = New System.Drawing.Size(225, 24)
         Me.ComboEstado.TabIndex = 15
@@ -149,7 +150,7 @@ Partial Class FrmPais
         'BtnInsertarE
         '
         Me.BtnInsertarE.Location = New System.Drawing.Point(473, 15)
-        Me.BtnInsertarE.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnInsertarE.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnInsertarE.Name = "BtnInsertarE"
         Me.BtnInsertarE.Size = New System.Drawing.Size(100, 28)
         Me.BtnInsertarE.TabIndex = 14
@@ -159,7 +160,7 @@ Partial Class FrmPais
         'BtnEliminarE
         '
         Me.BtnEliminarE.Location = New System.Drawing.Point(581, 49)
-        Me.BtnEliminarE.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnEliminarE.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnEliminarE.Name = "BtnEliminarE"
         Me.BtnEliminarE.Size = New System.Drawing.Size(100, 28)
         Me.BtnEliminarE.TabIndex = 12
@@ -169,7 +170,7 @@ Partial Class FrmPais
         'BtnActualizarE
         '
         Me.BtnActualizarE.Location = New System.Drawing.Point(473, 49)
-        Me.BtnActualizarE.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnActualizarE.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnActualizarE.Name = "BtnActualizarE"
         Me.BtnActualizarE.Size = New System.Drawing.Size(100, 28)
         Me.BtnActualizarE.TabIndex = 11
@@ -179,7 +180,7 @@ Partial Class FrmPais
         'TxtEstado
         '
         Me.TxtEstado.Location = New System.Drawing.Point(239, 16)
-        Me.TxtEstado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtEstado.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtEstado.Name = "TxtEstado"
         Me.TxtEstado.Size = New System.Drawing.Size(225, 22)
         Me.TxtEstado.TabIndex = 10
@@ -207,7 +208,7 @@ Partial Class FrmPais
         '
         Me.ComboCiudad.FormattingEnabled = True
         Me.ComboCiudad.Location = New System.Drawing.Point(239, 50)
-        Me.ComboCiudad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboCiudad.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboCiudad.Name = "ComboCiudad"
         Me.ComboCiudad.Size = New System.Drawing.Size(225, 24)
         Me.ComboCiudad.TabIndex = 23
@@ -215,7 +216,7 @@ Partial Class FrmPais
         'BtnInsertarC
         '
         Me.BtnInsertarC.Location = New System.Drawing.Point(473, 15)
-        Me.BtnInsertarC.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnInsertarC.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnInsertarC.Name = "BtnInsertarC"
         Me.BtnInsertarC.Size = New System.Drawing.Size(100, 28)
         Me.BtnInsertarC.TabIndex = 22
@@ -225,7 +226,7 @@ Partial Class FrmPais
         'BtnEliminarC
         '
         Me.BtnEliminarC.Location = New System.Drawing.Point(581, 48)
-        Me.BtnEliminarC.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnEliminarC.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnEliminarC.Name = "BtnEliminarC"
         Me.BtnEliminarC.Size = New System.Drawing.Size(100, 28)
         Me.BtnEliminarC.TabIndex = 20
@@ -235,7 +236,7 @@ Partial Class FrmPais
         'BtnActualizarC
         '
         Me.BtnActualizarC.Location = New System.Drawing.Point(473, 48)
-        Me.BtnActualizarC.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnActualizarC.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnActualizarC.Name = "BtnActualizarC"
         Me.BtnActualizarC.Size = New System.Drawing.Size(100, 28)
         Me.BtnActualizarC.TabIndex = 19
@@ -245,7 +246,7 @@ Partial Class FrmPais
         'TxtCiudad
         '
         Me.TxtCiudad.Location = New System.Drawing.Point(239, 16)
-        Me.TxtCiudad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtCiudad.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCiudad.Name = "TxtCiudad"
         Me.TxtCiudad.Size = New System.Drawing.Size(225, 22)
         Me.TxtCiudad.TabIndex = 18
@@ -273,7 +274,7 @@ Partial Class FrmPais
         '
         Me.ComboColonia.FormattingEnabled = True
         Me.ComboColonia.Location = New System.Drawing.Point(239, 52)
-        Me.ComboColonia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ComboColonia.Margin = New System.Windows.Forms.Padding(4)
         Me.ComboColonia.Name = "ComboColonia"
         Me.ComboColonia.Size = New System.Drawing.Size(225, 24)
         Me.ComboColonia.TabIndex = 31
@@ -281,7 +282,7 @@ Partial Class FrmPais
         'BtnInsertarCo
         '
         Me.BtnInsertarCo.Location = New System.Drawing.Point(473, 15)
-        Me.BtnInsertarCo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnInsertarCo.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnInsertarCo.Name = "BtnInsertarCo"
         Me.BtnInsertarCo.Size = New System.Drawing.Size(100, 28)
         Me.BtnInsertarCo.TabIndex = 30
@@ -291,7 +292,7 @@ Partial Class FrmPais
         'BtnLimpia
         '
         Me.BtnLimpia.Location = New System.Drawing.Point(489, 421)
-        Me.BtnLimpia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnLimpia.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnLimpia.Name = "BtnLimpia"
         Me.BtnLimpia.Size = New System.Drawing.Size(208, 28)
         Me.BtnLimpia.TabIndex = 29
@@ -301,7 +302,7 @@ Partial Class FrmPais
         'BtnEliminarCo
         '
         Me.BtnEliminarCo.Location = New System.Drawing.Point(581, 49)
-        Me.BtnEliminarCo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnEliminarCo.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnEliminarCo.Name = "BtnEliminarCo"
         Me.BtnEliminarCo.Size = New System.Drawing.Size(100, 28)
         Me.BtnEliminarCo.TabIndex = 28
@@ -311,7 +312,7 @@ Partial Class FrmPais
         'BtnActualizarCo
         '
         Me.BtnActualizarCo.Location = New System.Drawing.Point(473, 49)
-        Me.BtnActualizarCo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnActualizarCo.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnActualizarCo.Name = "BtnActualizarCo"
         Me.BtnActualizarCo.Size = New System.Drawing.Size(100, 28)
         Me.BtnActualizarCo.TabIndex = 27
@@ -321,7 +322,7 @@ Partial Class FrmPais
         'TxtColonia
         '
         Me.TxtColonia.Location = New System.Drawing.Point(239, 16)
-        Me.TxtColonia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtColonia.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtColonia.Name = "TxtColonia"
         Me.TxtColonia.Size = New System.Drawing.Size(225, 22)
         Me.TxtColonia.TabIndex = 26
@@ -336,103 +337,103 @@ Partial Class FrmPais
         Me.Label8.TabIndex = 25
         Me.Label8.Text = "Introduce el nombre del la colonia:"
         '
-        'GroupBox1
+        'GBPais
         '
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.TxtPais)
-        Me.GroupBox1.Controls.Add(Me.BtnActualizarP)
-        Me.GroupBox1.Controls.Add(Me.BtnEliminarP)
-        Me.GroupBox1.Controls.Add(Me.BtnInsertarP)
-        Me.GroupBox1.Controls.Add(Me.ComboPais)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 15)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox1.Size = New System.Drawing.Size(692, 91)
-        Me.GroupBox1.TabIndex = 33
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "PAÍSES"
+        Me.GBPais.Controls.Add(Me.Label1)
+        Me.GBPais.Controls.Add(Me.TxtPais)
+        Me.GBPais.Controls.Add(Me.BtnActualizarP)
+        Me.GBPais.Controls.Add(Me.BtnEliminarP)
+        Me.GBPais.Controls.Add(Me.BtnInsertarP)
+        Me.GBPais.Controls.Add(Me.ComboPais)
+        Me.GBPais.Controls.Add(Me.Label2)
+        Me.GBPais.Location = New System.Drawing.Point(16, 15)
+        Me.GBPais.Margin = New System.Windows.Forms.Padding(4)
+        Me.GBPais.Name = "GBPais"
+        Me.GBPais.Padding = New System.Windows.Forms.Padding(4)
+        Me.GBPais.Size = New System.Drawing.Size(692, 91)
+        Me.GBPais.TabIndex = 33
+        Me.GBPais.TabStop = False
+        Me.GBPais.Text = "PAÍSES"
         '
-        'GroupBox2
+        'GBEstado
         '
-        Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Controls.Add(Me.TxtEstado)
-        Me.GroupBox2.Controls.Add(Me.BtnActualizarE)
-        Me.GroupBox2.Controls.Add(Me.BtnEliminarE)
-        Me.GroupBox2.Controls.Add(Me.BtnInsertarE)
-        Me.GroupBox2.Controls.Add(Me.ComboEstado)
-        Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Enabled = False
-        Me.GroupBox2.Location = New System.Drawing.Point(16, 116)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox2.Size = New System.Drawing.Size(692, 91)
-        Me.GroupBox2.TabIndex = 34
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "ESTADOS"
+        Me.GBEstado.Controls.Add(Me.Label4)
+        Me.GBEstado.Controls.Add(Me.TxtEstado)
+        Me.GBEstado.Controls.Add(Me.BtnActualizarE)
+        Me.GBEstado.Controls.Add(Me.BtnEliminarE)
+        Me.GBEstado.Controls.Add(Me.BtnInsertarE)
+        Me.GBEstado.Controls.Add(Me.ComboEstado)
+        Me.GBEstado.Controls.Add(Me.Label3)
+        Me.GBEstado.Enabled = False
+        Me.GBEstado.Location = New System.Drawing.Point(16, 116)
+        Me.GBEstado.Margin = New System.Windows.Forms.Padding(4)
+        Me.GBEstado.Name = "GBEstado"
+        Me.GBEstado.Padding = New System.Windows.Forms.Padding(4)
+        Me.GBEstado.Size = New System.Drawing.Size(692, 91)
+        Me.GBEstado.TabIndex = 34
+        Me.GBEstado.TabStop = False
+        Me.GBEstado.Text = "ESTADOS"
         '
-        'GroupBox3
+        'GBCiudad
         '
-        Me.GroupBox3.Controls.Add(Me.Label6)
-        Me.GroupBox3.Controls.Add(Me.TxtCiudad)
-        Me.GroupBox3.Controls.Add(Me.BtnActualizarC)
-        Me.GroupBox3.Controls.Add(Me.BtnEliminarC)
-        Me.GroupBox3.Controls.Add(Me.BtnInsertarC)
-        Me.GroupBox3.Controls.Add(Me.ComboCiudad)
-        Me.GroupBox3.Controls.Add(Me.Label5)
-        Me.GroupBox3.Enabled = False
-        Me.GroupBox3.Location = New System.Drawing.Point(16, 220)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox3.Size = New System.Drawing.Size(692, 91)
-        Me.GroupBox3.TabIndex = 35
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "CIUDADES"
+        Me.GBCiudad.Controls.Add(Me.Label6)
+        Me.GBCiudad.Controls.Add(Me.TxtCiudad)
+        Me.GBCiudad.Controls.Add(Me.BtnActualizarC)
+        Me.GBCiudad.Controls.Add(Me.BtnEliminarC)
+        Me.GBCiudad.Controls.Add(Me.BtnInsertarC)
+        Me.GBCiudad.Controls.Add(Me.ComboCiudad)
+        Me.GBCiudad.Controls.Add(Me.Label5)
+        Me.GBCiudad.Enabled = False
+        Me.GBCiudad.Location = New System.Drawing.Point(16, 220)
+        Me.GBCiudad.Margin = New System.Windows.Forms.Padding(4)
+        Me.GBCiudad.Name = "GBCiudad"
+        Me.GBCiudad.Padding = New System.Windows.Forms.Padding(4)
+        Me.GBCiudad.Size = New System.Drawing.Size(692, 91)
+        Me.GBCiudad.TabIndex = 35
+        Me.GBCiudad.TabStop = False
+        Me.GBCiudad.Text = "CIUDADES"
         '
-        'GroupBox4
+        'GBColonia
         '
-        Me.GroupBox4.Controls.Add(Me.Label8)
-        Me.GroupBox4.Controls.Add(Me.TxtColonia)
-        Me.GroupBox4.Controls.Add(Me.BtnActualizarCo)
-        Me.GroupBox4.Controls.Add(Me.Label7)
-        Me.GroupBox4.Controls.Add(Me.BtnEliminarCo)
-        Me.GroupBox4.Controls.Add(Me.ComboColonia)
-        Me.GroupBox4.Controls.Add(Me.BtnInsertarCo)
-        Me.GroupBox4.Enabled = False
-        Me.GroupBox4.Location = New System.Drawing.Point(16, 322)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox4.Size = New System.Drawing.Size(692, 91)
-        Me.GroupBox4.TabIndex = 36
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "COLONIAS"
+        Me.GBColonia.Controls.Add(Me.Label8)
+        Me.GBColonia.Controls.Add(Me.TxtColonia)
+        Me.GBColonia.Controls.Add(Me.BtnActualizarCo)
+        Me.GBColonia.Controls.Add(Me.Label7)
+        Me.GBColonia.Controls.Add(Me.BtnEliminarCo)
+        Me.GBColonia.Controls.Add(Me.ComboColonia)
+        Me.GBColonia.Controls.Add(Me.BtnInsertarCo)
+        Me.GBColonia.Enabled = False
+        Me.GBColonia.Location = New System.Drawing.Point(16, 322)
+        Me.GBColonia.Margin = New System.Windows.Forms.Padding(4)
+        Me.GBColonia.Name = "GBColonia"
+        Me.GBColonia.Padding = New System.Windows.Forms.Padding(4)
+        Me.GBColonia.Size = New System.Drawing.Size(692, 91)
+        Me.GBColonia.TabIndex = 36
+        Me.GBColonia.TabStop = False
+        Me.GBColonia.Text = "COLONIAS"
         '
         'FrmPais
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(728, 460)
-        Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GBColonia)
+        Me.Controls.Add(Me.GBCiudad)
+        Me.Controls.Add(Me.GBEstado)
+        Me.Controls.Add(Me.GBPais)
         Me.Controls.Add(Me.BtnLimpia)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FrmPais"
         Me.Text = "FrmPais"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
+        Me.GBPais.ResumeLayout(False)
+        Me.GBPais.PerformLayout()
+        Me.GBEstado.ResumeLayout(False)
+        Me.GBEstado.PerformLayout()
+        Me.GBCiudad.ResumeLayout(False)
+        Me.GBCiudad.PerformLayout()
+        Me.GBColonia.ResumeLayout(False)
+        Me.GBColonia.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -466,8 +467,8 @@ Partial Class FrmPais
     Friend WithEvents BtnActualizarCo As Button
     Friend WithEvents TxtColonia As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents GBPais As GroupBox
+    Friend WithEvents GBEstado As GroupBox
+    Friend WithEvents GBCiudad As GroupBox
+    Friend WithEvents GBColonia As GroupBox
 End Class

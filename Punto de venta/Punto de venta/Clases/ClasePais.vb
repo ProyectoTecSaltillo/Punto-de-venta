@@ -35,7 +35,7 @@ Public Class ClasePais
     End Property
 
     'Consulta el nombre de todos los paises de la base de datos
-    Public Function consultaTodosPaises() As Object
+    Public Function consultaTodosPaises() As DataTable
         Dim strSQL As String
         Dim xCnx As New conexion
 
@@ -46,6 +46,7 @@ Public Class ClasePais
 
     'Rellena el DataGridView con los paises de la base de datos
     Public Sub poblarComboPaises(ByVal ComboP As ComboBox)
+        ComboP.ValueMember = consultaTodosPaises().Columns(0).ToString()
         ComboP.DataSource = consultaTodosPaises()
         ComboP.Refresh()
     End Sub
@@ -95,12 +96,32 @@ Public Class ClasePais
         cnx.Close()
     End Sub
 
-    Public Sub actualizaPais()
+    Public Function actualizaPais(ByVal aux As String) As Boolean
+        Dim strSql As String
+        Dim xCnx As New conexion
+        If aux <> "" Then
+            strSql = "UPDATE paises SET nombre = '" & aux & "' WHERE nombre = '" & nombre & "';"
+            xCnx.objetoCommand(strSql)
+            cnx.Close()
+            Return True
+        Else
+            cnx.Close()
+            Return False
+        End If
+    End Function
+    Public Function eliminaPais() As Boolean
         Dim strSql As String
         Dim xCnx As New conexion
 
-        strSql = "UPDATE paises SET nombre = '" & nombre & "' WHERE nombre = " & nombre
-        xCnx.objetoCommand(strSql)
-        cnx.Close()
-    End Sub
+        If nombre <> "" Then
+            strSql = "DELETE FROM paises WHERE nombre='" & nombre & "';"
+            xCnx.objetoCommand(strSql)
+            cnx.Close()
+            Return True
+        Else
+            MsgBox("Faltan datos del país", MsgBoxStyle.Critical)
+            cnx.Close()
+            Return False
+        End If
+    End Function
 End Class
