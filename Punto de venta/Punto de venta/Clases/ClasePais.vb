@@ -1,7 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class ClasePais
-    Private idPais As Integer
+    Private id As Integer
     Private nombre As String
+    Private ds As DataTable
 
     Public Sub New()
         idPais = 0
@@ -18,10 +19,10 @@ Public Class ClasePais
 
     Public Property getSetidPais() As Integer
         Get
-            Return idPais
+            Return id
         End Get
         Set(ByVal value As Integer)
-            idPais = value
+            id = value
         End Set
     End Property
 
@@ -43,12 +44,55 @@ Public Class ClasePais
         consultaTodosPaises = xCnx.objetoDataAdapter(strSQL)
         cnx.Close()
     End Function
+    Public Function consultaTodosEstados() As DataTable
+        Dim strSQL As String
+        Dim xCnx As New conexion
 
-    'Rellena el DataGridView con los paises de la base de datos
+        strSQL = "SELECT nombre AS Estado FROM estados ORDER BY nombre ASC;"
+        consultaTodosEstados = xCnx.objetoDataAdapter(strSQL)
+        cnx.Close()
+    End Function
+    Public Function consultaTodosCiudades() As DataTable
+        Dim strSQL As String
+        Dim xCnx As New conexion
+
+        strSQL = "SELECT nombre AS Ciudad FROM ciudades ORDER BY nombre ASC;"
+        consultaTodosCiudades = xCnx.objetoDataAdapter(strSQL)
+        cnx.Close()
+    End Function
+    Public Function consultaTodosColonias() As DataTable
+        Dim strSQL As String
+        Dim xCnx As New conexion
+
+        strSQL = "SELECT nombre AS Colonia FROM colonias ORDER BY nombre ASC;"
+        consultaTodosColonias = xCnx.objetoDataAdapter(strSQL)
+        cnx.Close()
+    End Function
+
+    'Rellena el Combobox con la base de datos
     Public Sub poblarComboPaises(ByVal ComboP As ComboBox)
-        ComboP.ValueMember = consultaTodosPaises().Columns(0).ToString()
-        ComboP.DataSource = consultaTodosPaises()
+        ds = consultaTodosPaises()
+        ComboP.ValueMember = ds.Columns(0).ToString()
+        ComboP.DataSource = ds
         ComboP.Refresh()
+    End Sub
+    Public Sub poblarComboEstados(ByVal ComboE As ComboBox)
+        ds = consultaTodosEstados()
+        ComboE.ValueMember = ds.Columns(0).ToString()
+        ComboE.DataSource = ds
+        ComboE.Refresh()
+    End Sub
+    Public Sub poblarComboCiudades(ByVal ComboC As ComboBox)
+        ds = consultaTodosCiudades()
+        ComboC.ValueMember = ds.Columns(0).ToString()
+        ComboC.DataSource = ds
+        ComboC.Refresh()
+    End Sub
+    Public Sub poblarComboColonias(ByVal ComboCo As ComboBox)
+        ds = consultaTodosColonias()
+        ComboCo.ValueMember = ds.Columns(0).ToString()
+        ComboCo.DataSource = ds
+        ComboCo.Refresh()
     End Sub
 
     'Consulta todos los estados de la base de datos que estén relacionados con el nombre del país brindado
@@ -66,13 +110,13 @@ Public Class ClasePais
         cnx.Close()
     End Function
 
-    Public Function consultaUnPais() As Boolean
+    Public Function consultaUno(ByRef Tabla As String) As Boolean
         Dim strSQL As String
         Dim xCnx As New conexion
         Dim xDT As DataTable
 
-        strSQL = "SELECT * FROM paises WHERE nombre = '" & nombre & "';"
-        consultaUnPais = False
+        strSQL = "SELECT * FROM " & Tabla & " WHERE nombre = '" & nombre & "';"
+        consultaUno = False
         xDT = xCnx.objetoDataAdapter(strSQL)
 
         If xDT.Rows.Count = 1 Then
@@ -82,26 +126,35 @@ Public Class ClasePais
                 nombre = CStr(xDT.Rows(0)("nombre"))
                 EL_nombre = CStr(xDT.Rows(0)("nombre"))
             End If
-            consultaUnPais = True
+            consultaUno = True
         End If
         cnx.Close()
     End Function
 
-    Public Sub insertaPais()
+    Public Sub inserta(ByVal Tabla As String)
         Dim strSql As String
         Dim xCnx As New conexion
-
-        strSql = "INSERT INTO paises (nombre) VALUES('" & nombre & "');"
-        xCnx.objetoCommand(strSql)
-        cnx.Close()
+        If Tabla = pais Then
+            strSql = "INSERT INTO " & Tabla & " (nombre) VALUES('" & nombre & "');"
+            xCnx.objetoCommand(strSql)
+            MessageBox.Show("Registro insertado!")
+            cnx.Close()
+        ElseIf Tabla = estado Then
+            'Buscar id Pais ¿como? y agregar el primer campo 
+            strSql = "INSERT INTO " & Tabla & " (id_pais,id_estado,nombre) VALUES(" & AutoIncrementE(Tabla) & "," & nombre & "');"
+            xCnx.objetoCommand(strSql)
+            MessageBox.Show("Registro insertado!")
+            cnx.Close()
+        End If
     End Sub
 
-    Public Function actualizaPais(ByVal aux As String) As Boolean
+    Public Function actualiza(ByVal Tabla As String, ByVal NuevoNombre As String) As Boolean
         Dim strSql As String
         Dim xCnx As New conexion
-        If aux <> "" Then
-            strSql = "UPDATE paises SET nombre = '" & aux & "' WHERE nombre = '" & nombre & "';"
+        If NuevoNombre <> "" Then
+            strSql = "UPDATE " & Tabla & " SET nombre = '" & NuevoNombre & "' WHERE nombre = '" & nombre & "';"
             xCnx.objetoCommand(strSql)
+            MsgBox("Registro modificado")
             cnx.Close()
             Return True
         Else
@@ -109,13 +162,14 @@ Public Class ClasePais
             Return False
         End If
     End Function
-    Public Function eliminaPais() As Boolean
+    Public Function elimina(ByVal tabla As String) As Boolean
         Dim strSql As String
         Dim xCnx As New conexion
 
         If nombre <> "" Then
-            strSql = "DELETE FROM paises WHERE nombre='" & nombre & "';"
+            strSql = "DELETE FROM " & tabla & " WHERE nombre='" & nombre & "';"
             xCnx.objetoCommand(strSql)
+            MessageBox.Show("Registro Eliminado")
             cnx.Close()
             Return True
         Else
@@ -123,5 +177,19 @@ Public Class ClasePais
             cnx.Close()
             Return False
         End If
+    End Function
+
+    Public Function AutoIncrementE(ByVal tabla As String) As Integer
+        If tabla = estado Then
+            idEstado += 1
+            Return idEstado
+        ElseIf tabla = cuidad Then
+            idCiudad += 1
+            Return idCiudad
+        ElseIf tabla = colonia Then
+            idColonia += 1
+            Return idColonia
+        End If
+        Return 0
     End Function
 End Class

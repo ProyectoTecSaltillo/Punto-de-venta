@@ -6,4 +6,6 @@ Module Globales
     Public EL_nombre As String
     Public idpais As String
     Public inc As Integer
+    Public pais = "paises", estado = "estados", cuidad = "ciudades", colonia = "colonias"
+    Public idEstado, idCiuadad, idColonia, idCiudad As Integer
 End Module

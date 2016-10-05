@@ -1,7 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class FrmPais
     Private cnx As New MySqlConnection
-
     Private Sub FrmPais_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Restablecer()
         Dim paises As New ClasePais
@@ -15,8 +14,7 @@ Public Class FrmPais
     'Inserta nuevos paises
     Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizarP.Click
         Dim paises As New ClasePais(ComboPais.Text)
-        If paises.actualizaPais(TxtPais.Text) Then
-            MsgBox("Registro modificado")
+        If paises.actualiza(pais, TxtPais.Text) Then
             paises.poblarComboPaises(ComboPais)
             TxtPais.Text = ""
         End If
@@ -29,6 +27,8 @@ Public Class FrmPais
         TxtPais.Focus()
         BtnEliminarP.Enabled = False
         BtnActualizarP.Enabled = False
+        BtnEliminarE.Enabled = False
+        BtnActualizarE.Enabled = False
         BtnLimpia.Enabled = False
     End Sub
 
@@ -46,10 +46,9 @@ Public Class FrmPais
             MessageBox.Show("Capturar nombre del Pais")
         Else
             Dim paises As New ClasePais(TxtPais.Text)
-            If paises.consultaUnPais() = False Then
+            If paises.consultaUno(pais) = False Then
                 TxtPais.Text = EL_nombre
-                paises.insertaPais()
-                MessageBox.Show("Registro insertado!")
+                paises.inserta(pais)
             End If
             paises.poblarComboPaises(ComboPais)
             TxtPais.Text = ""
@@ -64,9 +63,8 @@ Public Class FrmPais
         Dim cbselect = ComboPais.Text
         If MessageBox.Show("¿Deseas eliminar el pais " & cbselect & "?", "CONFIRMAR", MessageBoxButtons.YesNo) = System.Windows.Forms.DialogResult.Yes Then
             Dim paises As New ClasePais(cbselect)
-            If paises.eliminaPais() Then
+            If paises.elimina(pais) Then
                 BtnEliminarP.Enabled = False
-                MessageBox.Show("Registro Eliminado")
                 paises.poblarComboPaises(ComboPais)
             End If
             TxtPais.Text = ""
@@ -80,6 +78,17 @@ Public Class FrmPais
             GBEstado.Enabled = True
         Else
             GBEstado.Enabled = False
+        End If
+    End Sub
+
+    Private Sub BtnInsertarE_Click(sender As Object, e As EventArgs) Handles BtnInsertarE.Click
+        Dim paises As New ClasePais(ComboPais.Text)
+        If paises.consultaUno(pais) = True Then
+            Dim estados As New ClasePais(TxtEstado.Text)
+            If estados.consultaUno(estado) = False Then
+                TxtEstado.Text = EL_nombre
+                estados.inserta(estado)
+            End If
         End If
     End Sub
 End Class
