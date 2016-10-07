@@ -97,21 +97,21 @@ Public Class ClasePais
     End Sub
 
     'Consulta todos los estados de la base de datos que estén relacionados con el nombre del país brindado
-    Public Function consultaUnEstado() As Boolean
+    Public Function consultaAlgo(ByVal Tabla As String, ByVal idPais As String) As Boolean
         Dim strSQL As String
         Dim xCnx As New conexion
         Dim xDT As DataTable
 
-        strSQL = "SELECT * FROM estados WHERE nombre = '" & nombre & "';"
-        consultaUnEstado = False
+        strSQL = "SELECT * FROM " & Tabla & " WHERE id_pais = '" & idPais & "';"
+        consultaAlgo = False
         xDT = xCnx.objetoDataAdapter(strSQL)
         If xDT.Rows.Count >= 1 Then
-            consultaUnEstado = True
+            consultaAlgo = True
         End If
         cnx.Close()
     End Function
 
-    Public Function consultaUno(ByRef Tabla As String) As Boolean
+    Public Function consultaUno(ByVal Tabla As String) As Boolean
         Dim strSQL As String
         Dim xCnx As New conexion
         Dim xDT As DataTable

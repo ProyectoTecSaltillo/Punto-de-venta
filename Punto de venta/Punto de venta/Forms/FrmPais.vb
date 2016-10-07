@@ -3,9 +3,9 @@ Public Class FrmPais
     Private cnx As New MySqlConnection
     Private Sub FrmPais_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Restablecer()
-        Dim paises As New ClasePais(ComboPais.Text)
-        Dim estados As New ClasePais
-        paises.poblarComboPaises(ComboPais)
+        'Dim paises As New ClasePais(ComboPais.Text)
+        'Dim estados As New ClasePais
+        'paises.poblarComboPaises(ComboPais)
     End Sub
 
     Private Sub BtnLimpia_Click(ByVal sender As Object, ByVal e As EventArgs)
@@ -117,14 +117,16 @@ Public Class FrmPais
     End Sub
 
     Private Sub ComboPais_GotFocus(sender As Object, e As EventArgs) Handles ComboPais.GotFocus
+        Dim paises As New ClasePais(ComboPais.Text)
+        Dim estados As New ClasePais
+        paises.poblarComboPaises(ComboPais)
         'Otra Forma forma de actualizar
         'BtnActualizarP.Enabled = True
-        BtnEliminarP.Enabled = True
-        If ComboPais.Text <> "" Then
-            GBEstado.Enabled = True
-        Else
-            GBEstado.Enabled = False
-        End If
+        'If ComboPais.Text <> "" Then
+        '    GBEstado.Enabled = True
+        'Else
+        '    GBEstado.Enabled = False
+        'End If
     End Sub
 
 
@@ -138,8 +140,15 @@ Public Class FrmPais
     End Sub
     Private Sub ComboPais_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboPais.SelectedIndexChanged
         Dim paises As New ClasePais(ComboPais.Text)
-        Dim estados As New ClasePais
+        Dim estados As New ClasePais(ComboEstado.Text)
         estados.poblarComboEstados(ComboEstado, paises.getIdPais())
+        If paises.consultaAlgo(estado, paises.getIdPais) = True Then
+            BtnEliminarP.Enabled = False
+            GBEstado.Enabled = True
+        Else
+            BtnEliminarP.Enabled = True
+            GBEstado.Enabled = False
+        End If
     End Sub
     Private Sub ComboEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboEstado.SelectedIndexChanged
 

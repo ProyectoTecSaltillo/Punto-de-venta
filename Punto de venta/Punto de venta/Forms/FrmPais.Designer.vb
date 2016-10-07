@@ -119,6 +119,7 @@ Partial Class FrmPais
         Me.ComboPais.Name = "ComboPais"
         Me.ComboPais.Size = New System.Drawing.Size(225, 24)
         Me.ComboPais.TabIndex = 7
+        Me.ComboPais.Text = "Seleccione..."
         '
         'Label2
         '
