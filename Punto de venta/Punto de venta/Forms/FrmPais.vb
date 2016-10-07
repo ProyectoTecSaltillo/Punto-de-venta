@@ -3,9 +3,9 @@ Public Class FrmPais
     Private cnx As New MySqlConnection
     Private Sub FrmPais_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Restablecer()
-        Dim paises As New ClasePais(ComboPais.Text)
-        Dim estados As New ClasePais
-        paises.poblarComboPaises(ComboPais)
+        'Dim paises As New ClasePais(ComboPais.Text)
+        'Dim estados As New ClasePais
+        'paises.poblarComboPaises(ComboPais)
     End Sub
 
     Private Sub BtnLimpia_Click(ByVal sender As Object, ByVal e As EventArgs)
@@ -117,6 +117,9 @@ Public Class FrmPais
     End Sub
 
     Private Sub ComboPais_GotFocus(sender As Object, e As EventArgs) Handles ComboPais.GotFocus
+        Dim paises As New ClasePais(ComboPais.Text)
+        Dim estados As New ClasePais
+        paises.poblarComboPaises(ComboPais)
         'Otra Forma forma de actualizar
         'BtnActualizarP.Enabled = True
         'If ComboPais.Text <> "" Then
