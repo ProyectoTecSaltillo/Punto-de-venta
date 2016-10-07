@@ -89,6 +89,22 @@ Public Class FrmPais
         End If
     End Sub
 
+    Private Sub BtnInsertarC_Click(sender As Object, e As EventArgs) Handles BtnInsertarC.Click
+        Dim paises As New ClasePais(ComboPais.Text)
+        Dim estados As New ClasePais(ComboEstado.Text)
+        Dim ciudades As New ClasePais(TxtCiudad.Text)
+        If TxtCiudad.Text = "" Then
+            MessageBox.Show("Capturar nombre de la Ciudad")
+        Else
+            If ciudades.consultaUno(ciudad) = False Then
+                TxtCiudad.Text = EL_nombre
+                ciudades.insertaC(paises.getIdPais(), estados.getIdEstado())
+            End If
+            ciudades.poblarComboCiudades(ComboCiudad, paises.getIdPais(), estados.getIdEstado())
+            TxtCiudad.Text = ""
+            Restablecer()
+        End If
+    End Sub
 
     Private Sub BtnEliminarP_Click(sender As Object, e As EventArgs) Handles BtnEliminarP.Click
         Dim cbselect = ComboPais.Text
@@ -142,15 +158,24 @@ Public Class FrmPais
         Dim paises As New ClasePais(ComboPais.Text)
         Dim estados As New ClasePais(ComboEstado.Text)
         estados.poblarComboEstados(ComboEstado, paises.getIdPais())
-        If paises.consultaAlgo(estado, paises.getIdPais) = True Then
+        GBEstado.Enabled = True
+        If paises.consultaAlgoP(estado, paises.getIdPais) = True Then
             BtnEliminarP.Enabled = False
-            GBEstado.Enabled = True
         Else
             BtnEliminarP.Enabled = True
-            GBEstado.Enabled = False
         End If
     End Sub
     Private Sub ComboEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboEstado.SelectedIndexChanged
-
+        Dim paises As New ClasePais(ComboPais.Text)
+        Dim estados As New ClasePais(ComboEstado.Text)
+        Dim ciudades As New ClasePais(ComboCiudad.Text)
+        ciudades.poblarComboCiudades(ComboCiudad, paises.getIdPais(), estados.getIdEstado())
+        GBCiudad.Enabled = True
+        If estados.consultaAlgoE(ciudad, estados.getIdEstado()) = True Then
+            BtnEliminarE.Enabled = False
+        Else
+            BtnEliminarE.Enabled = True
+        End If
     End Sub
+
 End Class

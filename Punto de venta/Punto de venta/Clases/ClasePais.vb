@@ -2,15 +2,13 @@
 Public Class ClasePais
     Private id As Integer
     Private nombre As String
-    Private ds As DataTable
 
     Public Sub New()
-        idPais = 0
+        id = 0
         nombre = ""
     End Sub
 
     Public Sub New(ByVal nuevoNombre As String)
-
         nombre = nuevoNombre
     End Sub
     ' No se utiliza
@@ -53,60 +51,77 @@ Public Class ClasePais
         consultaTodosEstados = xCnx.objetoDataAdapter(strSQL)
         cnx.Close()
     End Function
-    Public Function consultaTodosCiudades() As DataTable
+    Public Function consultaTodosCiudades(ByVal idpais As String, ByVal idestado As String) As DataTable
         Dim strSQL As String
         Dim xCnx As New conexion
 
-        strSQL = "SELECT nombre AS Ciudad FROM ciudades ORDER BY nombre ASC;"
+        strSQL = "SELECT nombre AS Ciudad FROM ciudades WHERE id_pais = '" & idpais & "'AND id_estado = '" & idestado & "'  ORDER BY nombre ASC;"
         consultaTodosCiudades = xCnx.objetoDataAdapter(strSQL)
         cnx.Close()
     End Function
-    Public Function consultaTodosColonias() As DataTable
+    Public Function consultaTodosColonias(ByVal idpais As String, ByVal idestado As String, ByVal idciudad As String) As DataTable
         Dim strSQL As String
         Dim xCnx As New conexion
 
-        strSQL = "SELECT nombre AS Colonia FROM colonias ORDER BY nombre ASC;"
+        strSQL = "SELECT nombre AS Colonia FROM colonias WHERE id_pais = '" & idpais & "'AND id_estado = '" & idestado & "' AND id_ciudad'" & idciudad & "' ORDER BY nombre ASC;"
         consultaTodosColonias = xCnx.objetoDataAdapter(strSQL)
         cnx.Close()
     End Function
 
     'Rellena el Combobox con la base de datos
     Public Sub poblarComboPaises(ByVal ComboP As ComboBox)
+        Dim ds As DataTable
         ds = consultaTodosPaises()
         ComboP.ValueMember = ds.Columns(0).ToString()
         ComboP.DataSource = ds
         ComboP.Refresh()
     End Sub
     Public Sub poblarComboEstados(ByVal ComboE As ComboBox, ByVal idpais As String)
+        Dim ds As DataTable
         ds = consultaTodosEstados(idpais)
         ComboE.ValueMember = ds.Columns(0).ToString()
         ComboE.DataSource = ds
         ComboE.Refresh()
     End Sub
-    Public Sub poblarComboCiudades(ByVal ComboC As ComboBox)
-        ds = consultaTodosCiudades()
+    Public Sub poblarComboCiudades(ByVal ComboC As ComboBox, ByVal idpais As String, ByVal idestado As String)
+        Dim ds As DataTable
+        ds = consultaTodosCiudades(idpais, idestado)
         ComboC.ValueMember = ds.Columns(0).ToString()
         ComboC.DataSource = ds
         ComboC.Refresh()
     End Sub
-    Public Sub poblarComboColonias(ByVal ComboCo As ComboBox)
-        ds = consultaTodosColonias()
+    Public Sub poblarComboColonias(ByVal ComboCo As ComboBox, ByVal idpais As String, ByVal idestado As String, ByVal idciudad As String)
+        Dim ds As DataTable
+        ds = consultaTodosColonias(idpais, idestado, idciudad)
         ComboCo.ValueMember = ds.Columns(0).ToString()
         ComboCo.DataSource = ds
         ComboCo.Refresh()
     End Sub
 
     'Consulta todos los estados de la base de datos que estén relacionados con el nombre del país brindado
-    Public Function consultaAlgo(ByVal Tabla As String, ByVal idPais As String) As Boolean
+    Public Function consultaAlgoP(ByVal Tabla As String, ByVal idPais As String) As Boolean
         Dim strSQL As String
         Dim xCnx As New conexion
         Dim xDT As DataTable
 
         strSQL = "SELECT * FROM " & Tabla & " WHERE id_pais = '" & idPais & "';"
-        consultaAlgo = False
+        consultaAlgoP = False
         xDT = xCnx.objetoDataAdapter(strSQL)
         If xDT.Rows.Count >= 1 Then
-            consultaAlgo = True
+            consultaAlgoP = True
+        End If
+        cnx.Close()
+    End Function
+    Public Function consultaAlgoE(ByVal Tabla As String, ByVal idEstado As String) As Boolean
+        Dim strSQL As String
+        Dim xCnx As New conexion
+        Dim xDT As DataTable
+
+        strSQL = "SELECT * FROM " & Tabla & " WHERE id_estado = '" & idEstado & "';"
+        consultaAlgoE = False
+        xDT = xCnx.objetoDataAdapter(strSQL)
+        If xDT.Rows.Count >= 1 Then
+            consultaAlgoE = True
         End If
         cnx.Close()
     End Function
@@ -149,6 +164,15 @@ Public Class ClasePais
         MessageBox.Show("Registro insertado!")
         cnx.Close()
     End Sub
+    Public Sub insertaC(ByVal idPais As String, ByVal idEstado As String)
+        Dim strSql As String
+        'Buscar id Pais ¿como? y agregar el primer campo 
+        strSql = "INSERT INTO " & ciudad & " (id_pais,id_estado,id_ciudad,nombre) VALUES(" & idPais & "," & idEstado & "," & AutoIncrementE(ciudad) & ",'" & nombre & "');"
+        Dim xCnx As New conexion
+        xCnx.objetoCommand(strSql)
+        MessageBox.Show("Registro insertado!")
+        cnx.Close()
+    End Sub
 
     Public Function actualiza(ByVal Tabla As String, ByVal NuevoNombre As String) As Boolean
         Dim strSql As String
@@ -181,20 +205,6 @@ Public Class ClasePais
             Return False
         End If
     End Function
-
-    Public Function AutoIncrementE(ByVal tabla As String) As Integer
-        If tabla = estado Then
-            idEstado = getMaxIdEstado() + 1
-            Return idEstado
-        ElseIf tabla = cuidad Then
-            idCiudad += 1
-            Return idCiudad
-        ElseIf tabla = colonia Then
-            idColonia += 1
-            Return idColonia
-        End If
-        Return 0
-    End Function
     Public Function getIdPais() As String
         Dim strSql As String
         Dim xCnx As New conexion
@@ -202,6 +212,36 @@ Public Class ClasePais
         strSql = "SELECT id_pais FROM " & pais & " WHERE nombre='" & nombre & "';"
         xDT = xCnx.objetoDataAdapter(strSql)
         id = CStr(xDT.Rows(0)("id_pais"))
+        cnx.Close()
+        Return id
+    End Function
+    Public Function getIdEstado() As String
+        Dim strSql As String
+        Dim xCnx As New conexion
+        Dim xDT As DataTable
+        strSql = "SELECT id_estado FROM " & estado & " WHERE nombre='" & nombre & "';"
+        xDT = xCnx.objetoDataAdapter(strSql)
+        id = CStr(xDT.Rows(0)("id_estado"))
+        cnx.Close()
+        Return id
+    End Function
+    Public Function getIdCiudad() As String
+        Dim strSql As String
+        Dim xCnx As New conexion
+        Dim xDT As DataTable
+        strSql = "SELECT id_ciudad FROM " & ciudad & " WHERE nombre='" & nombre & "';"
+        xDT = xCnx.objetoDataAdapter(strSql)
+        id = CStr(xDT.Rows(0)("id_ciudad"))
+        cnx.Close()
+        Return id
+    End Function
+    Public Function getIdColonia() As String
+        Dim strSql As String
+        Dim xCnx As New conexion
+        Dim xDT As DataTable
+        strSql = "SELECT id_colonia FROM " & colonia & " WHERE nombre='" & nombre & "';"
+        xDT = xCnx.objetoDataAdapter(strSql)
+        id = CStr(xDT.Rows(0)("id_colonia"))
         cnx.Close()
         Return id
     End Function
@@ -214,5 +254,38 @@ Public Class ClasePais
         id = CStr(xDT.Rows(0)("Estado"))
         cnx.Close()
         Return id
+    End Function
+    Public Function getMaxIdCiudad() As String
+        Dim strSql As String
+        Dim xCnx As New conexion
+        Dim xDT As DataTable
+        strSql = "SELECT max(id_ciudad) as Ciudad FROM " & ciudad & ";"
+        xDT = xCnx.objetoDataAdapter(strSql)
+        id = CStr(xDT.Rows(0)("Ciudad"))
+        cnx.Close()
+        Return id
+    End Function
+    Public Function getMaxIdColonia() As String
+        Dim strSql As String
+        Dim xCnx As New conexion
+        Dim xDT As DataTable
+        strSql = "SELECT max(id_colonia) as Colonia FROM " & colonia & ";"
+        xDT = xCnx.objetoDataAdapter(strSql)
+        id = CStr(xDT.Rows(0)("Colonia"))
+        cnx.Close()
+        Return id
+    End Function
+    Public Function AutoIncrementE(ByVal tabla As String) As Integer
+        If tabla = estado Then
+            idEstado = getMaxIdEstado() + 1
+            Return idEstado
+        ElseIf tabla = ciudad Then
+            idCiudad = getMaxIdCiudad() + 1
+            Return idCiudad
+        ElseIf tabla = colonia Then
+            idColonia = getMaxIdColonia() + 1
+            Return idColonia
+        End If
+        Return 0
     End Function
 End Class
