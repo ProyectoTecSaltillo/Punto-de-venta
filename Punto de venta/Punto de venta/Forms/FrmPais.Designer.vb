@@ -147,6 +147,7 @@ Partial Class FrmPais
         Me.ComboEstado.Name = "ComboEstado"
         Me.ComboEstado.Size = New System.Drawing.Size(225, 24)
         Me.ComboEstado.TabIndex = 15
+        Me.ComboEstado.Text = "Seleccione..."
         '
         'BtnInsertarE
         '
@@ -213,6 +214,7 @@ Partial Class FrmPais
         Me.ComboCiudad.Name = "ComboCiudad"
         Me.ComboCiudad.Size = New System.Drawing.Size(225, 24)
         Me.ComboCiudad.TabIndex = 23
+        Me.ComboCiudad.Text = "Seleccione..."
         '
         'BtnInsertarC
         '
@@ -236,6 +238,7 @@ Partial Class FrmPais
         '
         'BtnActualizarC
         '
+        Me.BtnActualizarC.Enabled = False
         Me.BtnActualizarC.Location = New System.Drawing.Point(473, 48)
         Me.BtnActualizarC.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnActualizarC.Name = "BtnActualizarC"
@@ -279,6 +282,7 @@ Partial Class FrmPais
         Me.ComboColonia.Name = "ComboColonia"
         Me.ComboColonia.Size = New System.Drawing.Size(225, 24)
         Me.ComboColonia.TabIndex = 31
+        Me.ComboColonia.Text = "Seleccione..."
         '
         'BtnInsertarCo
         '
@@ -312,6 +316,7 @@ Partial Class FrmPais
         '
         'BtnActualizarCo
         '
+        Me.BtnActualizarCo.Enabled = False
         Me.BtnActualizarCo.Location = New System.Drawing.Point(473, 49)
         Me.BtnActualizarCo.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnActualizarCo.Name = "BtnActualizarCo"
