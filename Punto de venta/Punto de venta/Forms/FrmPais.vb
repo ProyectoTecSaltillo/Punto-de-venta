@@ -208,8 +208,6 @@ Public Class FrmPais
         Dim estados As New ClasePais
         paises.poblarComboPaises(ComboPais)
     End Sub
-
-
     Private Sub ComboEstado_GotFocus(sender As Object, e As EventArgs) Handles ComboEstado.GotFocus
         Dim paises As New ClasePais(ComboPais.Text)
         Dim estados As New ClasePais(ComboEstado.Text)
@@ -228,6 +226,7 @@ Public Class FrmPais
         Dim colonias As New ClasePais(ComboColonia.Text)
         colonias.poblarComboColonias(ComboColonia, paises.getIdPais(), estados.getIdEstado, ciudades.getIdCiudad)
     End Sub
+
     Private Sub ComboPais_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboPais.SelectedIndexChanged
         Dim paises As New ClasePais(ComboPais.Text)
         Dim estados As New ClasePais(ComboEstado.Text)
@@ -258,7 +257,7 @@ Public Class FrmPais
         Dim colonias As New ClasePais(ComboColonia.Text)
         colonias.poblarComboColonias(ComboColonia, paises.getIdPais(), estados.getIdEstado(), ciudades.getIdCiudad)
         GBColonia.Enabled = True
-        If colonias.consultaAlgoc(ciudad, estados.getIdEstado()) = True Then
+        If ciudades.consultaAlgoC(ciudad, ciudades.getIdCiudad()) = True Then
             BtnEliminarE.Enabled = False
         Else
             BtnEliminarE.Enabled = True

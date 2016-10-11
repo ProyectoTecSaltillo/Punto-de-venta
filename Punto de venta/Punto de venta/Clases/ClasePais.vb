@@ -130,11 +130,24 @@ Public Class ClasePais
         Dim xCnx As New conexion
         Dim xDT As DataTable
 
-        strSQL = "SELECT * FROM " & Tabla & " WHERE id_estado = '" & idCiudad & "';"
+        strSQL = "SELECT * FROM " & Tabla & " WHERE id_ciudad = '" & idCiudad & "';"
         consultaAlgoC = False
         xDT = xCnx.objetoDataAdapter(strSQL)
         If xDT.Rows.Count >= 1 Then
             consultaAlgoC = True
+        End If
+        cnx.Close()
+    End Function
+    Public Function consultaAlgoCo(ByVal Tabla As String, ByVal idColonia As String) As Boolean
+        Dim strSQL As String
+        Dim xCnx As New conexion
+        Dim xDT As DataTable
+
+        strSQL = "SELECT * FROM " & Tabla & " WHERE id_colonia = '" & idColonia & "';"
+        consultaAlgoCo = False
+        xDT = xCnx.objetoDataAdapter(strSQL)
+        If xDT.Rows.Count >= 1 Then
+            consultaAlgoCo = True
         End If
         cnx.Close()
     End Function
