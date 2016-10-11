@@ -43,8 +43,8 @@ Public Class FrmPais
         BtnLimpia.Enabled = False
     End Sub
 
-    'Habilita el botón guardar si hay text dentro del campo, de lo contrario, lo mantiene deshabilitado
-    Private Sub Txtpais_TextChanged(sender As Object, e As EventArgs) Handles TxtPais.TextChanged
+    'Habilita el botón insertar país si hay texto dentro del campo, de lo contrario, lo mantiene deshabilitado
+    Private Sub TxtPais_TextChanged(sender As Object, e As EventArgs) Handles TxtPais.TextChanged
         If (ComboPais.Text <> "" And TxtPais.Text <> "") Then
             BtnActualizarP.Enabled = True
         Else
