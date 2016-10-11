@@ -211,6 +211,7 @@ Public Class FrmPais
     Private Sub ComboEstado_GotFocus(sender As Object, e As EventArgs) Handles ComboEstado.GotFocus
         Dim paises As New ClasePais(ComboPais.Text)
         Dim estados As New ClasePais(ComboEstado.Text)
+        ComboCiudad.Text = ""
         estados.poblarComboEstados(ComboEstado, paises.getIdPais())
     End Sub
     Private Sub ComboCiudad_GotFocus(sender As Object, e As EventArgs) Handles ComboCiudad.GotFocus
