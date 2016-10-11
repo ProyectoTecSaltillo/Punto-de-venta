@@ -63,7 +63,7 @@ Public Class ClasePais
         Dim strSQL As String
         Dim xCnx As New conexion
 
-        strSQL = "SELECT nombre AS Colonia FROM colonias WHERE id_pais = '" & idpais & "'AND id_estado = '" & idestado & "' AND id_ciudad'" & idciudad & "' ORDER BY nombre ASC;"
+        strSQL = "SELECT nombre AS Colonia FROM colonias WHERE id_pais = '" & idpais & "'AND id_estado = '" & idestado & "' AND id_ciudad ='" & idciudad & "' ORDER BY nombre ASC;"
         consultaTodosColonias = xCnx.objetoDataAdapter(strSQL)
         cnx.Close()
     End Function
@@ -125,6 +125,32 @@ Public Class ClasePais
         End If
         cnx.Close()
     End Function
+    Public Function consultaAlgoC(ByVal Tabla As String, ByVal idCiudad As String) As Boolean
+        Dim strSQL As String
+        Dim xCnx As New conexion
+        Dim xDT As DataTable
+
+        strSQL = "SELECT * FROM " & Tabla & " WHERE id_ciudad = '" & idCiudad & "';"
+        consultaAlgoC = False
+        xDT = xCnx.objetoDataAdapter(strSQL)
+        If xDT.Rows.Count >= 1 Then
+            consultaAlgoC = True
+        End If
+        cnx.Close()
+    End Function
+    Public Function consultaAlgoCo(ByVal Tabla As String, ByVal idColonia As String) As Boolean
+        Dim strSQL As String
+        Dim xCnx As New conexion
+        Dim xDT As DataTable
+
+        strSQL = "SELECT * FROM " & Tabla & " WHERE id_colonia = '" & idColonia & "';"
+        consultaAlgoCo = False
+        xDT = xCnx.objetoDataAdapter(strSQL)
+        If xDT.Rows.Count >= 1 Then
+            consultaAlgoCo = True
+        End If
+        cnx.Close()
+    End Function
 
     Public Function consultaUno(ByVal Tabla As String) As Boolean
         Dim strSQL As String
@@ -168,6 +194,15 @@ Public Class ClasePais
         Dim strSql As String
         'Buscar id Pais ¿como? y agregar el primer campo 
         strSql = "INSERT INTO " & ciudad & " (id_pais,id_estado,id_ciudad,nombre) VALUES(" & idPais & "," & idEstado & "," & AutoIncrementE(ciudad) & ",'" & nombre & "');"
+        Dim xCnx As New conexion
+        xCnx.objetoCommand(strSql)
+        MessageBox.Show("Registro insertado!")
+        cnx.Close()
+    End Sub
+    Public Sub insertaCo(ByVal idPais As String, ByVal idEstado As String, ByVal idCiudad As String)
+        Dim strSql As String
+        'Buscar id Pais ¿como? y agregar el primer campo 
+        strSql = "INSERT INTO " & colonia & " (id_pais,id_estado,id_ciudad,id_colonia,nombre) VALUES(" & idPais & "," & idEstado & "," & idCiudad & "," & AutoIncrementE(colonia) & ",'" & nombre & "');"
         Dim xCnx As New conexion
         xCnx.objetoCommand(strSql)
         MessageBox.Show("Registro insertado!")

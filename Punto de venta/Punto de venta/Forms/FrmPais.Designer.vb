@@ -221,6 +221,9 @@ Partial Class FrmPais
         'BtnActualizarC
         '
         Me.BtnActualizarC.Location = New System.Drawing.Point(355, 39)
+        Me.BtnActualizarC.Enabled = False
+        Me.BtnActualizarC.Location = New System.Drawing.Point(473, 48)
+        Me.BtnActualizarC.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnActualizarC.Name = "BtnActualizarC"
         Me.BtnActualizarC.Size = New System.Drawing.Size(75, 23)
         Me.BtnActualizarC.TabIndex = 19
@@ -290,6 +293,9 @@ Partial Class FrmPais
         'BtnActualizarCo
         '
         Me.BtnActualizarCo.Location = New System.Drawing.Point(355, 40)
+        Me.BtnActualizarCo.Enabled = False
+        Me.BtnActualizarCo.Location = New System.Drawing.Point(473, 49)
+        Me.BtnActualizarCo.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnActualizarCo.Name = "BtnActualizarCo"
         Me.BtnActualizarCo.Size = New System.Drawing.Size(75, 23)
         Me.BtnActualizarCo.TabIndex = 27
