@@ -92,6 +92,8 @@ Public Class FrmPais
             If paises.consultaUno(pais) = False Then
                 TxtPais.Text = EL_nombre
                 paises.insertaP()
+            Else
+                MsgBox("Ese Pais ya existe, ingrese otro por favor")
             End If
             paises.poblarComboPaises(ComboPais)
             TxtPais.Text = ""
@@ -107,6 +109,8 @@ Public Class FrmPais
             If estados.consultaUno(estado) = False Then
                 TxtEstado.Text = EL_nombre
                 estados.insertaE(paises.getIdPais())
+            Else
+                MsgBox("Ese Estado ya existe, ingrese otro por favor")
             End If
             estados.poblarComboEstados(ComboEstado, paises.getIdPais())
             TxtEstado.Text = ""
@@ -124,6 +128,8 @@ Public Class FrmPais
             If ciudades.consultaUno(ciudad) = False Then
                 TxtCiudad.Text = EL_nombre
                 ciudades.insertaC(paises.getIdPais(), estados.getIdEstado())
+            Else
+                MsgBox("Esa Ciudad ya existe, ingrese otro por favor")
             End If
             ciudades.poblarComboCiudades(ComboCiudad, paises.getIdPais(), estados.getIdEstado())
             TxtCiudad.Text = ""
@@ -136,11 +142,13 @@ Public Class FrmPais
         Dim ciudades As New ClasePais(ComboCiudad.Text)
         Dim colonias As New ClasePais(TxtColonia.Text)
         If TxtColonia.Text = "" Then
-            MessageBox.Show("Capturar nombre de la Ciudad")
+            MessageBox.Show("Capturar nombre de la Colonia")
         Else
             If colonias.consultaUno(colonia) = False Then
                 TxtColonia.Text = EL_nombre
                 colonias.insertaCo(paises.getIdPais(), estados.getIdEstado(), ciudades.getIdCiudad)
+            Else
+                MsgBox("Esa Colonia ya existe, ingrese otro por favor")
             End If
             colonias.poblarComboColonias(ComboColonia, paises.getIdPais(), estados.getIdEstado(), ciudades.getIdCiudad)
             TxtColonia.Text = ""
@@ -208,29 +216,33 @@ Public Class FrmPais
         Dim estados As New ClasePais
         paises.poblarComboPaises(ComboPais)
     End Sub
-    Private Sub ComboEstado_GotFocus(sender As Object, e As EventArgs) Handles ComboEstado.GotFocus
-        Dim paises As New ClasePais(ComboPais.Text)
-        Dim estados As New ClasePais(ComboEstado.Text)
-        ComboCiudad.Text = ""
-        estados.poblarComboEstados(ComboEstado, paises.getIdPais())
-    End Sub
-    Private Sub ComboCiudad_GotFocus(sender As Object, e As EventArgs) Handles ComboCiudad.GotFocus
-        Dim paises As New ClasePais(ComboPais.Text)
-        Dim estados As New ClasePais(ComboEstado.Text)
-        Dim ciudades As New ClasePais(ComboCiudad.Text)
-        ciudades.poblarComboCiudades(ComboCiudad, paises.getIdPais(), estados.getIdEstado)
-    End Sub
-    Private Sub Combocolonias_GotFocus(sender As Object, e As EventArgs) Handles ComboCiudad.GotFocus
-        Dim paises As New ClasePais(ComboPais.Text)
-        Dim estados As New ClasePais(ComboEstado.Text)
-        Dim ciudades As New ClasePais(ComboCiudad.Text)
-        Dim colonias As New ClasePais(ComboColonia.Text)
-        colonias.poblarComboColonias(ComboColonia, paises.getIdPais(), estados.getIdEstado, ciudades.getIdCiudad)
-    End Sub
+    'Private Sub ComboEstado_GotFocus(sender As Object, e As EventArgs) Handles ComboEstado.GotFocus
+    '    Dim paises As New ClasePais(ComboPais.Text)
+    '    Dim estados As New ClasePais(ComboEstado.Text)
+    '    estados.poblarComboEstados(ComboEstado, paises.getIdPais())
+    'End Sub
+    'Private Sub ComboCiudad_GotFocus(sender As Object, e As EventArgs) Handles ComboCiudad.GotFocus
+    '    Dim paises As New ClasePais(ComboPais.Text)
+    '    Dim estados As New ClasePais(ComboEstado.Text)
+    '    Dim ciudades As New ClasePais(ComboCiudad.Text)
+    '    ciudades.poblarComboCiudades(ComboCiudad, paises.getIdPais(), estados.getIdEstado)
+    'End Sub
+    'Private Sub Combocolonias_GotFocus(sender As Object, e As EventArgs) Handles ComboCiudad.GotFocus
+    '    Dim paises As New ClasePais(ComboPais.Text)
+    '    Dim estados As New ClasePais(ComboEstado.Text)
+    '    Dim ciudades As New ClasePais(ComboCiudad.Text)
+    '    Dim colonias As New ClasePais(ComboColonia.Text)
+    '    colonias.poblarComboColonias(ComboColonia, paises.getIdPais(), estados.getIdEstado, ciudades.getIdCiudad)
+    'End Sub
 
     Private Sub ComboPais_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboPais.SelectedIndexChanged
         Dim paises As New ClasePais(ComboPais.Text)
         Dim estados As New ClasePais(ComboEstado.Text)
+        ComboEstado.Text = "Seleccione..."
+        ComboCiudad.Text = "Seleccione..."
+        ComboColonia.Text = "Seleccione..."
+        GBColonia.Enabled = False
+        GBCiudad.Enabled = False
         estados.poblarComboEstados(ComboEstado, paises.getIdPais())
         GBEstado.Enabled = True
         If paises.consultaAlgoP(estado, paises.getIdPais) = True Then
@@ -243,6 +255,9 @@ Public Class FrmPais
         Dim paises As New ClasePais(ComboPais.Text)
         Dim estados As New ClasePais(ComboEstado.Text)
         Dim ciudades As New ClasePais(ComboCiudad.Text)
+        ComboCiudad.Text = "Seleccione..."
+        ComboColonia.Text = "Seleccione..."
+        GBColonia.Enabled = False
         ciudades.poblarComboCiudades(ComboCiudad, paises.getIdPais(), estados.getIdEstado())
         GBCiudad.Enabled = True
         If estados.consultaAlgoE(ciudad, estados.getIdEstado()) = True Then
@@ -256,12 +271,13 @@ Public Class FrmPais
         Dim estados As New ClasePais(ComboEstado.Text)
         Dim ciudades As New ClasePais(ComboCiudad.Text)
         Dim colonias As New ClasePais(ComboColonia.Text)
+        ComboColonia.Text = "Seleccione..."
         colonias.poblarComboColonias(ComboColonia, paises.getIdPais(), estados.getIdEstado(), ciudades.getIdCiudad)
         GBColonia.Enabled = True
-        If ciudades.consultaAlgoC(ciudad, ciudades.getIdCiudad()) = True Then
-            BtnEliminarE.Enabled = False
+        If ciudades.consultaAlgoC(colonia, ciudades.getIdCiudad()) = True Then
+            BtnEliminarC.Enabled = False
         Else
-            BtnEliminarE.Enabled = True
+            BtnEliminarC.Enabled = True
         End If
     End Sub
 
