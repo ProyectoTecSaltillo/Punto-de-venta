@@ -281,32 +281,50 @@ Public Class ClasePais
         Return id
     End Function
     Public Function getMaxIdEstado() As String
-        Dim strSql As String
-        Dim xCnx As New conexion
-        Dim xDT As DataTable
-        strSql = "SELECT max(id_estado) as Estado FROM " & estado & ";"
-        xDT = xCnx.objetoDataAdapter(strSql)
-        id = CStr(xDT.Rows(0)("Estado"))
+        Try
+            Dim strSql As String
+            Dim xCnx As New conexion
+            Dim xDT As DataTable
+            strSql = "SELECT max(id_estado) as Estado FROM " & estado & ";"
+            xDT = xCnx.objetoDataAdapter(strSql)
+            id = CStr(xDT.Rows(0)("Estado"))
+            cnx.Close()
+            Return id
+        Catch
+        End Try
+        id = 0
         cnx.Close()
         Return id
     End Function
     Public Function getMaxIdCiudad() As String
-        Dim strSql As String
-        Dim xCnx As New conexion
-        Dim xDT As DataTable
-        strSql = "SELECT max(id_ciudad) as Ciudad FROM " & ciudad & ";"
-        xDT = xCnx.objetoDataAdapter(strSql)
-        id = CStr(xDT.Rows(0)("Ciudad"))
+        Try
+            Dim strSql As String
+            Dim xCnx As New conexion
+            Dim xDT As DataTable
+            strSql = "SELECT max(id_ciudad) as Ciudad FROM " & ciudad & ";"
+            xDT = xCnx.objetoDataAdapter(strSql)
+            id = CStr(xDT.Rows(0)("Ciudad"))
+            cnx.Close()
+            Return id
+        Catch
+        End Try
+        id = 0
         cnx.Close()
         Return id
     End Function
     Public Function getMaxIdColonia() As String
-        Dim strSql As String
-        Dim xCnx As New conexion
-        Dim xDT As DataTable
-        strSql = "SELECT max(id_colonia) as Colonia FROM " & colonia & ";"
-        xDT = xCnx.objetoDataAdapter(strSql)
-        id = CStr(xDT.Rows(0)("Colonia"))
+        Try
+            Dim strSql As String
+            Dim xCnx As New conexion
+            Dim xDT As DataTable
+            strSql = "SELECT max(id_colonia) as Colonia FROM " & colonia & ";"
+            xDT = xCnx.objetoDataAdapter(strSql)
+            id = CStr(xDT.Rows(0)("Colonia"))
+            cnx.Close()
+            Return id
+        Catch
+        End Try
+        id = 0
         cnx.Close()
         Return id
     End Function

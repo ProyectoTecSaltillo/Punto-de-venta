@@ -241,6 +241,9 @@ Public Class FrmPais
         ComboEstado.Text = "Seleccione..."
         ComboCiudad.Text = "Seleccione..."
         ComboColonia.Text = "Seleccione..."
+        BtnEliminarE.Enabled = False
+        BtnEliminarC.Enabled = False
+        BtnEliminarCo.Enabled = False
         GBColonia.Enabled = False
         GBCiudad.Enabled = False
         estados.poblarComboEstados(ComboEstado, paises.getIdPais())
@@ -257,6 +260,8 @@ Public Class FrmPais
         Dim ciudades As New ClasePais(ComboCiudad.Text)
         ComboCiudad.Text = "Seleccione..."
         ComboColonia.Text = "Seleccione..."
+        BtnEliminarC.Enabled = False
+        BtnEliminarCo.Enabled = False
         GBColonia.Enabled = False
         ciudades.poblarComboCiudades(ComboCiudad, paises.getIdPais(), estados.getIdEstado())
         GBCiudad.Enabled = True
@@ -272,6 +277,7 @@ Public Class FrmPais
         Dim ciudades As New ClasePais(ComboCiudad.Text)
         Dim colonias As New ClasePais(ComboColonia.Text)
         ComboColonia.Text = "Seleccione..."
+        BtnEliminarCo.Enabled = False
         colonias.poblarComboColonias(ComboColonia, paises.getIdPais(), estados.getIdEstado(), ciudades.getIdCiudad)
         GBColonia.Enabled = True
         If ciudades.consultaAlgoC(colonia, ciudades.getIdCiudad()) = True Then
