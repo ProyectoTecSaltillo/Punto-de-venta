@@ -73,8 +73,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\ClaseEstado.vb" />
     <Compile Include="Clases\ClasePais.vb" />
     <Compile Include="Clases\ClasePaises.vb" />
+    <Compile Include="Clases\ClasePrinc.vb" />
     <Compile Include="Conexión\conexion.vb" />
     <Compile Include="Forms\FrmPais.Designer.vb">
       <DependentUpon>FrmPais.vb</DependentUpon>
@@ -117,10 +119,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Venta.Designer.vb">
+    <Compile Include="Forms\Venta.Designer.vb">
       <DependentUpon>Venta.vb</DependentUpon>
     </Compile>
-    <Compile Include="Venta.vb">
+    <Compile Include="Forms\Venta.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -143,7 +145,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Venta.resx">
+    <EmbeddedResource Include="Forms\Venta.resx">
       <DependentUpon>Venta.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
