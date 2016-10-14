@@ -134,14 +134,12 @@
         Dim xCnx As New conexion
         Dim xDT As DataTable
         Select Case (Tabla)
-            Case pais
-                strSQL = "SELECT * FROM " & Tabla & " WHERE id_pais = '" & id & "';"
             Case estado
-                strSQL = "SELECT * FROM " & Tabla & " WHERE id_estado = '" & id & "';"
+                strSQL = "SELECT * FROM " & Tabla & " WHERE id_pais = '" & id & "';"
             Case ciudad
-                strSQL = "SELECT * FROM " & Tabla & " WHERE id_ciudad = '" & id & "';"
+                strSQL = "SELECT * FROM " & Tabla & " WHERE id_estado = '" & id & "';"
             Case colonia
-                strSQL = "SELECT * FROM " & Tabla & " WHERE id_colonia = '" & id & "';"
+                strSQL = "SELECT * FROM " & Tabla & " WHERE id_ciudad = '" & id & "';"
         End Select
         consultaAlgo = False
         xDT = xCnx.objetoDataAdapter(strSQL)

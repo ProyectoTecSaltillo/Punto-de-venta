@@ -73,6 +73,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\ClaseCiudad.vb" />
+    <Compile Include="Clases\ClaseColonia.vb" />
     <Compile Include="Clases\ClaseEstado.vb" />
     <Compile Include="Clases\ClasePais.vb" />
     <Compile Include="Clases\ClasePaises.vb" />
