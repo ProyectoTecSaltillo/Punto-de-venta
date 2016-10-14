@@ -13,4 +13,9 @@
         Me.Close()
         Venta.Show()
     End Sub
+
+    Private Sub BtnManEmp_Click(sender As Object, e As EventArgs) Handles BtnManEmp.Click
+        Me.Close()
+        MtnEmpleados.Show()
+    End Sub
 End Class

@@ -66,6 +66,8 @@
         Dim xCnx As New conexion
         Dim xDT As DataTable
         Select Case (tabla)
+            Case pais
+                strSql = "SELECT max(id_pais) as Columna FROM " & pais & ";"
             Case estado
                 strSql = "SELECT max(id_estado) as Columna FROM " & estado & ";"
             Case ciudad

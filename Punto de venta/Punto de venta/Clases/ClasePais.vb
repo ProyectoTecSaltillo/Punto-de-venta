@@ -27,8 +27,8 @@ Public Class ClasePais
 
     Public Sub inserta()
         Dim strSql As String
+        strSql = "INSERT INTO " & pais & " (id_pais,nombre) VALUES(" & AutoIncrement(pais) & ",'" & nombre & "');"
         Dim xCnx As New conexion
-        strSql = "INSERT INTO " & pais & " (nombre) VALUES('" & nombre & "');"
         xCnx.objetoCommand(strSql)
         MessageBox.Show("Registro insertado!")
         cnx.Close()

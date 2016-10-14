@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="Clases\ClaseCiudad.vb" />
     <Compile Include="Clases\ClaseColonia.vb" />
+    <Compile Include="Clases\ClaseEmpleado.vb" />
     <Compile Include="Clases\ClaseEstado.vb" />
     <Compile Include="Clases\ClasePais.vb" />
     <Compile Include="Clases\ClasePaises.vb" />
@@ -103,6 +104,12 @@
       <DependentUpon>MenuGeneral.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\MenuGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MtnEmpleados.Designer.vb">
+      <DependentUpon>MtnEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MtnEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulos\Globales.vb" />
@@ -140,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuGeneral.resx">
       <DependentUpon>MenuGeneral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MtnEmpleados.resx">
+      <DependentUpon>MtnEmpleados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
