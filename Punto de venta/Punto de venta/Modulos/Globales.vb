@@ -7,4 +7,5 @@ Module Globales
     Public inc As Integer
     Public pais = "paises", estado = "estados", ciudad = "ciudades", colonia = "colonias"
     Public idPais, idEstado, idColonia, idCiudad As Integer
+    Public session As Object
 End Module
