@@ -56,6 +56,7 @@ Partial Class FrmPais
         Me.GBEstado = New System.Windows.Forms.GroupBox()
         Me.GBCiudad = New System.Windows.Forms.GroupBox()
         Me.GBColonia = New System.Windows.Forms.GroupBox()
+        Me.BtnBack = New System.Windows.Forms.Button()
         Me.GBPais.SuspendLayout()
         Me.GBEstado.SuspendLayout()
         Me.GBCiudad.SuspendLayout()
@@ -220,9 +221,8 @@ Partial Class FrmPais
         '
         'BtnActualizarC
         '
-        Me.BtnActualizarC.Location = New System.Drawing.Point(355, 39)
         Me.BtnActualizarC.Enabled = False
-        Me.BtnActualizarC.Location = New System.Drawing.Point(473, 48)
+        Me.BtnActualizarC.Location = New System.Drawing.Point(356, 39)
         Me.BtnActualizarC.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnActualizarC.Name = "BtnActualizarC"
         Me.BtnActualizarC.Size = New System.Drawing.Size(75, 23)
@@ -292,9 +292,8 @@ Partial Class FrmPais
         '
         'BtnActualizarCo
         '
-        Me.BtnActualizarCo.Location = New System.Drawing.Point(355, 40)
         Me.BtnActualizarCo.Enabled = False
-        Me.BtnActualizarCo.Location = New System.Drawing.Point(473, 49)
+        Me.BtnActualizarCo.Location = New System.Drawing.Point(355, 40)
         Me.BtnActualizarCo.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnActualizarCo.Name = "BtnActualizarCo"
         Me.BtnActualizarCo.Size = New System.Drawing.Size(75, 23)
@@ -385,12 +384,22 @@ Partial Class FrmPais
         Me.GBColonia.TabStop = False
         Me.GBColonia.Text = "COLONIAS"
         '
+        'BtnBack
+        '
+        Me.BtnBack.Location = New System.Drawing.Point(205, 342)
+        Me.BtnBack.Name = "BtnBack"
+        Me.BtnBack.Size = New System.Drawing.Size(156, 23)
+        Me.BtnBack.TabIndex = 37
+        Me.BtnBack.Text = "Menú General"
+        Me.BtnBack.UseVisualStyleBackColor = True
+        '
         'FrmPais
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(546, 374)
+        Me.Controls.Add(Me.BtnBack)
         Me.Controls.Add(Me.GBColonia)
         Me.Controls.Add(Me.GBCiudad)
         Me.Controls.Add(Me.GBEstado)
@@ -446,4 +455,5 @@ Partial Class FrmPais
     Friend WithEvents GBEstado As GroupBox
     Friend WithEvents GBCiudad As GroupBox
     Friend WithEvents GBColonia As GroupBox
+    Friend WithEvents BtnBack As Button
 End Class

@@ -16,23 +16,19 @@ Public Class Login
             HashedPass = Convert.ToBase64String(MD5hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(TxtPsw.Text)))
         End Using
 
-        'Try
         strSQL = "SELECT * FROM usuarios WHERE email = '" & TxtEmail.Text & "' && password = '" & HashedPass & "';"
         xDT = xCnx.objetoDataAdapter(strSQL)
         If xDT.Rows.Count = 1 Then
-            MessageBox.Show("Bienvenido")
+            TxtEmail.Text = ""
+            TxtPsw.Text = ""
             session = xDT.Rows(0)
+            MessageBox.Show("Bienvenido " & session.Item(1))
             MenuGeneral.Show()
             Me.Hide()
         Else
             MessageBox.Show("Usuario o contraseña incorrecto!")
         End If
         cnx.Close()
-        'Catch ex As MySqlException
-        '    MessageBox.Show("No se ha podido conectar al servidor")
-        'End Try
-        'MenuGeneral.Show()
-        'Me.Hide()
     End Sub
 
     Private Sub TxtUser_TextChanged(sender As Object, e As EventArgs) Handles TxtEmail.TextChanged

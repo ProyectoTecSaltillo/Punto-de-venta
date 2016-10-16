@@ -264,4 +264,8 @@ Public Class FrmPais
         End If
     End Sub
 
+    Private Sub BtnBack_Click(sender As Object, e As EventArgs) Handles BtnBack.Click
+        MenuGeneral.Show()
+        Me.Close()
+    End Sub
 End Class
