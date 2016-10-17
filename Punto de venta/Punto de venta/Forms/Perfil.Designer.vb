@@ -95,7 +95,7 @@ Partial Class Perfil
         '
         'BtnEdName
         '
-        Me.BtnEdName.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.edit
+        'Me.BtnEdName.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.edit
         Me.BtnEdName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnEdName.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.BtnEdName.FlatAppearance.BorderSize = 0
@@ -108,7 +108,7 @@ Partial Class Perfil
         '
         'BtnEdEmail
         '
-        Me.BtnEdEmail.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.edit
+        'Me.BtnEdEmail.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.edit
         Me.BtnEdEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnEdEmail.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.BtnEdEmail.FlatAppearance.BorderSize = 0
@@ -121,7 +121,7 @@ Partial Class Perfil
         '
         'BtnEdPsw
         '
-        Me.BtnEdPsw.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.edit
+        'Me.BtnEdPsw.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.edit
         Me.BtnEdPsw.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnEdPsw.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.BtnEdPsw.FlatAppearance.BorderSize = 0
@@ -134,7 +134,7 @@ Partial Class Perfil
         '
         'BtnEdPat
         '
-        Me.BtnEdPat.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.edit
+        'Me.BtnEdPat.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.edit
         Me.BtnEdPat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnEdPat.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.BtnEdPat.FlatAppearance.BorderSize = 0
@@ -164,7 +164,7 @@ Partial Class Perfil
         '
         'BtnEdMat
         '
-        Me.BtnEdMat.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.edit
+        'Me.BtnEdMat.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.edit
         Me.BtnEdMat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnEdMat.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.BtnEdMat.FlatAppearance.BorderSize = 0

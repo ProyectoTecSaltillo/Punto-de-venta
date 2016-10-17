@@ -30,6 +30,7 @@
 
     Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click
         session = Nothing
+        MsgBox("Vuelve pronto!")
         Login.Show()
         Me.Close()
     End Sub

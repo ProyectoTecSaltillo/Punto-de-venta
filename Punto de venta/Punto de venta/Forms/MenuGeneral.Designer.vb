@@ -96,7 +96,6 @@ Partial Class MenuGeneral
         '
         Me.ToolStripLabel1.AutoSize = False
         Me.ToolStripLabel1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PerfilToolStripMenuItem, Me.SalirToolStripMenuItem})
-        Me.ToolStripLabel1.Image = Global.Punto_de_venta.My.Resources.Resources.us
         Me.ToolStripLabel1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ToolStripLabel1.Name = "ToolStripLabel1"
         Me.ToolStripLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -105,14 +104,13 @@ Partial Class MenuGeneral
         'PerfilToolStripMenuItem
         '
         Me.PerfilToolStripMenuItem.Name = "PerfilToolStripMenuItem"
-        Me.PerfilToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PerfilToolStripMenuItem.Size = New System.Drawing.Size(101, 22)
         Me.PerfilToolStripMenuItem.Text = "Perfil"
         '
         'SalirToolStripMenuItem
         '
-        Me.SalirToolStripMenuItem.Image = Global.Punto_de_venta.My.Resources.Resources.logout
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(101, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         Me.SalirToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         '

@@ -14,6 +14,7 @@
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         session = Nothing
+        MsgBox("Vuelve pronto!")
         Login.Show()
         Me.Close()
     End Sub

@@ -167,28 +167,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ITS.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\user.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\user1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\us.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logout.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\editar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\edit.png" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
