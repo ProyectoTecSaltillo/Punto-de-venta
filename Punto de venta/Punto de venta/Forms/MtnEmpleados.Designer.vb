@@ -28,6 +28,12 @@ Partial Class MtnEmpleados
         Me.ComboNombre = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ComboColonia = New System.Windows.Forms.ComboBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.ComboEstado = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.ComboPais = New System.Windows.Forms.ComboBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.TxtPass2 = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.ComboCiudad = New System.Windows.Forms.ComboBox()
@@ -102,6 +108,12 @@ Partial Class MtnEmpleados
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.ComboColonia)
+        Me.GroupBox2.Controls.Add(Me.Label12)
+        Me.GroupBox2.Controls.Add(Me.ComboEstado)
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.ComboPais)
+        Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.TxtPass2)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.ComboCiudad)
@@ -118,10 +130,61 @@ Partial Class MtnEmpleados
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 143)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(445, 273)
+        Me.GroupBox2.Size = New System.Drawing.Size(445, 359)
         Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos"
+        '
+        'ComboColonia
+        '
+        Me.ComboColonia.FormattingEnabled = True
+        Me.ComboColonia.Location = New System.Drawing.Point(79, 320)
+        Me.ComboColonia.Name = "ComboColonia"
+        Me.ComboColonia.Size = New System.Drawing.Size(344, 24)
+        Me.ComboColonia.TabIndex = 18
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(15, 291)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(52, 17)
+        Me.Label12.TabIndex = 17
+        Me.Label12.Text = "Ciudad"
+        '
+        'ComboEstado
+        '
+        Me.ComboEstado.FormattingEnabled = True
+        Me.ComboEstado.Location = New System.Drawing.Point(79, 258)
+        Me.ComboEstado.Name = "ComboEstado"
+        Me.ComboEstado.Size = New System.Drawing.Size(344, 24)
+        Me.ComboEstado.TabIndex = 16
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(15, 261)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(52, 17)
+        Me.Label11.TabIndex = 15
+        Me.Label11.Text = "Estado"
+        '
+        'ComboPais
+        '
+        Me.ComboPais.FormattingEnabled = True
+        Me.ComboPais.Location = New System.Drawing.Point(79, 227)
+        Me.ComboPais.Name = "ComboPais"
+        Me.ComboPais.Size = New System.Drawing.Size(344, 24)
+        Me.ComboPais.TabIndex = 14
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(15, 230)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(35, 17)
+        Me.Label10.TabIndex = 13
+        Me.Label10.Text = "Pais"
         '
         'TxtPass2
         '
@@ -142,7 +205,7 @@ Partial Class MtnEmpleados
         'ComboCiudad
         '
         Me.ComboCiudad.FormattingEnabled = True
-        Me.ComboCiudad.Location = New System.Drawing.Point(79, 234)
+        Me.ComboCiudad.Location = New System.Drawing.Point(79, 290)
         Me.ComboCiudad.Name = "ComboCiudad"
         Me.ComboCiudad.Size = New System.Drawing.Size(344, 24)
         Me.ComboCiudad.TabIndex = 5
@@ -150,11 +213,11 @@ Partial Class MtnEmpleados
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(15, 237)
+        Me.Label8.Location = New System.Drawing.Point(15, 323)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(52, 17)
+        Me.Label8.Size = New System.Drawing.Size(55, 17)
         Me.Label8.TabIndex = 4
-        Me.Label8.Text = "Ciudad"
+        Me.Label8.Text = "Colonia"
         '
         'TxtPass1
         '
@@ -269,7 +332,7 @@ Partial Class MtnEmpleados
         '
         'BtnAgregar
         '
-        Me.BtnAgregar.Location = New System.Drawing.Point(507, 192)
+        Me.BtnAgregar.Location = New System.Drawing.Point(539, 326)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(150, 41)
         Me.BtnAgregar.TabIndex = 5
@@ -278,7 +341,7 @@ Partial Class MtnEmpleados
         '
         'BtnModificar
         '
-        Me.BtnModificar.Location = New System.Drawing.Point(507, 251)
+        Me.BtnModificar.Location = New System.Drawing.Point(539, 385)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(150, 41)
         Me.BtnModificar.TabIndex = 6
@@ -287,7 +350,7 @@ Partial Class MtnEmpleados
         '
         'BtnEliminar
         '
-        Me.BtnEliminar.Location = New System.Drawing.Point(507, 312)
+        Me.BtnEliminar.Location = New System.Drawing.Point(539, 446)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(150, 41)
         Me.BtnEliminar.TabIndex = 7
@@ -298,7 +361,7 @@ Partial Class MtnEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(705, 428)
+        Me.ClientSize = New System.Drawing.Size(705, 514)
         Me.Controls.Add(Me.BtnEliminar)
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnAgregar)
@@ -344,4 +407,10 @@ Partial Class MtnEmpleados
     Friend WithEvents BtnEliminar As Button
     Friend WithEvents TxtPass2 As TextBox
     Friend WithEvents Label9 As Label
+    Friend WithEvents ComboColonia As ComboBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents ComboEstado As ComboBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents ComboPais As ComboBox
+    Friend WithEvents Label10 As Label
 End Class

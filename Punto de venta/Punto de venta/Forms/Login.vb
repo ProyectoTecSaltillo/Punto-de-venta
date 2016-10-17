@@ -29,7 +29,7 @@ Public Class Login
         '    MessageBox.Show("No se ha podido conectar al servidor")
         'End Try
         MenuGeneral.Show()
-        Me.Hide()
+        Hide()
     End Sub
 
     Private Sub TxtUser_TextChanged(sender As Object, e As EventArgs) Handles TxtUser.TextChanged

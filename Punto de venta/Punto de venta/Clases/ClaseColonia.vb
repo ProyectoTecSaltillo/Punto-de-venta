@@ -25,7 +25,6 @@
     End Sub
     Public Sub inserta(ByVal idPais As String, ByVal idEstado As String, ByVal idCiudad As String)
         Dim strSql As String
-        'Buscar id Pais ¿como? y agregar el primer campo 
         strSql = "INSERT INTO " & colonia & " (id_pais,id_estado,id_ciudad,id_colonia,nombre) VALUES(" & idPais & "," & idEstado & "," & idCiudad & "," & AutoIncrement(colonia) & ",'" & nombre & "');"
         Dim xCnx As New conexion
         xCnx.objetoCommand(strSql)
