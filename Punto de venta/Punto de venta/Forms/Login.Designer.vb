@@ -25,7 +25,7 @@ Partial Class Login
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TxtUser = New System.Windows.Forms.TextBox()
+        Me.TxtEmail = New System.Windows.Forms.TextBox()
         Me.TxtPsw = New System.Windows.Forms.TextBox()
         Me.BtnEntrar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
@@ -46,9 +46,9 @@ Partial Class Login
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(41, 76)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(46, 13)
+        Me.Label2.Size = New System.Drawing.Size(35, 13)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Usuario:"
+        Me.Label2.Text = "Email:"
         '
         'Label3
         '
@@ -59,12 +59,12 @@ Partial Class Login
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Contraserña:"
         '
-        'TxtUser
+        'TxtEmail
         '
-        Me.TxtUser.Location = New System.Drawing.Point(93, 73)
-        Me.TxtUser.Name = "TxtUser"
-        Me.TxtUser.Size = New System.Drawing.Size(148, 20)
-        Me.TxtUser.TabIndex = 4
+        Me.TxtEmail.Location = New System.Drawing.Point(93, 73)
+        Me.TxtEmail.Name = "TxtEmail"
+        Me.TxtEmail.Size = New System.Drawing.Size(148, 20)
+        Me.TxtEmail.TabIndex = 4
         '
         'TxtPsw
         '
@@ -91,7 +91,7 @@ Partial Class Login
         Me.ClientSize = New System.Drawing.Size(265, 173)
         Me.Controls.Add(Me.BtnEntrar)
         Me.Controls.Add(Me.TxtPsw)
-        Me.Controls.Add(Me.TxtUser)
+        Me.Controls.Add(Me.TxtEmail)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -107,7 +107,7 @@ Partial Class Login
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents TxtUser As TextBox
+    Friend WithEvents TxtEmail As TextBox
     Friend WithEvents TxtPsw As TextBox
     Friend WithEvents BtnEntrar As Button
 End Class

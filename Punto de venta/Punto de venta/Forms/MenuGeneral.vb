@@ -1,25 +1,29 @@
 ﻿Public Class MenuGeneral
+    Private Sub MenuGeneral_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ToolStripLabel1.Text = "Bienvenido " & session.Item(1)
+        If session.Item(6) <> 1 Then
+            Bu.Visible = False
+            B.Visible = False
+        End If
+    End Sub
+
     Private Sub BtnMant_Click(sender As Object, e As EventArgs) Handles BtnMant.Click
         FrmPais.Show()
         Me.Hide()
     End Sub
 
-    Private Sub CerrarSesion_Click(sender As Object, e As EventArgs) Handles CerrarSes.Click
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Me.Close()
-        Login.Show()
     End Sub
 
-    Private Sub Venta_Click(sender As Object, e As EventArgs) Handles Venta.Click
+    Private Sub PerfilToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PerfilToolStripMenuItem.Click
+        Perfil.Show()
         Me.Hide()
-        Venta.Show()
-    End Sub
-
-    Private Sub BtnManEmp_Click(sender As Object, e As EventArgs) Handles BtnManEmp.Click
-        Me.Hide()
-        MtnEmpleados.Show()
     End Sub
 
     Private Sub MenuGeneral_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        session = Nothing
+        MsgBox("Vuelve pronto!")
         Login.Show()
     End Sub
 

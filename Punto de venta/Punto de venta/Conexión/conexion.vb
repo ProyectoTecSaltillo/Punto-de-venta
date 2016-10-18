@@ -2,13 +2,12 @@
 Public Class conexion
     Public Sub New()
         cnx.ConnectionString = "server=localhost; user=adminVentas; password=ventas; database=clase1"
-        'cnx = New OdbcConnection("DRIVER={MySQL ODBC 5.1 Driver}; SERVER=127.0.0.1; DATABASE=; UID=root; PWD=")
         If cnx.State <> ConnectionState.Open Then
             Try
                 cnx.Open()
                 'MsgBox("Sí")
             Catch ex As Exception
-                MsgBox("No")
+                MsgBox("No se pudo conectar a la base de datos")
                 Throw New Exception("No se pudo establecer la conexión.", ex)
                 'Finally
             End Try
