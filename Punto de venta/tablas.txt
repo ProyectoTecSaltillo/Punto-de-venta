@@ -1,0 +1,39 @@
+create table clientes
+(id_cliente numeric (10) not null, 
+nombre varchar(30) not null,
+ap_paterno varchar(30) not null,
+ap_materno varchar(30) not null,
+edad numeric(3) not null,
+rfc varchar(15) not null,
+sexo varchar(10) not null,
+correo varchar(30) not null,
+telefono numeric(20) not null,
+constraint pk_clientes primary key(id_cliente)
+constraint fk_clientes foreign key(id_pais, id_estado, id_ciudad, id_col)
+references colonias (id_cliente, id_ciudad, id_col, id_pais));
+
+create table ventas
+(id_venta numeric(10) not null,
+id_empleado numeric(10) not null,
+id_cliente numeric(10) not null,
+fecha_venta date() not null,
+importe_total numeric(10) not null,
+forma_pago varchar(10) not null,
+constraint pk_ventas primary key(id_venta, id_empleado, id_cliente),
+constraint fk_ventas foreign key (id_empleado, id_cliente)
+references clientes (id_cliente));
+
+CREATE TABLE detalle (
+  id_venta INTEGER NOT NULL AUTO_INCREMENT,
+  id_producto INTEGER NOT NULL,
+  productos_id_empleado INTEGER NOT NULL,
+  productos_id_proveedor INTEGER NOT NULL,
+  productos_id_producto INTEGER NOT NULL,
+  ventas_id_cliente INTEGER NOT NULL,
+  ventas_id_empleado INTEGER NOT NULL,
+  ventas_id_venta INTEGER NOT NULL,
+  cuantos NUMERIC NULL,
+  PRIMARY KEY(id_venta, id_producto),
+  INDEX detalle_FKIndex1(ventas_id_venta, ventas_id_empleado, ventas_id_cliente),
+  INDEX detalle_FKIndex2(productos_id_producto, productos_id_proveedor, productos_id_empleado)
+);

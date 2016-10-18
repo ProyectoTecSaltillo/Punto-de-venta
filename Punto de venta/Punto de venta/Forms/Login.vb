@@ -7,27 +7,27 @@ Public Class Login
     End Sub
 
     Private Sub BtnEntrar_Click(sender As Object, e As EventArgs) Handles BtnEntrar.Click
-        'Dim strSQL As String
-        'Dim xCnx As New conexion
-        'Dim xDT As DataTable
-        'Dim HashedPass As String = ""
+        Dim strSQL As String
+        Dim xCnx As New conexion
+        Dim xDT As DataTable
+        Dim HashedPass As String = ""
 
-        'Using MD5hash As MD5 = MD5.Create()
-        '    HashedPass = Convert.ToBase64String(MD5hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(TxtPsw.Text)))
-        'End Using
+        Using MD5hash As MD5 = MD5.Create()
+            HashedPass = Convert.ToBase64String(MD5hash.ComputeHash(System.Text.Encoding.ASCII.GetBytes(TxtPsw.Text)))
+        End Using
 
-        'Try
-        '    strSQL = "SELECT * FROM usuarios WHERE nombre = '" & TxtUser.Text & "' && password = '" & TxtPsw.Text & "';"
-        '    xDT = xCnx.objetoDataAdapter(strSQL)
-        '    If xDT.Rows.Count = 1 Then
-        '        MessageBox.Show("Bienvenido")
-        '        MenuGeneral.Show()
-        '        Me.Hide()
-        '    End If
-        '    cnx.Close()
-        'Catch ex As MySqlException
-        '    MessageBox.Show("No se ha podido conectar al servidor")
-        'End Try
+        Try
+            strSQL = "SELECT * FROM usuarios WHERE nombre = '" & TxtUser.Text & "' && password = '" & TxtPsw.Text & "';"
+            xDT = xCnx.objetoDataAdapter(strSQL)
+            If xDT.Rows.Count = 1 Then
+                MessageBox.Show("Bienvenido")
+                MenuGeneral.Show()
+                Me.Hide()
+            End If
+            cnx.Close()
+        Catch ex As MySqlException
+            MessageBox.Show("No se ha podido conectar al servidor")
+        End Try
         MenuGeneral.Show()
         Hide()
     End Sub

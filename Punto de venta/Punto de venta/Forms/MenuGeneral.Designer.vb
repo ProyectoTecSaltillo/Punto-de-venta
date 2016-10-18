@@ -34,77 +34,70 @@ Partial Class MenuGeneral
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Verdana", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(16, 11)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(311, 41)
+        Me.Label1.Size = New System.Drawing.Size(247, 32)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Punto de Venta"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'BtnMant
         '
-        Me.BtnMant.Location = New System.Drawing.Point(16, 73)
-        Me.BtnMant.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnMant.Location = New System.Drawing.Point(12, 59)
         Me.BtnMant.Name = "BtnMant"
-        Me.BtnMant.Size = New System.Drawing.Size(323, 58)
+        Me.BtnMant.Size = New System.Drawing.Size(242, 47)
         Me.BtnMant.TabIndex = 1
         Me.BtnMant.Text = "Mantenimiento países"
         Me.BtnMant.UseVisualStyleBackColor = True
         '
         'BtnManEmp
         '
-        Me.BtnManEmp.Location = New System.Drawing.Point(16, 138)
-        Me.BtnManEmp.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnManEmp.Location = New System.Drawing.Point(12, 112)
         Me.BtnManEmp.Name = "BtnManEmp"
-        Me.BtnManEmp.Size = New System.Drawing.Size(323, 54)
+        Me.BtnManEmp.Size = New System.Drawing.Size(242, 44)
         Me.BtnManEmp.TabIndex = 2
         Me.BtnManEmp.Text = "Mantenimiento Empleados"
         Me.BtnManEmp.UseVisualStyleBackColor = True
         '
         'Sol
         '
-        Me.Sol.Location = New System.Drawing.Point(16, 199)
-        Me.Sol.Margin = New System.Windows.Forms.Padding(4)
+        Me.Sol.Location = New System.Drawing.Point(12, 162)
         Me.Sol.Name = "Sol"
-        Me.Sol.Size = New System.Drawing.Size(323, 54)
+        Me.Sol.Size = New System.Drawing.Size(242, 44)
         Me.Sol.TabIndex = 3
         Me.Sol.Text = "Solicitudes"
         Me.Sol.UseVisualStyleBackColor = True
         '
         'Venta
         '
-        Me.Venta.Location = New System.Drawing.Point(16, 261)
-        Me.Venta.Margin = New System.Windows.Forms.Padding(4)
+        Me.Venta.Location = New System.Drawing.Point(12, 212)
         Me.Venta.Name = "Venta"
-        Me.Venta.Size = New System.Drawing.Size(323, 54)
+        Me.Venta.Size = New System.Drawing.Size(242, 44)
         Me.Venta.TabIndex = 4
         Me.Venta.Text = "Venta de Productos"
         Me.Venta.UseVisualStyleBackColor = True
         '
         'CerrarSes
         '
-        Me.CerrarSes.Location = New System.Drawing.Point(16, 322)
-        Me.CerrarSes.Margin = New System.Windows.Forms.Padding(4)
+        Me.CerrarSes.Location = New System.Drawing.Point(12, 262)
         Me.CerrarSes.Name = "CerrarSes"
-        Me.CerrarSes.Size = New System.Drawing.Size(323, 54)
+        Me.CerrarSes.Size = New System.Drawing.Size(242, 44)
         Me.CerrarSes.TabIndex = 5
         Me.CerrarSes.Text = "Cerrar Sesion"
         Me.CerrarSes.UseVisualStyleBackColor = True
         '
         'MenuGeneral
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(355, 391)
+        Me.ClientSize = New System.Drawing.Size(266, 318)
         Me.Controls.Add(Me.CerrarSes)
         Me.Controls.Add(Me.Venta)
         Me.Controls.Add(Me.Sol)
         Me.Controls.Add(Me.BtnManEmp)
         Me.Controls.Add(Me.BtnMant)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "MenuGeneral"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
