@@ -9,6 +9,9 @@ Public Class ClasePais
     Public Sub New(ByVal nuevoNombre As String)
         MyBase.New(nuevoNombre)
     End Sub
+    Public Sub New(ByVal nuevoid As Integer)
+        MyBase.New(nuevoid)
+    End Sub
     Public Function consultaTodos() As DataTable
         Dim strSQL As String
         Dim xCnx As New conexion
@@ -33,4 +36,15 @@ Public Class ClasePais
         MessageBox.Show("Registro insertado!")
         cnx.Close()
     End Sub
+    Public Overloads Function getNombre()
+        Return MyBase.getNombre(pais)
+    End Function
+
+    Public Overloads Function getId()
+        Return MyBase.getId(pais)
+    End Function
+
+    Public Overloads Function elimina()
+        Return MyBase.elimina(pais)
+    End Function
 End Class

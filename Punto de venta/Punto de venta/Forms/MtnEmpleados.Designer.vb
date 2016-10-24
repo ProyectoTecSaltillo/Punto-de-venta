@@ -138,10 +138,10 @@ Partial Class MtnEmpleados
         'ComboColonia
         '
         Me.ComboColonia.FormattingEnabled = True
-        Me.ComboColonia.Location = New System.Drawing.Point(79, 320)
+        Me.ComboColonia.Location = New System.Drawing.Point(76, 320)
         Me.ComboColonia.Name = "ComboColonia"
         Me.ComboColonia.Size = New System.Drawing.Size(344, 24)
-        Me.ComboColonia.TabIndex = 18
+        Me.ComboColonia.TabIndex = 12
         '
         'Label12
         '
@@ -158,7 +158,7 @@ Partial Class MtnEmpleados
         Me.ComboEstado.Location = New System.Drawing.Point(79, 258)
         Me.ComboEstado.Name = "ComboEstado"
         Me.ComboEstado.Size = New System.Drawing.Size(344, 24)
-        Me.ComboEstado.TabIndex = 16
+        Me.ComboEstado.TabIndex = 10
         '
         'Label11
         '
@@ -175,7 +175,7 @@ Partial Class MtnEmpleados
         Me.ComboPais.Location = New System.Drawing.Point(79, 227)
         Me.ComboPais.Name = "ComboPais"
         Me.ComboPais.Size = New System.Drawing.Size(344, 24)
-        Me.ComboPais.TabIndex = 14
+        Me.ComboPais.TabIndex = 9
         '
         'Label10
         '
@@ -190,8 +190,9 @@ Partial Class MtnEmpleados
         '
         Me.TxtPass2.Location = New System.Drawing.Point(90, 194)
         Me.TxtPass2.Name = "TxtPass2"
+        Me.TxtPass2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtPass2.Size = New System.Drawing.Size(333, 22)
-        Me.TxtPass2.TabIndex = 12
+        Me.TxtPass2.TabIndex = 8
         '
         'Label9
         '
@@ -208,7 +209,7 @@ Partial Class MtnEmpleados
         Me.ComboCiudad.Location = New System.Drawing.Point(79, 290)
         Me.ComboCiudad.Name = "ComboCiudad"
         Me.ComboCiudad.Size = New System.Drawing.Size(344, 24)
-        Me.ComboCiudad.TabIndex = 5
+        Me.ComboCiudad.TabIndex = 11
         '
         'Label8
         '
@@ -223,8 +224,9 @@ Partial Class MtnEmpleados
         '
         Me.TxtPass1.Location = New System.Drawing.Point(90, 166)
         Me.TxtPass1.Name = "TxtPass1"
+        Me.TxtPass1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtPass1.Size = New System.Drawing.Size(333, 22)
-        Me.TxtPass1.TabIndex = 10
+        Me.TxtPass1.TabIndex = 7
         '
         'Label7
         '
@@ -240,7 +242,7 @@ Partial Class MtnEmpleados
         Me.TxtEmail.Location = New System.Drawing.Point(63, 131)
         Me.TxtEmail.Name = "TxtEmail"
         Me.TxtEmail.Size = New System.Drawing.Size(360, 22)
-        Me.TxtEmail.TabIndex = 8
+        Me.TxtEmail.TabIndex = 6
         '
         'Label6
         '
@@ -256,7 +258,7 @@ Partial Class MtnEmpleados
         Me.TxtMat.Location = New System.Drawing.Point(133, 93)
         Me.TxtMat.Name = "TxtMat"
         Me.TxtMat.Size = New System.Drawing.Size(290, 22)
-        Me.TxtMat.TabIndex = 6
+        Me.TxtMat.TabIndex = 5
         '
         'Label5
         '
@@ -323,6 +325,8 @@ Partial Class MtnEmpleados
         'CheckAdm
         '
         Me.CheckAdm.AutoSize = True
+        Me.CheckAdm.Checked = True
+        Me.CheckAdm.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckAdm.Location = New System.Drawing.Point(25, 30)
         Me.CheckAdm.Name = "CheckAdm"
         Me.CheckAdm.Size = New System.Drawing.Size(117, 21)
@@ -335,7 +339,7 @@ Partial Class MtnEmpleados
         Me.BtnAgregar.Location = New System.Drawing.Point(539, 326)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(150, 41)
-        Me.BtnAgregar.TabIndex = 5
+        Me.BtnAgregar.TabIndex = 13
         Me.BtnAgregar.Text = "Agregar"
         Me.BtnAgregar.UseVisualStyleBackColor = True
         '
@@ -344,7 +348,7 @@ Partial Class MtnEmpleados
         Me.BtnModificar.Location = New System.Drawing.Point(539, 385)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(150, 41)
-        Me.BtnModificar.TabIndex = 6
+        Me.BtnModificar.TabIndex = 14
         Me.BtnModificar.Text = "Modificar"
         Me.BtnModificar.UseVisualStyleBackColor = True
         '
@@ -353,7 +357,7 @@ Partial Class MtnEmpleados
         Me.BtnEliminar.Location = New System.Drawing.Point(539, 446)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(150, 41)
-        Me.BtnEliminar.TabIndex = 7
+        Me.BtnEliminar.TabIndex = 15
         Me.BtnEliminar.Text = "Eliminar"
         Me.BtnEliminar.UseVisualStyleBackColor = True
         '

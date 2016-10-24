@@ -2,7 +2,7 @@
 
 Module Globales
     Public cnx As New MySqlConnection
-    Public pais = "paises", estado = "estados", ciudad = "ciudades", colonia = "colonias", empleados = "empleados"
+    Public pais = "paises", estado = "estados", ciudad = "ciudades", colonia = "colonias", usuarios = "usuarios"
     Public var, EL_nombre As String
     Public idPais, idEstado, idColonia, idCiudad, inc As Integer
     Public session As Object

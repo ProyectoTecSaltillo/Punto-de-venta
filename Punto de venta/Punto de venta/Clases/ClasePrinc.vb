@@ -9,6 +9,10 @@
     Public Sub New(ByVal nuevoNombre As String)
         nombre = nuevoNombre
     End Sub
+
+    Public Sub New(ByVal nuevoid As Integer)
+        id = nuevoid
+    End Sub
     Public Property getSetid() As Integer
         Get
             Return id
@@ -26,7 +30,7 @@
             nombre = value
         End Set
     End Property
-    Public Function actualiza(ByVal Tabla As String, ByVal NuevoNombre As String) As Boolean
+    Public Overloads Function actualiza(ByVal Tabla As String, ByVal NuevoNombre As String) As Boolean
         Dim strSql As String
         Dim xCnx As New conexion
         If NuevoNombre <> "" Then
@@ -41,7 +45,7 @@
             Return False
         End If
     End Function
-    Public Function elimina(ByVal tabla As String) As Boolean
+    Public Overloads Function elimina(ByVal tabla As String) As Boolean
         Dim strSql As String
         Dim xCnx As New conexion
 
@@ -74,6 +78,8 @@
                 strSql = "SELECT max(id_ciudad) as Columna FROM " & ciudad & ";"
             Case colonia
                 strSql = "SELECT max(id_colonia) as Columna FROM " & colonia & ";"
+            Case usuarios
+                strSql = "SELECT max(id_usuario) as Columna FROM " & usuarios & ";"
         End Select
         Try
             xDT = xCnx.objetoDataAdapter(strSql)
@@ -86,7 +92,7 @@
         cnx.Close()
         Return id
     End Function
-    Public Function getId(ByVal tabla As String) As String
+    Public Overloads Function getId(ByVal tabla As String) As String
         Dim strSql As String
         Dim xCnx As New conexion
         Dim xDT As DataTable
@@ -99,6 +105,8 @@
                 strSql = "SELECT id_ciudad as Columna FROM " & ciudad & " WHERE nombre='" & nombre & "';"
             Case colonia
                 strSql = "SELECT id_colonia as Columna FROM " & colonia & " WHERE nombre='" & nombre & "';"
+            Case usuarios
+                strSql = "SELECT id_usuario as Columna FROM " & usuarios & " WHERE CONCAT( nombre, ' ', paterno, ' ', materno ) ='" & nombre & "';"
         End Select
         Try
             xDT = xCnx.objetoDataAdapter(strSql)
@@ -149,5 +157,26 @@
             consultaAlgo = True
         End If
         cnx.Close()
+    End Function
+    Public Overloads Function getNombre(ByVal tabla As String)
+        Dim strSQL As String
+        Dim xCnx As New conexion
+        Dim xDT As DataTable
+        Select Case (tabla)
+            Case pais
+                strSQL = "SELECT nombre FROM " & pais & " WHERE id_pais= " & id & ";"
+            Case estado
+                strSQL = "SELECT nombre FROM " & estado & " WHERE id_estado= " & id & ";"
+            Case ciudad
+                strSQL = "SELECT nombre FROM " & colonia & " WHERE id_ciudad= " & id & ";"
+            Case colonia
+                strSQL = "SELECT nombre FROM " & colonia & " WHERE id_colonia= " & id & ";"
+            Case usuarios
+                strSQL = "SELECT CONCAT( nombre, ' ', paterno, ' ', materno ) as nombre FROM usuarios WHERE id_usuario = " & id & ";"
+        End Select
+        xDT = xCnx.objetoDataAdapter(strSQL)
+        nombre = CStr(xDT.Rows(0)("nombre"))
+        cnx.Close()
+        Return nombre
     End Function
 End Class
