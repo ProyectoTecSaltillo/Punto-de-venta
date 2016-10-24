@@ -87,6 +87,7 @@
     <Compile Include="Clases\ClasePais.vb" />
     <Compile Include="Clases\ClasePaises.vb" />
     <Compile Include="Clases\ClasePrinc.vb" />
+    <Compile Include="Clases\ClaseProveedores.vb" />
     <Compile Include="Conexión\conexion.vb" />
     <Compile Include="Forms\FrmPais.Designer.vb">
       <DependentUpon>FrmPais.vb</DependentUpon>
@@ -111,6 +112,12 @@
       <DependentUpon>MenuGeneral.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\MenuGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MtnProveedores.Designer.vb">
+      <DependentUpon>MtnProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MtnProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Perfil.Designer.vb">
@@ -160,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuGeneral.resx">
       <DependentUpon>MenuGeneral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MtnProveedores.resx">
+      <DependentUpon>MtnProveedores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Perfil.resx">
       <DependentUpon>Perfil.vb</DependentUpon>

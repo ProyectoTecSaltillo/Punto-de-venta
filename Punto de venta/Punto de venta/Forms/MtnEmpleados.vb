@@ -62,4 +62,6 @@ Public Class MtnEmpleados
         'ComboColonia.Text <> Nothing And ComboColonia.Text <> "Seleccione..."
         Return False
     End Function
+
+
 End Class
