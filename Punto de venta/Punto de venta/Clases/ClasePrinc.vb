@@ -66,7 +66,7 @@
         Return id
     End Function
     Public Function getMaxId(ByVal tabla As String) As String
-        Dim strSql As String
+        Dim strSql As String = Nothing
         Dim xCnx As New conexion
         Dim xDT As DataTable
         Select Case (tabla)
@@ -80,6 +80,8 @@
                 strSql = "SELECT max(id_colonia) as Columna FROM " & colonia & ";"
             Case usuarios
                 strSql = "SELECT max(id_usuario) as Columna FROM " & usuarios & ";"
+            Case clientes
+                strSql = "SELECT MAX(id_cliente) AS Columna FROM " & clientes & ";"
         End Select
         Try
             xDT = xCnx.objetoDataAdapter(strSql)

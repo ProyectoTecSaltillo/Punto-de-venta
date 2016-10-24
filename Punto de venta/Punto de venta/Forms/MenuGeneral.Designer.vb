@@ -24,7 +24,7 @@ Partial Class MenuGeneral
     Private Sub InitializeComponent()
         Me.BtnMant = New System.Windows.Forms.Button()
         Me.BtnManEmp = New System.Windows.Forms.Button()
-        Me.Sol = New System.Windows.Forms.Button()
+        Me.BtnManCli = New System.Windows.Forms.Button()
         Me.B = New System.Windows.Forms.Button()
         Me.Bu = New System.Windows.Forms.Button()
         Me.BienvenidoToolStrip = New System.Windows.Forms.ToolStrip()
@@ -54,7 +54,7 @@ Partial Class MenuGeneral
         Me.BtnManEmp.Text = "Mantenimiento Empleados"
         Me.BtnManEmp.UseVisualStyleBackColor = True
         '
-        'Sol
+        'BtnManCli
         '
         Me.Sol.Location = New System.Drawing.Point(16, 159)
         Me.Sol.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
@@ -63,6 +63,12 @@ Partial Class MenuGeneral
         Me.Sol.TabIndex = 3
         Me.Sol.Text = "Solicitudes"
         Me.Sol.UseVisualStyleBackColor = True
+        Me.BtnManCli.Location = New System.Drawing.Point(12, 129)
+        Me.BtnManCli.Name = "BtnManCli"
+        Me.BtnManCli.Size = New System.Drawing.Size(242, 44)
+        Me.BtnManCli.TabIndex = 3
+        Me.BtnManCli.Text = "Mantenimiento Clientes"
+        Me.BtnManCli.UseVisualStyleBackColor = True
         '
         'B
         '
@@ -129,7 +135,7 @@ Partial Class MenuGeneral
         Me.Controls.Add(Me.BienvenidoToolStrip)
         Me.Controls.Add(Me.Bu)
         Me.Controls.Add(Me.B)
-        Me.Controls.Add(Me.Sol)
+        Me.Controls.Add(Me.BtnManCli)
         Me.Controls.Add(Me.BtnManEmp)
         Me.Controls.Add(Me.BtnMant)
         Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
@@ -144,7 +150,7 @@ Partial Class MenuGeneral
     End Sub
     Friend WithEvents BtnMant As Button
     Friend WithEvents BtnManEmp As Button
-    Friend WithEvents Sol As Button
+    Friend WithEvents BtnManCli As Button
     Friend WithEvents B As Button
     Friend WithEvents Bu As Button
     Friend WithEvents BienvenidoToolStrip As ToolStrip
