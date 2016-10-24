@@ -26,5 +26,4 @@
         MsgBox("Vuelve pronto!")
         Login.Show()
     End Sub
-
 End Class
