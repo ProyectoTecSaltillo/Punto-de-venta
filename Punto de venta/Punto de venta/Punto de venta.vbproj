@@ -88,6 +88,7 @@
     <Compile Include="Clases\ClasePais.vb" />
     <Compile Include="Clases\ClasePaises.vb" />
     <Compile Include="Clases\ClasePrinc.vb" />
+    <Compile Include="Clases\ClaseProveedores.vb" />
     <Compile Include="Conexión\conexion.vb" />
     <Compile Include="Forms\FrmPais.Designer.vb">
       <DependentUpon>FrmPais.vb</DependentUpon>
@@ -112,6 +113,12 @@
       <DependentUpon>MenuGeneral.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\MenuGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MtnProveedores.Designer.vb">
+      <DependentUpon>MtnProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MtnProveedores.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MtnClientes.Designer.vb">
@@ -171,6 +178,9 @@
     <EmbeddedResource Include="Forms\MtnClientes.resx">
       <DependentUpon>MtnClientes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MtnProveedores.resx">
+      <DependentUpon>MtnProveedores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Perfil.resx">
       <DependentUpon>Perfil.vb</DependentUpon>
     </EmbeddedResource>
@@ -203,7 +213,32 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\ppt5B47.pptm [Autoguardado].jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

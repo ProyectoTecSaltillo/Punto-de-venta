@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.Security.Cryptography
+Imports AxWMPLib
 
 Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -42,4 +43,10 @@ Public Class Login
     Private Sub TxtPsw_TextChanged(sender As Object, e As EventArgs) Handles TxtPsw.TextChanged
         TxtPsw.PasswordChar = "*"
     End Sub
+
+    Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
+        Me.Close()
+    End Sub
+
+
 End Class

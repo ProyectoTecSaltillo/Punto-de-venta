@@ -37,3 +37,20 @@ CREATE TABLE detalle (
   INDEX detalle_FKIndex1(ventas_id_venta, ventas_id_empleado, ventas_id_cliente),
   INDEX detalle_FKIndex2(productos_id_producto, productos_id_proveedor, productos_id_empleado)
 );
+
+
+CREATE TABLE proveedores (
+  id_proveedor INTEGER(10) NOT NULL AUTO_INCREMENT,
+  id_pais integer(3) not null,
+  id_estado integer(3) not null,
+  id_ciudad integer(3) not null,
+  id_colonia integer(3) not null,
+  razon_social VARCHAR(50) NOT NULL,
+  nombre_representante VARCHAR(50) NOT NULL,
+  correo VARCHAR(30) NOT NULL,
+  telefono VARCHAR(20) NOT NULL,
+  telefono_representante INTEGER(20) NOT NULL,
+  constraint pk_proveedores PRIMARY KEY(id_proveedor),
+  constraint fk_proveedores foreign key(id_pais, id_estado, id_ciudad, id_colonia)
+  references colonias (id_pais, id_estado, id_ciudad, id_colonia));
+
