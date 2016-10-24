@@ -27,7 +27,8 @@
         Login.Show()
     End Sub
 
-    Private Sub MenuGeneral_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub BtnManCli_Click(sender As Object, e As EventArgs) Handles BtnManCli.Click
+        MtnClientes.Show()
+        Me.Hide()
     End Sub
 End Class
