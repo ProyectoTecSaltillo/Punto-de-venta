@@ -73,7 +73,7 @@ Partial Class MtnClientes
         Me.BtnEliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(112, 33)
-        Me.BtnEliminar.TabIndex = 13
+        Me.BtnEliminar.TabIndex = 21
         Me.BtnEliminar.Text = "Eliminar"
         Me.BtnEliminar.UseVisualStyleBackColor = True
         '
@@ -83,7 +83,7 @@ Partial Class MtnClientes
         Me.BtnModificar.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(112, 33)
-        Me.BtnModificar.TabIndex = 12
+        Me.BtnModificar.TabIndex = 20
         Me.BtnModificar.Text = "Modificar"
         Me.BtnModificar.UseVisualStyleBackColor = True
         '
@@ -93,7 +93,7 @@ Partial Class MtnClientes
         Me.BtnAgregar.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(112, 33)
-        Me.BtnAgregar.TabIndex = 11
+        Me.BtnAgregar.TabIndex = 19
         Me.BtnAgregar.Text = "Agregar"
         Me.BtnAgregar.UseVisualStyleBackColor = True
         '
@@ -134,7 +134,7 @@ Partial Class MtnClientes
         Me.TxtCalle.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtCalle.Name = "TxtCalle"
         Me.TxtCalle.Size = New System.Drawing.Size(172, 20)
-        Me.TxtCalle.TabIndex = 26
+        Me.TxtCalle.TabIndex = 12
         '
         'Label17
         '
@@ -163,7 +163,7 @@ Partial Class MtnClientes
         Me.ComboColonia.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboColonia.Name = "ComboColonia"
         Me.ComboColonia.Size = New System.Drawing.Size(171, 21)
-        Me.ComboColonia.TabIndex = 18
+        Me.ComboColonia.TabIndex = 11
         '
         'Label12
         '
@@ -182,7 +182,7 @@ Partial Class MtnClientes
         Me.ComboEstado.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboEstado.Name = "ComboEstado"
         Me.ComboEstado.Size = New System.Drawing.Size(171, 21)
-        Me.ComboEstado.TabIndex = 16
+        Me.ComboEstado.TabIndex = 9
         '
         'Label11
         '
@@ -201,7 +201,7 @@ Partial Class MtnClientes
         Me.ComboPais.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboPais.Name = "ComboPais"
         Me.ComboPais.Size = New System.Drawing.Size(171, 21)
-        Me.ComboPais.TabIndex = 14
+        Me.ComboPais.TabIndex = 8
         '
         'Label10
         '
@@ -220,7 +220,7 @@ Partial Class MtnClientes
         Me.ComboCiudad.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboCiudad.Name = "ComboCiudad"
         Me.ComboCiudad.Size = New System.Drawing.Size(171, 21)
-        Me.ComboCiudad.TabIndex = 5
+        Me.ComboCiudad.TabIndex = 10
         '
         'Label8
         '
@@ -238,7 +238,7 @@ Partial Class MtnClientes
         Me.TxtTel.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtTel.Name = "TxtTel"
         Me.TxtTel.Size = New System.Drawing.Size(167, 20)
-        Me.TxtTel.TabIndex = 10
+        Me.TxtTel.TabIndex = 7
         '
         'TxtEmail
         '
@@ -246,7 +246,7 @@ Partial Class MtnClientes
         Me.TxtEmail.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtEmail.Name = "TxtEmail"
         Me.TxtEmail.Size = New System.Drawing.Size(183, 20)
-        Me.TxtEmail.TabIndex = 8
+        Me.TxtEmail.TabIndex = 6
         '
         'Label6
         '
@@ -264,7 +264,7 @@ Partial Class MtnClientes
         Me.TxtMat.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtMat.Name = "TxtMat"
         Me.TxtMat.Size = New System.Drawing.Size(130, 20)
-        Me.TxtMat.TabIndex = 6
+        Me.TxtMat.TabIndex = 5
         '
         'Label5
         '
@@ -318,7 +318,7 @@ Partial Class MtnClientes
         Me.TxtExt.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtExt.Name = "TxtExt"
         Me.TxtExt.Size = New System.Drawing.Size(134, 20)
-        Me.TxtExt.TabIndex = 12
+        Me.TxtExt.TabIndex = 13
         '
         'GroupBox1
         '
@@ -342,7 +342,7 @@ Partial Class MtnClientes
         Me.ComboID.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboID.Name = "ComboID"
         Me.ComboID.Size = New System.Drawing.Size(259, 21)
-        Me.ComboID.TabIndex = 3
+        Me.ComboID.TabIndex = 2
         '
         'Label2
         '
@@ -429,7 +429,7 @@ Partial Class MtnClientes
         Me.TxtRfc.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtRfc.Name = "TxtRfc"
         Me.TxtRfc.Size = New System.Drawing.Size(157, 20)
-        Me.TxtRfc.TabIndex = 25
+        Me.TxtRfc.TabIndex = 15
         '
         'TxtCurp
         '
@@ -437,7 +437,7 @@ Partial Class MtnClientes
         Me.TxtCurp.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtCurp.Name = "TxtCurp"
         Me.TxtCurp.Size = New System.Drawing.Size(157, 20)
-        Me.TxtCurp.TabIndex = 26
+        Me.TxtCurp.TabIndex = 16
         '
         'NumEdad
         '
@@ -445,7 +445,7 @@ Partial Class MtnClientes
         Me.NumEdad.Minimum = New Decimal(New Integer() {18, 0, 0, 0})
         Me.NumEdad.Name = "NumEdad"
         Me.NumEdad.Size = New System.Drawing.Size(41, 20)
-        Me.NumEdad.TabIndex = 27
+        Me.NumEdad.TabIndex = 14
         Me.NumEdad.Value = New Decimal(New Integer() {18, 0, 0, 0})
         '
         'Masculino
@@ -454,7 +454,7 @@ Partial Class MtnClientes
         Me.Masculino.Location = New System.Drawing.Point(346, 246)
         Me.Masculino.Name = "Masculino"
         Me.Masculino.Size = New System.Drawing.Size(73, 17)
-        Me.Masculino.TabIndex = 28
+        Me.Masculino.TabIndex = 17
         Me.Masculino.TabStop = True
         Me.Masculino.Text = "Masculino"
         Me.Masculino.UseVisualStyleBackColor = True
@@ -465,7 +465,7 @@ Partial Class MtnClientes
         Me.Femenino.Location = New System.Drawing.Point(425, 246)
         Me.Femenino.Name = "Femenino"
         Me.Femenino.Size = New System.Drawing.Size(71, 17)
-        Me.Femenino.TabIndex = 29
+        Me.Femenino.TabIndex = 18
         Me.Femenino.TabStop = True
         Me.Femenino.Text = "Femenino"
         Me.Femenino.UseVisualStyleBackColor = True

@@ -95,7 +95,7 @@
         Return id
     End Function
     Public Overloads Function getId(ByVal tabla As String) As String
-        Dim strSql As String
+        Dim strSql As String = Nothing
         Dim xCnx As New conexion
         Dim xDT As DataTable
         Select Case (tabla)
@@ -122,7 +122,7 @@
         Return id
     End Function
     Public Function consultaUno(ByVal Tabla As String) As Boolean
-        Dim strSQL As String
+        Dim strSQL As String = Nothing
         Dim xCnx As New conexion
         Dim xDT As DataTable
 
@@ -142,7 +142,7 @@
         cnx.Close()
     End Function
     Public Function consultaAlgo(ByVal Tabla As String, ByVal id As String) As Boolean
-        Dim strSQL As String
+        Dim strSQL As String = Nothing
         Dim xCnx As New conexion
         Dim xDT As DataTable
         Select Case (Tabla)
@@ -161,7 +161,7 @@
         cnx.Close()
     End Function
     Public Overloads Function getNombre(ByVal tabla As String)
-        Dim strSQL As String
+        Dim strSQL As String = Nothing
         Dim xCnx As New conexion
         Dim xDT As DataTable
         Select Case (tabla)
