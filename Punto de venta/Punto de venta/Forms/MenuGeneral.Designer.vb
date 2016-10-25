@@ -56,13 +56,13 @@ Partial Class MenuGeneral
         '
         'BtnManCli
         '
-        Me.Sol.Location = New System.Drawing.Point(16, 159)
-        Me.Sol.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Sol.Name = "Sol"
-        Me.Sol.Size = New System.Drawing.Size(323, 54)
-        Me.Sol.TabIndex = 3
-        Me.Sol.Text = "Solicitudes"
-        Me.Sol.UseVisualStyleBackColor = True
+        'Me.Sol.Location = New System.Drawing.Point(16, 159)
+        'Me.Sol.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        'Me.Sol.Name = "Sol"
+        'Me.Sol.Size = New System.Drawing.Size(323, 54)
+        'Me.Sol.TabIndex = 3
+        'Me.Sol.Text = "Solicitudes"
+        'Me.Sol.UseVisualStyleBackColor = True
         Me.BtnManCli.Location = New System.Drawing.Point(12, 129)
         Me.BtnManCli.Name = "BtnManCli"
         Me.BtnManCli.Size = New System.Drawing.Size(242, 44)
