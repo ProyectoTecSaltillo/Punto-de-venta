@@ -74,6 +74,9 @@
                 strSql = "SELECT max(id_ciudad) as Columna FROM " & ciudad & ";"
             Case colonia
                 strSql = "SELECT max(id_colonia) as Columna FROM " & colonia & ";"
+            Case proveedores
+                strSql = "SELECT max(id_proveedor) as Columna FROM " & proveedores & ";"
+
         End Select
         Try
             xDT = xCnx.objetoDataAdapter(strSql)
@@ -99,6 +102,8 @@
                 strSql = "SELECT id_ciudad as Columna FROM " & ciudad & " WHERE nombre='" & nombre & "';"
             Case colonia
                 strSql = "SELECT id_colonia as Columna FROM " & colonia & " WHERE nombre='" & nombre & "';"
+            Case proveedores
+                strSql = "select id_proveedores as columna from " & proveedores & " where nombre =" & nombre & "';"
         End Select
         Try
             xDT = xCnx.objetoDataAdapter(strSql)
