@@ -67,6 +67,7 @@ Partial Class Login
         Me.TxtEmail.Name = "TxtEmail"
         Me.TxtEmail.Size = New System.Drawing.Size(148, 13)
         Me.TxtEmail.TabIndex = 4
+        Me.TxtEmail.Visible = False
         '
         'TxtPsw
         '
@@ -77,6 +78,7 @@ Partial Class Login
         Me.TxtPsw.Size = New System.Drawing.Size(148, 13)
         Me.TxtPsw.TabIndex = 5
         Me.TxtPsw.UseSystemPasswordChar = True
+        Me.TxtPsw.Visible = False
         '
         'BtnEntrar
         '
@@ -92,6 +94,7 @@ Partial Class Login
         Me.BtnEntrar.TabIndex = 6
         Me.BtnEntrar.Text = "Sing In"
         Me.BtnEntrar.UseVisualStyleBackColor = False
+        Me.BtnEntrar.Visible = False
         '
         'VideoLogin
         '
@@ -101,7 +104,6 @@ Partial Class Login
         Me.VideoLogin.OcxState = CType(resources.GetObject("VideoLogin.OcxState"), System.Windows.Forms.AxHost.State)
         Me.VideoLogin.Size = New System.Drawing.Size(680, 460)
         Me.VideoLogin.TabIndex = 7
-        Me.VideoLogin.Visible = False
         '
         'BtnExit
         '

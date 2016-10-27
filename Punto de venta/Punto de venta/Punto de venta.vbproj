@@ -230,6 +230,36 @@
   <ItemGroup>
     <None Include="Resources\X.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonMenu2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProveedoresCaliz.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProveedoresCaliz2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProveedoresCaliz3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaProveedores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Limpiar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliminar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

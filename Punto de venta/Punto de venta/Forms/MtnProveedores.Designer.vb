@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MtnProveedores
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,189 +20,139 @@ Partial Class MtnProveedores
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtRazonSocial = New System.Windows.Forms.TextBox()
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtCorreo = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TxtProveedor = New System.Windows.Forms.TextBox()
         Me.ComboColonia = New System.Windows.Forms.ComboBox()
         Me.ComboCiudad = New System.Windows.Forms.ComboBox()
         Me.ComboEstado = New System.Windows.Forms.ComboBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboPais = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TxtTelefonoR = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtNombreR = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.BtnGuardaP = New System.Windows.Forms.Button()
         Me.BtnLimpiaP = New System.Windows.Forms.Button()
         Me.BtnEliminaP = New System.Windows.Forms.Button()
         Me.DGVproveedores = New System.Windows.Forms.DataGridView()
         Me.BtnInicio = New System.Windows.Forms.Button()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TxtProveedor = New System.Windows.Forms.TextBox()
+        Me.BtnExit = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DGVproveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(231, 23)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(71, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Razon social:"
-        '
         'TxtRazonSocial
         '
-        Me.TxtRazonSocial.Location = New System.Drawing.Point(308, 16)
+        Me.TxtRazonSocial.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TxtRazonSocial.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtRazonSocial.Location = New System.Drawing.Point(367, 53)
         Me.TxtRazonSocial.Name = "TxtRazonSocial"
-        Me.TxtRazonSocial.Size = New System.Drawing.Size(233, 20)
+        Me.TxtRazonSocial.Size = New System.Drawing.Size(182, 18)
         Me.TxtRazonSocial.TabIndex = 2
         '
         'TxtTelefono
         '
-        Me.TxtTelefono.Location = New System.Drawing.Point(90, 47)
+        Me.TxtTelefono.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TxtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtTelefono.Location = New System.Drawing.Point(80, 53)
         Me.TxtTelefono.Name = "TxtTelefono"
-        Me.TxtTelefono.Size = New System.Drawing.Size(127, 20)
+        Me.TxtTelefono.Size = New System.Drawing.Size(176, 18)
         Me.TxtTelefono.TabIndex = 4
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(13, 54)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(52, 13)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Telefono:"
         '
         'TxtCorreo
         '
-        Me.TxtCorreo.Location = New System.Drawing.Point(90, 73)
+        Me.TxtCorreo.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TxtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtCorreo.Location = New System.Drawing.Point(77, 84)
         Me.TxtCorreo.Name = "TxtCorreo"
-        Me.TxtCorreo.Size = New System.Drawing.Size(166, 20)
+        Me.TxtCorreo.Size = New System.Drawing.Size(179, 18)
         Me.TxtCorreo.TabIndex = 6
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(13, 80)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(41, 13)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Correo:"
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.TxtProveedor)
         Me.GroupBox1.Controls.Add(Me.ComboColonia)
         Me.GroupBox1.Controls.Add(Me.ComboCiudad)
         Me.GroupBox1.Controls.Add(Me.ComboEstado)
-        Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.ComboPais)
         Me.GroupBox1.Controls.Add(Me.TxtCorreo)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.TxtRazonSocial)
         Me.GroupBox1.Controls.Add(Me.TxtTelefono)
-        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(23, 23)
         Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.GroupBox1.Size = New System.Drawing.Size(569, 172)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos"
         '
+        'TxtProveedor
+        '
+        Me.TxtProveedor.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TxtProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtProveedor.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtProveedor.Location = New System.Drawing.Point(97, 23)
+        Me.TxtProveedor.Name = "TxtProveedor"
+        Me.TxtProveedor.Size = New System.Drawing.Size(159, 16)
+        Me.TxtProveedor.TabIndex = 21
+        '
         'ComboColonia
         '
+        Me.ComboColonia.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.ComboColonia.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboColonia.FormattingEnabled = True
-        Me.ComboColonia.Location = New System.Drawing.Point(323, 135)
+        Me.ComboColonia.Location = New System.Drawing.Point(332, 136)
         Me.ComboColonia.Name = "ComboColonia"
-        Me.ComboColonia.Size = New System.Drawing.Size(121, 21)
+        Me.ComboColonia.Size = New System.Drawing.Size(121, 25)
         Me.ComboColonia.TabIndex = 19
         '
         'ComboCiudad
         '
+        Me.ComboCiudad.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.ComboCiudad.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboCiudad.FormattingEnabled = True
-        Me.ComboCiudad.Location = New System.Drawing.Point(323, 106)
+        Me.ComboCiudad.Location = New System.Drawing.Point(332, 109)
         Me.ComboCiudad.Name = "ComboCiudad"
-        Me.ComboCiudad.Size = New System.Drawing.Size(121, 21)
+        Me.ComboCiudad.Size = New System.Drawing.Size(121, 25)
         Me.ComboCiudad.TabIndex = 18
         '
         'ComboEstado
         '
+        Me.ComboEstado.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.ComboEstado.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboEstado.FormattingEnabled = True
-        Me.ComboEstado.Location = New System.Drawing.Point(90, 140)
+        Me.ComboEstado.Location = New System.Drawing.Point(119, 140)
         Me.ComboEstado.Name = "ComboEstado"
-        Me.ComboEstado.Size = New System.Drawing.Size(121, 21)
+        Me.ComboEstado.Size = New System.Drawing.Size(107, 25)
         Me.ComboEstado.TabIndex = 17
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(13, 108)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(30, 13)
-        Me.Label9.TabIndex = 16
-        Me.Label9.Text = "Pais:"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(13, 143)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(43, 13)
-        Me.Label8.TabIndex = 15
-        Me.Label8.Text = "Estado:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(246, 109)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(43, 13)
-        Me.Label7.TabIndex = 14
-        Me.Label7.Text = "Ciudad:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(246, 138)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(45, 13)
-        Me.Label1.TabIndex = 13
-        Me.Label1.Text = "Colonia:"
         '
         'ComboPais
         '
+        Me.ComboPais.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.ComboPais.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboPais.FormattingEnabled = True
-        Me.ComboPais.Location = New System.Drawing.Point(90, 105)
+        Me.ComboPais.Location = New System.Drawing.Point(105, 112)
         Me.ComboPais.Name = "ComboPais"
-        Me.ComboPais.Size = New System.Drawing.Size(121, 21)
+        Me.ComboPais.Size = New System.Drawing.Size(121, 25)
         Me.ComboPais.TabIndex = 12
         '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.TxtTelefonoR)
-        Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.TxtNombreR)
-        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(23, 201)
         Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.GroupBox2.Size = New System.Drawing.Size(569, 84)
         Me.GroupBox2.TabIndex = 8
         Me.GroupBox2.TabStop = False
@@ -210,62 +160,60 @@ Partial Class MtnProveedores
         '
         'TxtTelefonoR
         '
-        Me.TxtTelefonoR.Location = New System.Drawing.Point(78, 49)
+        Me.TxtTelefonoR.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TxtTelefonoR.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtTelefonoR.Location = New System.Drawing.Point(368, 39)
         Me.TxtTelefonoR.Name = "TxtTelefonoR"
-        Me.TxtTelefonoR.Size = New System.Drawing.Size(245, 20)
+        Me.TxtTelefonoR.Size = New System.Drawing.Size(182, 18)
         Me.TxtTelefonoR.TabIndex = 12
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 52)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(52, 13)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Telefono:"
         '
         'TxtNombreR
         '
-        Me.TxtNombreR.Location = New System.Drawing.Point(79, 23)
+        Me.TxtNombreR.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.TxtNombreR.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtNombreR.Location = New System.Drawing.Point(92, 38)
         Me.TxtNombreR.Name = "TxtNombreR"
-        Me.TxtNombreR.Size = New System.Drawing.Size(245, 20)
+        Me.TxtNombreR.Size = New System.Drawing.Size(180, 18)
         Me.TxtNombreR.TabIndex = 10
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(13, 26)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(47, 13)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Nombre:"
         '
         'BtnGuardaP
         '
-        Me.BtnGuardaP.Location = New System.Drawing.Point(355, 472)
+        Me.BtnGuardaP.BackColor = System.Drawing.Color.Transparent
+        Me.BtnGuardaP.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.Guardar
+        Me.BtnGuardaP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnGuardaP.FlatAppearance.BorderSize = 0
+        Me.BtnGuardaP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnGuardaP.Location = New System.Drawing.Point(433, 460)
         Me.BtnGuardaP.Name = "BtnGuardaP"
-        Me.BtnGuardaP.Size = New System.Drawing.Size(75, 23)
+        Me.BtnGuardaP.Size = New System.Drawing.Size(40, 40)
         Me.BtnGuardaP.TabIndex = 9
-        Me.BtnGuardaP.Text = "&Guardar"
-        Me.BtnGuardaP.UseVisualStyleBackColor = True
+        Me.BtnGuardaP.UseVisualStyleBackColor = False
         '
         'BtnLimpiaP
         '
-        Me.BtnLimpiaP.Location = New System.Drawing.Point(436, 472)
+        Me.BtnLimpiaP.BackColor = System.Drawing.Color.Transparent
+        Me.BtnLimpiaP.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.Limpiar
+        Me.BtnLimpiaP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnLimpiaP.FlatAppearance.BorderSize = 0
+        Me.BtnLimpiaP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnLimpiaP.Location = New System.Drawing.Point(490, 460)
         Me.BtnLimpiaP.Name = "BtnLimpiaP"
-        Me.BtnLimpiaP.Size = New System.Drawing.Size(75, 23)
+        Me.BtnLimpiaP.Size = New System.Drawing.Size(40, 40)
         Me.BtnLimpiaP.TabIndex = 10
-        Me.BtnLimpiaP.Text = "&Limpiar"
-        Me.BtnLimpiaP.UseVisualStyleBackColor = True
+        Me.BtnLimpiaP.UseVisualStyleBackColor = False
         '
         'BtnEliminaP
         '
-        Me.BtnEliminaP.Location = New System.Drawing.Point(517, 472)
+        Me.BtnEliminaP.BackColor = System.Drawing.Color.Transparent
+        Me.BtnEliminaP.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.Eliminar
+        Me.BtnEliminaP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnEliminaP.FlatAppearance.BorderSize = 0
+        Me.BtnEliminaP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEliminaP.Location = New System.Drawing.Point(547, 460)
         Me.BtnEliminaP.Name = "BtnEliminaP"
-        Me.BtnEliminaP.Size = New System.Drawing.Size(75, 23)
+        Me.BtnEliminaP.Size = New System.Drawing.Size(40, 40)
         Me.BtnEliminaP.TabIndex = 11
-        Me.BtnEliminaP.Text = "&Eliminar"
-        Me.BtnEliminaP.UseVisualStyleBackColor = True
+        Me.BtnEliminaP.UseVisualStyleBackColor = False
         '
         'DGVproveedores
         '
@@ -277,34 +225,40 @@ Partial Class MtnProveedores
         '
         'BtnInicio
         '
-        Me.BtnInicio.Location = New System.Drawing.Point(39, 479)
+        Me.BtnInicio.BackColor = System.Drawing.Color.Transparent
+        Me.BtnInicio.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.BotonMenu2
+        Me.BtnInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnInicio.FlatAppearance.BorderSize = 0
+        Me.BtnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnInicio.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnInicio.Location = New System.Drawing.Point(20, 455)
         Me.BtnInicio.Name = "BtnInicio"
-        Me.BtnInicio.Size = New System.Drawing.Size(75, 23)
+        Me.BtnInicio.Size = New System.Drawing.Size(55, 50)
         Me.BtnInicio.TabIndex = 13
-        Me.BtnInicio.Text = "Inicio"
-        Me.BtnInicio.UseVisualStyleBackColor = True
+        Me.BtnInicio.UseVisualStyleBackColor = False
         '
-        'Label10
+        'BtnExit
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(14, 23)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(70, 13)
-        Me.Label10.TabIndex = 20
-        Me.Label10.Text = "Id proveedor:"
-        '
-        'TxtProveedor
-        '
-        Me.TxtProveedor.Location = New System.Drawing.Point(91, 16)
-        Me.TxtProveedor.Name = "TxtProveedor"
-        Me.TxtProveedor.Size = New System.Drawing.Size(120, 20)
-        Me.TxtProveedor.TabIndex = 21
+        Me.BtnExit.BackColor = System.Drawing.Color.Transparent
+        Me.BtnExit.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.X
+        Me.BtnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnExit.FlatAppearance.BorderSize = 0
+        Me.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnExit.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.BtnExit.Location = New System.Drawing.Point(592, -3)
+        Me.BtnExit.Name = "BtnExit"
+        Me.BtnExit.Size = New System.Drawing.Size(31, 37)
+        Me.BtnExit.TabIndex = 14
+        Me.BtnExit.UseVisualStyleBackColor = False
         '
         'MtnProveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(623, 518)
+        Me.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.PantallaProveedores
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(625, 518)
+        Me.Controls.Add(Me.BtnExit)
         Me.Controls.Add(Me.BtnInicio)
         Me.Controls.Add(Me.DGVproveedores)
         Me.Controls.Add(Me.BtnEliminaP)
@@ -312,6 +266,8 @@ Partial Class MtnProveedores
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.BtnLimpiaP)
         Me.Controls.Add(Me.BtnGuardaP)
+        Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MtnProveedores"
         Me.Text = " Mantenimiento Proveedores"
         Me.GroupBox1.ResumeLayout(False)
@@ -322,18 +278,13 @@ Partial Class MtnProveedores
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Label2 As Label
     Friend WithEvents TxtRazonSocial As TextBox
     Friend WithEvents TxtTelefono As TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents TxtCorreo As TextBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents TxtTelefonoR As TextBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents TxtNombreR As TextBox
-    Friend WithEvents Label5 As Label
     Friend WithEvents BtnGuardaP As Button
     Friend WithEvents BtnLimpiaP As Button
     Friend WithEvents BtnEliminaP As Button
@@ -341,12 +292,8 @@ Partial Class MtnProveedores
     Friend WithEvents ComboColonia As ComboBox
     Friend WithEvents ComboCiudad As ComboBox
     Friend WithEvents ComboEstado As ComboBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents DGVproveedores As DataGridView
     Friend WithEvents BtnInicio As Button
-    Friend WithEvents Label10 As Label
     Friend WithEvents TxtProveedor As TextBox
+    Friend WithEvents BtnExit As Button
 End Class

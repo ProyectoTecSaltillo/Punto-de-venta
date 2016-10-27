@@ -143,4 +143,8 @@
         ComboCiudad.Text = DGVproveedores.Rows(renglon).Cells(8).Value
         ComboColonia.Text = DGVproveedores.Rows(renglon).Cells(9).Value
     End Sub
+
+    Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
+        Me.Close()
+    End Sub
 End Class

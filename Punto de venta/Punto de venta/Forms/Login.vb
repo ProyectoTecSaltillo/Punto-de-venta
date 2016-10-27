@@ -48,5 +48,14 @@ Public Class Login
         Me.Close()
     End Sub
 
-
+    Dim cont As Integer = 0
+    Private Sub VideoLogin_PlayStateChange(sender As Object, e As _WMPOCXEvents_PlayStateChangeEvent) Handles VideoLogin.PlayStateChange
+        If cont = 1 Then
+            VideoLogin.Visible = False
+            TxtEmail.Visible = True
+            BtnEntrar.Visible = True
+            TxtPsw.Visible = True
+        End If
+        cont = cont + 1
+    End Sub
 End Class
