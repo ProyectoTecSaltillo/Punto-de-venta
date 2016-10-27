@@ -8,6 +8,9 @@
     Public Sub New(ByVal nuevoNombre As String)
         MyBase.New(nuevoNombre)
     End Sub
+    Public Sub New(ByVal nuevoid As Integer)
+        MyBase.New(nuevoid)
+    End Sub
     Public Sub inserta(ByVal idPais As String, ByVal idEstado As String)
         Dim strSql As String
         'Buscar id Pais ¿como? y agregar el primer campo 
@@ -31,5 +34,15 @@
         strSQL = "SELECT nombre AS Ciudad FROM ciudades WHERE id_pais = '" & idpais & "'AND id_estado = '" & idestado & "'  ORDER BY nombre ASC;"
         consultaTodos = xCnx.objetoDataAdapter(strSQL)
         cnx.Close()
+    End Function
+
+    Public Overloads Function getNombre()
+        Return MyBase.getNombre(ciudad)
+    End Function
+    Public Overloads Function elimina()
+        Return MyBase.elimina(ciudad)
+    End Function
+    Public Overloads Function getId()
+        Return MyBase.getId(ciudad)
     End Function
 End Class

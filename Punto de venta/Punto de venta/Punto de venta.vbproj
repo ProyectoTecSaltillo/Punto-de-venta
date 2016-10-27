@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\ClaseCiudad.vb" />
+    <Compile Include="Clases\ClaseCliente.vb" />
     <Compile Include="Clases\ClaseColonia.vb" />
     <Compile Include="Clases\ClaseEmpleado.vb" />
     <Compile Include="Clases\ClaseEstado.vb" />
@@ -118,6 +119,12 @@
       <DependentUpon>MtnProveedores.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\MtnProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MtnClientes.Designer.vb">
+      <DependentUpon>MtnClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MtnClientes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Perfil.Designer.vb">
@@ -167,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MenuGeneral.resx">
       <DependentUpon>MenuGeneral.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MtnClientes.resx">
+      <DependentUpon>MtnClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MtnProveedores.resx">
       <DependentUpon>MtnProveedores.vb</DependentUpon>

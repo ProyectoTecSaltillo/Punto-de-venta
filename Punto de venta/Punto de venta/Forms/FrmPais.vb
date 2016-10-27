@@ -24,7 +24,7 @@ Public Class FrmPais
         Dim paises As New ClasePais(ComboPais.Text)
         Dim estados As New ClaseEstado(ComboEstado.Text)
         If estados.actualiza(estado, TxtEstado.Text) Then
-            estados.poblarCombo(ComboEstado, paises.getId(pais))
+            estados.poblarCombo(ComboEstado, paises.getId())
             TxtEstado.Text = ""
         End If
         Restablecer()
@@ -35,7 +35,7 @@ Public Class FrmPais
         Dim estados As New ClaseEstado(ComboEstado.Text)
         Dim ciudades As New ClaseCiudad(ComboCiudad.Text)
         If ciudades.actualiza(ciudad, TxtCiudad.Text) Then
-            ciudades.poblarCombo(ComboCiudad, paises.getId(pais), estados.getId(estado))
+            ciudades.poblarCombo(ComboCiudad, paises.getId(), estados.getId())
             TxtCiudad.Text = ""
         End If
         Restablecer()
@@ -106,11 +106,11 @@ Public Class FrmPais
         Else
             If estados.consultaUno(estado) = False Then
                 TxtEstado.Text = EL_nombre
-                estados.inserta(paises.getId(pais))
+                estados.inserta(paises.getId())
             Else
                 MsgBox("Ese Estado ya existe, ingrese otro por favor")
             End If
-            estados.poblarCombo(ComboEstado, paises.getId(pais))
+            estados.poblarCombo(ComboEstado, paises.getId())
             TxtEstado.Text = ""
             Restablecer()
         End If
@@ -125,11 +125,11 @@ Public Class FrmPais
         Else
             If ciudades.consultaUno(ciudad) = False Then
                 TxtCiudad.Text = EL_nombre
-                ciudades.inserta(paises.getId(pais), estados.getId(estado))
+                ciudades.inserta(paises.getId(), estados.getId())
             Else
                 MsgBox("Esa Ciudad ya existe, ingrese otro por favor")
             End If
-            ciudades.poblarCombo(ComboCiudad, paises.getId(pais), estados.getId(estado))
+            ciudades.poblarCombo(ComboCiudad, paises.getId(), estados.getId())
             TxtCiudad.Text = ""
             Restablecer()
         End If
@@ -144,11 +144,11 @@ Public Class FrmPais
         Else
             If colonias.consultaUno(colonia) = False Then
                 TxtColonia.Text = EL_nombre
-                colonias.inserta(paises.getId(pais), estados.getId(estado), ciudades.getId(ciudad))
+                colonias.inserta(paises.getId(), estados.getId(), ciudades.getId())
             Else
                 MsgBox("Esa Colonia ya existe, ingrese otro por favor")
             End If
-            colonias.poblarCombo(ComboColonia, paises.getId(pais), estados.getId(estado), ciudades.getId(ciudad))
+            colonias.poblarCombo(ComboColonia, paises.getId(), estados.getId(), ciudades.getId())
             TxtColonia.Text = ""
             Restablecer()
         End If
@@ -158,7 +158,7 @@ Public Class FrmPais
         Dim cbselect = ComboPais.Text
         If MessageBox.Show("¿Deseas eliminar el pais " & cbselect & "?", "CONFIRMAR", MessageBoxButtons.YesNo) = System.Windows.Forms.DialogResult.Yes Then
             Dim paises As New ClasePais(cbselect)
-            If paises.elimina(pais) Then
+            If paises.elimina() Then
                 BtnEliminarP.Enabled = False
                 paises.poblarCombo(ComboPais)
             End If
@@ -171,9 +171,9 @@ Public Class FrmPais
         Dim paises As New ClasePais(ComboPais.Text)
         If MessageBox.Show("¿Deseas eliminar el Estado " & cbselect & "?", "CONFIRMAR", MessageBoxButtons.YesNo) = System.Windows.Forms.DialogResult.Yes Then
             Dim estados As New ClaseEstado(cbselect)
-            If estados.elimina(estado) Then
+            If estados.elimina() Then
                 BtnEliminarE.Enabled = False
-                estados.poblarCombo(ComboEstado, paises.getId(pais))
+                estados.poblarCombo(ComboEstado, paises.getId())
             End If
             TxtEstado.Text = ""
             Restablecer()
@@ -185,9 +185,9 @@ Public Class FrmPais
         Dim estados As New ClaseEstado(ComboEstado.Text)
         If MessageBox.Show("¿Deseas eliminar la Ciudad " & cbselect & "?", "CONFIRMAR", MessageBoxButtons.YesNo) = System.Windows.Forms.DialogResult.Yes Then
             Dim ciudades As New ClaseCiudad(cbselect)
-            If ciudades.elimina(ciudad) Then
+            If ciudades.elimina() Then
                 BtnEliminarC.Enabled = False
-                ciudades.poblarCombo(ComboCiudad, paises.getId(pais), estados.getId(estado))
+                ciudades.poblarCombo(ComboCiudad, paises.getId(), estados.getId())
             End If
             TxtCiudad.Text = ""
             Restablecer()
@@ -200,9 +200,9 @@ Public Class FrmPais
         Dim ciudades As New ClaseCiudad(ComboCiudad.Text)
         If MessageBox.Show("¿Deseas eliminar la Colonia " & cbselect & "?", "CONFIRMAR", MessageBoxButtons.YesNo) = System.Windows.Forms.DialogResult.Yes Then
             Dim colonias As New ClaseColonia(cbselect)
-            If colonias.elimina(colonia) Then
+            If colonias.elimina() Then
                 BtnEliminarCo.Enabled = False
-                colonias.poblarCombo(ComboColonia, paises.getId(pais), estados.getId(estado), ciudades.getId(ciudad))
+                colonias.poblarCombo(ComboColonia, paises.getId(), estados.getId(), ciudades.getId())
             End If
             TxtColonia.Text = ""
             Restablecer()
@@ -225,10 +225,10 @@ Public Class FrmPais
         BtnEliminarCo.Enabled = False
         GBColonia.Enabled = False
         GBCiudad.Enabled = False
-        estados.poblarCombo(ComboEstado, paises.getId(pais))
+        estados.poblarCombo(ComboEstado, paises.getId())
         GBEstado.Enabled = True
         'error falla al desactivar el boton eliminar
-        If paises.consultaAlgo(estado, paises.getId(pais)) = True Then
+        If paises.consultaAlgo(estado, paises.getId()) = True Then
             BtnEliminarP.Enabled = False
         Else
             BtnEliminarP.Enabled = True
@@ -243,9 +243,9 @@ Public Class FrmPais
         BtnEliminarC.Enabled = False
         BtnEliminarCo.Enabled = False
         GBColonia.Enabled = False
-        ciudades.poblarCombo(ComboCiudad, paises.getId(pais), estados.getId(estado))
+        ciudades.poblarCombo(ComboCiudad, paises.getId(), estados.getId())
         GBCiudad.Enabled = True
-        If estados.consultaAlgo(ciudad, estados.getId(estado)) = True Then
+        If estados.consultaAlgo(ciudad, estados.getId()) = True Then
             BtnEliminarE.Enabled = False
         Else
             BtnEliminarE.Enabled = True
@@ -258,9 +258,9 @@ Public Class FrmPais
         Dim colonias As New ClaseColonia(ComboColonia.Text)
         ComboColonia.Text = "Seleccione..."
         BtnEliminarCo.Enabled = False
-        colonias.poblarCombo(ComboColonia, paises.getId(pais), estados.getId(estado), ciudades.getId(ciudad))
+        colonias.poblarCombo(ComboColonia, paises.getId(), estados.getId(), ciudades.getId())
         GBColonia.Enabled = True
-        If ciudades.consultaAlgo(colonia, ciudades.getId(ciudad)) = True Then
+        If ciudades.consultaAlgo(colonia, ciudades.getId()) = True Then
             BtnEliminarC.Enabled = False
         Else
             BtnEliminarC.Enabled = True

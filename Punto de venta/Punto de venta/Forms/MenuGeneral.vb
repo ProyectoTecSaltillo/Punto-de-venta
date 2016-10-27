@@ -26,4 +26,13 @@
         MsgBox("Vuelve pronto!")
         Login.Show()
     End Sub
+
+    Private Sub BtnManEmp_Click(sender As Object, e As EventArgs) Handles BtnManEmp.Click
+        Me.Hide()
+        MtnEmpleados.Show()
+    End Sub
+    Private Sub BtnManCli_Click(sender As Object, e As EventArgs) Handles BtnManCli.Click
+        MtnClientes.Show()
+        Me.Hide()
+    End Sub
 End Class
