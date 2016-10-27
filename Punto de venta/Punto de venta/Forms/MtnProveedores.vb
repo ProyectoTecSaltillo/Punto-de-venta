@@ -56,23 +56,27 @@
 
     End Sub
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminaP.Click
+        Dim proveedor As New ClaseProveedores
+
         If MessageBox.Show("¿Esta seguro?", "CONFIRMAR", MessageBoxButtons.YesNo) = DialogResult.Yes Then
-            Dim proveedor As New ClaseProveedores
+
 
             Try
-                proveedor.getSetId_proveedor = TxtProveedor.Text
-                proveedor.getSetRazonSocial = TxtRazonSocial.Text
-                proveedor.getSetTelefono = TxtTelefono.Text
-                proveedor.getSetCorreo = TxtCorreo.Text
-                proveedor.getSetPais = ComboPais.SelectedItem.ToString
-                proveedor.getSetEstado = ComboEstado.SelectedItem.ToString
-                proveedor.getSetCiudad = ComboCiudad.SelectedItem.ToString
-                proveedor.getSetColonia = ComboColonia.SelectedItem.ToString
-                proveedor.getSetNombre = TxtNombreR.Text
-                proveedor.getSetTelefonoRepresentante = TxtTelefonoR.Text
+                'proveedor.getSetId_proveedor = TxtProveedor.Text
+                'proveedor.getSetRazonSocial = TxtRazonSocial.Text
+                'proveedor.getSetTelefono = TxtTelefono.Text
+                'proveedor.getSetCorreo = TxtCorreo.Text
+                'proveedor.getSetPais = ComboPais.SelectedItem.ToString
+                'proveedor.getSetEstado = ComboEstado.SelectedItem.ToString
+                'proveedor.getSetCiudad = ComboCiudad.SelectedItem.ToString
+                'proveedor.getSetColonia = ComboColonia.SelectedItem.ToString
+                'proveedor.getSetNombre = TxtNombreR.Text
+                'proveedor.getSetTelefonoRepresentante = TxtTelefonoR.Text
 
 
-                proveedor.eliminaProveedor()
+                proveedor.eliminaProveedor(TxtProveedor.Text, ComboPais.Text, ComboEstado.Text, ComboCiudad.Text, ComboColonia.Text, TxtRazonSocial.Text,
+                                           TxtNombreR.Text, TxtCorreo.Text, TxtTelefono.Text, TxtTelefonoR.Text)
+
                 TxtProveedor.Text = ""
                 TxtRazonSocial.Text = ""
                 TxtTelefono.Text = ""
@@ -116,8 +120,9 @@
             Try
                 Dim pr As New ClaseProveedores
 
-                If pr.consultaUnProveedor() = False Then
-                    pr.insertaProveedor()
+                If pr.consultaUnProveedor(TxtProveedor.Text) = False Then
+                    'ByVal id_proovedor As Integer, ByVal idPais As Integer, ByVal idEstado As Integer, idCiudad As Integer, ByVal idColonia As Integer, ByVal razonSocial As String, ByVal nombre As String, ByVal correo As String, ByVal telefono As String, ByVal tel_repr As Integer
+                    pr.insertaProveedor(TxtProveedor.Text, ComboPais.Text, ComboEstado.Text, ComboCiudad.Text, ComboColonia.Text, TxtRazonSocial.Text, TxtNombreR.Text, TxtCorreo.Text, TxtTelefono.Text, TxtTelefonoR.Text)
                     MessageBox.Show("Registro Insertado ...")
                 Else
                     getSetCampos()
@@ -156,15 +161,25 @@
         renglon = DGVproveedores.CurrentCellAddress.Y
 
         TxtProveedor.Text = DGVproveedores.Rows(renglon).Cells(0).Value
-        ComboPais.Text = DGVproveedores.Rows(renglon).Cells(1).Value
-        ComboEstado.Text = DGVproveedores.Rows(renglon).Cells(2).Value
-        ComboCiudad.Text = DGVproveedores.Rows(renglon).Cells(3).Value
-        ComboColonia.Text = DGVproveedores.Rows(renglon).Cells(4).Value
         TxtRazonSocial.Text = DGVproveedores.Rows(renglon).Cells(5).Value
         TxtNombreR.Text = DGVproveedores.Rows(renglon).Cells(6).Value
         TxtCorreo.Text = DGVproveedores.Rows(renglon).Cells(7).Value
         TxtTelefono.Text = DGVproveedores.Rows(renglon).Cells(8).Value
         TxtTelefonoR.Text = DGVproveedores.Rows(renglon).Cells(9).Value
 
+        ComboPais.SelectedValue = DGVproveedores.Rows(renglon).Cells(1).Value
+        proveedor.PoblamCmBxPais(ComboPais)
+
+        ComboEstado.SelectedValue = DGVproveedores.Rows(renglon).Cells(2).Value
+        proveedor.PoblamCmBxEstado(ComboEstado, DGVproveedores.Rows(renglon).Cells(1).Value)
+
+        ComboCiudad.SelectedValue = DGVproveedores.Rows(renglon).Cells(3).Value
+        proveedor.PoblamCmBxCiudades(ComboEstado, DGVproveedores.Rows(renglon).Cells(1).Value, DGVproveedores.Rows(renglon).Cells(2).Value)
+
+        ComboColonia.SelectedValue = DGVproveedores.Rows(renglon).Cells(4).Value
+        proveedor.PoblaCmBxColonias(ComboEstado, DGVproveedores.Rows(renglon).Cells(1).Value, DGVproveedores.Rows(renglon).Cells(2).Value, DGVproveedores.Rows(renglon).Cells(3).Value)
+
     End Sub
+
+
 End Class

@@ -1,24 +1,24 @@
 ﻿Public Class ClaseProveedores
-    Private id_proveedor As String
+    Private id_proveedor As Integer
     Private razonSocial As String
-    Private pais As String
-    Private estado As String
-    Private ciudad As String
-    Private colonia As String
+    Private pais As Integer
+    Private estado As Integer
+    Private ciudad As Integer
+    Private colonia As Integer
     Private nombre As String
     Private correo As String
     Private telefono As String
     Private tel_repr As String
 
     Public Sub New()
-        Dim pro As New ClasePrinc
-        id_proveedor = pro.getId(proveedores)
+        'Dim pro As New ClasePrinc
+        id_proveedor = 0 'pro.getId(proveedores)
         razonSocial = ""
-        pais = ""
-        estado = ""
-        ciudad = ""
-        colonia = ""
-        nombre = pro.getSetNombre
+        pais = 0
+        estado = 0
+        ciudad = 0
+        colonia = 0
+        nombre = "" 'pro.getSetNombre
         correo = ""
         telefono = ""
         tel_repr = ""
@@ -135,10 +135,10 @@
 
     End Sub
 
-    Public Sub eliminaProveedor()
+    Public Sub eliminaProveedor(ByVal id_proveedor As Integer, ByVal idPais As String, ByVal idEstado As String, idCiudad As String, ByVal idColonia As String, ByVal razonSocial As String, ByVal nombre As String, ByVal correo As String, ByVal telefono As String, ByVal tel_repr As String)
         Dim strSql As String
         Dim xCnx As New conexion
-        If id_proveedor <> "" And razonSocial <> "" And telefono <> "" And correo <> "" And pais <> "" And estado <> "" And ciudad <> "" And colonia <> "" And
+        If id_proveedor <> 0 And razonSocial <> "" And telefono <> "" And correo <> "" And idPais <> "" And idEstado <> "" And idCiudad <> "" And idColonia <> "" And
          nombre <> "" And tel_repr <> "" Then
 
             strSql = "Delete from proveedores where id_proveedor=" & id_proveedor
@@ -151,12 +151,12 @@
 
     End Sub
 
-    Public Function consultaUnProveedor() As Boolean
+    Public Function consultaUnProveedor(ByVal idp As String) As Boolean
         Dim strSQL As String
         Dim xCnx As New conexion
         Dim xDT As DataTable
 
-        strSQL = "select * from proveedores where id_proveedor =" & idProveedor
+        strSQL = "select * from proveedores where id_proveedor =" & idp
 
         consultaUnProveedor = False
 
@@ -176,19 +176,20 @@
         cnx.Close()
     End Function
 
-    Public Sub insertaProveedor()
+    Public Sub insertaProveedor(ByVal id_proveedor As Integer, ByVal idPais As String, ByVal idEstado As String, idCiudad As String, ByVal idColonia As String, ByVal razonSocial As String, ByVal nombre As String, ByVal correo As String, ByVal telefono As String, ByVal tel_repr As String)
         Dim strSql As String
         Dim xCnx As New conexion
         Dim pr As New ClasePrinc
+        Dim numero As Integer = getIdPais(idPais)
+        Dim numEst As Integer = getIdEstado(idEstado)
+        Dim numCiu As Integer = getIdCiudad(idCiudad)
+        Dim numCol As Integer = getIdColonia(idColonia)
 
-        id_proveedor = pr.AutoIncrement(proveedores)
-
-
-        If id_proveedor <> "" And razonSocial <> "" And telefono <> "" And correo <> "" And idPais <> "" And idEstado <> "" And idCiudad <> "" And idColonia <> "" And
+        If id_proveedor <> 0 And razonSocial <> "" And telefono <> "" And correo <> "" And idPais <> "" And idEstado <> "" And idCiudad <> "" And idColonia <> "" And
          nombre <> "" And tel_repr <> "" Then
             'Realiza inserción de dato
             strSql = "insert into proveedores(id_proveedor, id_pais, id_estado, id_ciudad, id_colonia, razon_social, nombre_representante, correo, telefono, telefono_representante)" &
-                " values (" & id_proveedor & "," & idPais & "," & idEstado & "," & idCiudad & "," & idColonia & "," & razonSocial & "," & nombre & ", " & correo & ", " & telefono & ", " & tel_repr & ")"
+                " values (" & id_proveedor & "," & numero & "," & numEst & "," & numCiu & "," & numCol & ",'" & razonSocial & "','" & nombre & "', '" & correo & "', '" & telefono & "', " & tel_repr & ")"
             xCnx.objetoCommand(strSql)
         Else
             MsgBox("Faltan datos del proveedor!!", MsgBoxStyle.Critical, "ATENCIÓN!!")
@@ -199,7 +200,7 @@
         Dim strSql As String
         Dim xCnx As New conexion
 
-        If id_proveedor <> "" And razonSocial <> "" And telefono <> "" And correo <> "" And idPais <> "" And idEstado <> "" And idCiudad <> "" And idColonia <> "" And
+        If id_proveedor <> 0 And razonSocial <> "" And telefono <> "" And correo <> "" And idPais <> 0 And idEstado <> 0 And idCiudad <> 0 And idColonia <> 0 And
          nombre <> "" And tel_repr <> "" Then
 
             strSql = "UPDATE proveedores set id_proveedor='" & id_proveedor & "',id_pais=" & idPais & ",id_estado=" & idEstado & ",id_ciudad=" & idCiudad & ",id_colonia=" & idColonia & ", razon_social=" & razonSocial & ", nombre=" & nombre & ", correo=" & correo & ",telefono=" & telefono & ", telefono_representante=" & tel_repr & "
@@ -221,6 +222,7 @@
         CmbBxPais.DisplayMember = "nombre"
         CmbBxPais.ValueMember = "id_pais"
         CmbBxPais.Refresh()
+        cnx.Close()
     End Sub
     Public Sub PoblamCmBxEstado(ByVal CmbBxEstado As ComboBox, ByVal idPais As Integer)
         Dim strSql As String
@@ -232,8 +234,10 @@
         CmbBxEstado.DisplayMember = "nombre"
         CmbBxEstado.ValueMember = "id_estado"
         CmbBxEstado.Refresh()
+        cnx.Close()
     End Sub
     Public Sub PoblamCmBxCiudades(ByVal CmbBxCiudades As ComboBox, ByVal idPais As Integer, ByVal idEstado As Integer)
+
         Dim strSql As String
         Dim xCnx As New conexion
 
@@ -243,8 +247,10 @@
         CmbBxCiudades.DisplayMember = "nombre"
         CmbBxCiudades.ValueMember = "id_ciudad"
         CmbBxCiudades.Refresh()
+        cnx.Close()
     End Sub
     Public Sub PoblaCmBxColonias(ByVal CmbBxColonias As ComboBox, ByVal idPais As Integer, ByVal idEstado As Integer, ByVal idCiudad As Integer)
+
         Dim strSql As String
         Dim xCnx As New conexion
 
@@ -254,5 +260,116 @@
         CmbBxColonias.DisplayMember = "nombre"
         CmbBxColonias.ValueMember = "id_ciudad"
         CmbBxColonias.Refresh()
+        cnx.Close()
     End Sub
+
+    Public Function getIdPais(ByVal nombre_pais As String) As Integer
+        cnx.Close()
+        Dim xCnx As New conexion
+        Dim dr As DataRow
+        Dim dt As DataTable
+        Dim pais As String
+        Dim id As Integer
+
+        If (nombre_pais <> "") Then
+
+            pais = "Select id_pais from paises where nombre='" & nombre_pais & "'"
+            Try
+                dt = xCnx.objetoDataAdapter(pais)
+                If dt.Rows.Count > 0 Then
+                    dr = dt.Rows(0)
+                    id = dr("id_pais")
+                Else
+                    MsgBox("No hay datos")
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        End If
+        Return id
+        cnx.Close()
+    End Function
+    Public Function getIdEstado(ByVal nombre_estado As String) As Integer
+        cnx.Close()
+        Dim xCnx As New conexion
+        Dim dr As DataRow
+        Dim dt As DataTable
+        Dim pais As String
+        Dim id As Integer
+
+        If (nombre_estado <> "") Then
+
+            pais = "Select id_estado from estados where nombre='" & nombre_estado & "'"
+            Try
+                dt = xCnx.objetoDataAdapter(pais)
+                If dt.Rows.Count > 0 Then
+                    dr = dt.Rows(0)
+                    id = dr("id_estado")
+                Else
+                    MsgBox("No hay datos")
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        End If
+        Return id
+        cnx.Close()
+    End Function
+    Public Function getIdCiudad(ByVal nombre_ciudad As String) As Integer
+        cnx.Close()
+        Dim xCnx As New conexion
+        Dim dr As DataRow
+        Dim dt As DataTable
+        Dim pais As String
+        Dim id As Integer
+
+        If (nombre_ciudad <> "") Then
+
+            pais = "Select id_ciudad from ciudades where nombre='" & nombre_ciudad & "'"
+            Try
+                dt = xCnx.objetoDataAdapter(pais)
+                If dt.Rows.Count > 0 Then
+                    dr = dt.Rows(0)
+                    id = dr("id_ciudad")
+                Else
+                    MsgBox("No hay datos")
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        End If
+        Return id
+        cnx.Close()
+    End Function
+    Public Function getIdColonia(ByVal nombre_colonia As String) As Integer
+        cnx.Close()
+        Dim xCnx As New conexion
+        Dim dr As DataRow
+        Dim dt As DataTable
+        Dim pais As String
+        Dim id As Integer
+
+        If (nombre_colonia <> "") Then
+
+            pais = "Select id_colonia from colonias where nombre='" & nombre_colonia & "'"
+            Try
+                dt = xCnx.objetoDataAdapter(pais)
+                If dt.Rows.Count > 0 Then
+                    dr = dt.Rows(0)
+                    id = dr("id_colonia")
+                Else
+                    MsgBox("No hay datos")
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        End If
+        Return id
+        cnx.Close()
+    End Function
+
 End Class

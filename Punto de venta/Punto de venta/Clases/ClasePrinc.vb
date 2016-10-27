@@ -81,7 +81,7 @@
         Try
             xDT = xCnx.objetoDataAdapter(strSql)
             id = CStr(xDT.Rows(0)("Columna"))
-            cnx.Close()
+            'cnx.Close()
             Return id
         Catch
         End Try
