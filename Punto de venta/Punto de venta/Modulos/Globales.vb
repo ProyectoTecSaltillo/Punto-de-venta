@@ -5,5 +5,5 @@ Module Globales
     Public pais = "paises", estado = "estados", ciudad = "ciudades", colonia = "colonias", usuarios = "usuarios", clientes = "clientes"
     Public var, EL_nombre As String
     Public idPais, idEstado, idColonia, idCiudad, inc As Integer
-    Public session, clientee As Object
+    Public session As Object
 End Module

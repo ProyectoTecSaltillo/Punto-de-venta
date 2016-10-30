@@ -10,6 +10,10 @@
         MyBase.New(nuevoNombre)
     End Sub
 
+    Public Sub New(ByVal nuevoid As Integer)
+        MyBase.New(nuevoid)
+    End Sub
+
     Public Function consultaTodos() As DataTable
         Dim strSQL As String
         Dim xCnx As New conexion
@@ -19,7 +23,7 @@
         cnx.Close()
     End Function
 
-    Public Sub poblarCombo(ByVal ComboNombre As ComboBox)
+    Public Sub poblarComboN(ByVal ComboNombre As ComboBox)
         Dim ds As DataTable
         ds = consultaTodos()
         ComboNombre.ValueMember = ds.Columns(0).ToString()
@@ -27,18 +31,35 @@
         ComboNombre.Refresh()
     End Sub
 
-    Public Function consultaCliente(ByVal nombreCompleto As String) As DataTable
+    Public Function consultaTodosID() As DataTable
         Dim strSQL As String
         Dim xCnx As New conexion
 
-        strSQL = "SELECT * FROM clientes WHERE CONCAT(nombre, ' ', paterno, ' ', materno) = '" & nombreCompleto & "';"
-        clientee = xCnx.objetoDataAdapter(strSQL)
+        strSQL = "SELECT id_cliente FROM clientes;"
+        consultaTodosID = xCnx.objetoDataAdapter(strSQL)
         cnx.Close()
-        Return clientee
-        'consultaCliente = xCnx.objetoDataAdapter(strSQL)
-        'clientee.Clear()
-        'clientee = consultaCliente
+    End Function
+    Public Sub poblarComboID(ByVal ComboCo As ComboBox)
+        Dim ds As DataTable
+        ds = consultaTodosID()
+        ComboCo.ValueMember = ds.Columns(0).ToString()
+        ComboCo.DataSource = ds
+        ComboCo.Refresh()
+    End Sub
 
+    Public Function consultaCliente(ByVal cliente As Object) As Object
+        Dim strSQL As String
+        Dim xCnx As New conexion
+        Dim xDT As DataTable
+
+        strSQL = "SELECT * FROM clientes WHERE id_cliente = " & id & ";"
+        xDT = xCnx.objetoDataAdapter(strSQL)
+
+        If xDT.Rows.Count = 1 Then
+            cliente = xDT.Rows(0)
+        End If
+        cnx.Close()
+        Return cliente
     End Function
 
     Public Sub inserta(ByVal nombre As String, ByVal paterno As String, ByVal materno As String, ByVal edad As String, ByVal rfc As String,
@@ -50,7 +71,50 @@
                                                calle & "'," & idColonia & ");"
         Dim xCnx As New conexion
         xCnx.objetoCommand(strSql)
-        MessageBox.Show("Registro insertado!")
+        MessageBox.Show("Cliente registrado!")
+        cnx.Close()
+    End Sub
+
+    Public Overloads Function getNombre()
+        Return MyBase.getNombre(clientes)
+    End Function
+
+    Public Overloads Function getId()
+        Return MyBase.getId(clientes)
+    End Function
+
+    Public Overloads Function elimina()
+        Return MyBase.elimina(clientes)
+    End Function
+
+    Public Overloads Sub actualiza(ByVal idCliente As String, ByVal nombre As String, ByVal paterno As String, ByVal materno As String, ByVal edad As String, ByVal rfc As String,
+                       ByVal curp As String, ByVal sexo As String, ByVal email As String, ByVal telefono As String, ByVal numExt As String,
+                       ByVal calle As String, ByVal idColonia As String)
+        Dim strSql As String
+        Dim xCnx As New conexion
+        Try
+            strSql = "UPDATE clientes SET nombre = '" & nombre & "', paterno = '" & paterno & "' , materno = '" &
+                        materno & "' , edad = " & edad & ", rfc = '" & rfc & "' , curp = '" & curp & "' , sexo = '" &
+                        sexo & "' , email = '" & email & "' , telefono = '" & telefono & "' , numeroExt = '" & numExt &
+                        "' , calle = '" & calle & "' , id_colonia = " & idColonia & " WHERE id_cliente = " & idCliente & ";"
+            xCnx.objetoCommand(strSql)
+            MsgBox("Cliente actualizado!")
+        Catch
+            MsgBox("No se pudo actualizar")
+        End Try
+        cnx.Close()
+    End Sub
+
+    Public Sub eliminar(ByVal id As Integer)
+        Dim strSql As String
+        Dim xCnx As New conexion
+        Try
+            strSql = "DELETE FROM clientes WHERE id_cliente = " & id & ";"
+            xCnx.objetoCommand(strSql)
+            MsgBox("Cliente eliminado")
+        Catch
+            MsgBox("No se pudo eliminar")
+        End Try
         cnx.Close()
     End Sub
 End Class
