@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.Security.Cryptography
+Imports AxWMPLib
 
 Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -41,5 +42,20 @@ Public Class Login
 
     Private Sub TxtPsw_TextChanged(sender As Object, e As EventArgs) Handles TxtPsw.TextChanged
         TxtPsw.PasswordChar = "*"
+    End Sub
+
+    Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
+        Me.Close()
+    End Sub
+
+    Dim cont As Integer = 0
+    Private Sub VideoLogin_PlayStateChange(sender As Object, e As _WMPOCXEvents_PlayStateChangeEvent) Handles VideoLogin.PlayStateChange
+        If cont = 1 Then
+            VideoLogin.Visible = False
+            TxtEmail.Visible = True
+            BtnEntrar.Visible = True
+            TxtPsw.Visible = True
+        End If
+        cont = cont + 1
     End Sub
 End Class
