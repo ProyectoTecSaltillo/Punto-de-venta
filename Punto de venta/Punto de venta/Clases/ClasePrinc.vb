@@ -114,6 +114,8 @@
                 strSql = "select id_proveedores as columna from " & proveedores & " where nombre =" & nombre & "';"
             Case usuarios
                 strSql = "SELECT id_usuario as Columna FROM " & usuarios & " WHERE CONCAT( nombre, ' ', paterno, ' ', materno ) ='" & nombre & "';"
+            Case clientes
+                strSql = "SELECT id_cliente as Columna FROM " & clientes & " WHERE CONCAT( nombre, ' ', paterno, ' ', materno ) = '" & nombre & "';"
         End Select
         Try
             xDT = xCnx.objetoDataAdapter(strSql)
@@ -180,6 +182,8 @@
                 strSQL = "SELECT nombre FROM " & colonia & " WHERE id_colonia= " & id & ";"
             Case usuarios
                 strSQL = "SELECT CONCAT( nombre, ' ', paterno, ' ', materno ) as nombre FROM usuarios WHERE id_usuario = " & id & ";"
+            Case clientes
+                strSQL = "SELECT CONCAT( nombre, ' ', paterno, ' ', materno ) AS nombre FROM clientes WHERE id_cliente = " & id & ";"
         End Select
         xDT = xCnx.objetoDataAdapter(strSQL)
         nombre = CStr(xDT.Rows(0)("nombre"))

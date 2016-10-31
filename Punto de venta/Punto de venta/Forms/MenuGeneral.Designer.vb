@@ -36,56 +36,45 @@ Partial Class MenuGeneral
         '
         'BtnMant
         '
-        Me.BtnMant.Location = New System.Drawing.Point(16, 32)
-        Me.BtnMant.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnMant.Location = New System.Drawing.Point(12, 26)
         Me.BtnMant.Name = "BtnMant"
-        Me.BtnMant.Size = New System.Drawing.Size(323, 58)
+        Me.BtnMant.Size = New System.Drawing.Size(242, 47)
         Me.BtnMant.TabIndex = 1
         Me.BtnMant.Text = "Mantenimiento países"
         Me.BtnMant.UseVisualStyleBackColor = True
         '
         'BtnManEmp
         '
-        Me.BtnManEmp.Location = New System.Drawing.Point(16, 97)
-        Me.BtnManEmp.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnManEmp.Location = New System.Drawing.Point(12, 79)
         Me.BtnManEmp.Name = "BtnManEmp"
-        Me.BtnManEmp.Size = New System.Drawing.Size(323, 54)
+        Me.BtnManEmp.Size = New System.Drawing.Size(242, 44)
         Me.BtnManEmp.TabIndex = 2
         Me.BtnManEmp.Text = "Mantenimiento Empleados"
         Me.BtnManEmp.UseVisualStyleBackColor = True
         '
         'BtnManCli
         '
-        'Me.Sol.Location = New System.Drawing.Point(16, 159)
-        'Me.Sol.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        'Me.Sol.Name = "Sol"
-        'Me.Sol.Size = New System.Drawing.Size(323, 54)
-        'Me.Sol.TabIndex = 3
-        'Me.Sol.Text = "Solicitudes"
-        'Me.Sol.UseVisualStyleBackColor = True
-        'Me.BtnManCli.Location = New System.Drawing.Point(12, 129)
-        'Me.BtnManCli.Name = "BtnManCli"
-        'Me.BtnManCli.Size = New System.Drawing.Size(242, 44)
-        'Me.BtnManCli.TabIndex = 3
-        'Me.BtnManCli.Text = "Mantenimiento Clientes"
-        'Me.BtnManCli.UseVisualStyleBackColor = True
+        Me.BtnManCli.Location = New System.Drawing.Point(12, 128)
+        Me.BtnManCli.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnManCli.Name = "BtnManCli"
+        Me.BtnManCli.Size = New System.Drawing.Size(242, 44)
+        Me.BtnManCli.TabIndex = 7
+        Me.BtnManCli.Text = "Mantenimiento Clientes"
         '
         'B
         '
-        Me.B.Location = New System.Drawing.Point(16, 220)
-        Me.B.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.B.Location = New System.Drawing.Point(12, 179)
         Me.B.Name = "B"
-        Me.B.Size = New System.Drawing.Size(323, 54)
+        Me.B.Size = New System.Drawing.Size(242, 44)
         Me.B.TabIndex = 4
         Me.B.Text = "Mantenimiento proveedores"
         Me.B.UseVisualStyleBackColor = True
         '
         'Bu
         '
-        Me.Bu.Location = New System.Drawing.Point(16, 282)
-        Me.Bu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Bu.Location = New System.Drawing.Point(12, 229)
         Me.Bu.Name = "Bu"
-        Me.Bu.Size = New System.Drawing.Size(323, 54)
+        Me.Bu.Size = New System.Drawing.Size(242, 44)
         Me.Bu.TabIndex = 5
         Me.Bu.Text = "..."
         Me.Bu.UseVisualStyleBackColor = True
@@ -100,7 +89,7 @@ Partial Class MenuGeneral
         Me.BienvenidoToolStrip.Name = "BienvenidoToolStrip"
         Me.BienvenidoToolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
         Me.BienvenidoToolStrip.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.BienvenidoToolStrip.Size = New System.Drawing.Size(355, 31)
+        Me.BienvenidoToolStrip.Size = New System.Drawing.Size(266, 25)
         Me.BienvenidoToolStrip.TabIndex = 6
         Me.BienvenidoToolStrip.Text = "ToolStrip1"
         '
@@ -116,29 +105,28 @@ Partial Class MenuGeneral
         'PerfilToolStripMenuItem
         '
         Me.PerfilToolStripMenuItem.Name = "PerfilToolStripMenuItem"
-        Me.PerfilToolStripMenuItem.Size = New System.Drawing.Size(118, 26)
+        Me.PerfilToolStripMenuItem.Size = New System.Drawing.Size(101, 22)
         Me.PerfilToolStripMenuItem.Text = "Perfil"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(118, 26)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(101, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         Me.SalirToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         '
         'MenuGeneral
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(355, 346)
+        Me.ClientSize = New System.Drawing.Size(266, 281)
         Me.Controls.Add(Me.BienvenidoToolStrip)
         Me.Controls.Add(Me.Bu)
         Me.Controls.Add(Me.B)
         Me.Controls.Add(Me.BtnManCli)
         Me.Controls.Add(Me.BtnManEmp)
         Me.Controls.Add(Me.BtnMant)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.Name = "MenuGeneral"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
