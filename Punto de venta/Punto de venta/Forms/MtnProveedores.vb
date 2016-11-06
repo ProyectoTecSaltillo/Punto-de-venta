@@ -184,6 +184,11 @@
 
 
     Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
+        MenuGeneral.Show()
         Me.Close()
+    End Sub
+
+    Private Sub MtnProveedores_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        MenuGeneral.Show()
     End Sub
 End Class
