@@ -26,7 +26,7 @@ Partial Class MenuGeneral
         Me.BtnManEmp = New System.Windows.Forms.Button()
         Me.BtnManCli = New System.Windows.Forms.Button()
         Me.B = New System.Windows.Forms.Button()
-        Me.Bu = New System.Windows.Forms.Button()
+        Me.BtnProductos = New System.Windows.Forms.Button()
         Me.BienvenidoToolStrip = New System.Windows.Forms.ToolStrip()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.PerfilToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -70,14 +70,14 @@ Partial Class MenuGeneral
         Me.B.Text = "..."
         Me.B.UseVisualStyleBackColor = True
         '
-        'Bu
+        'BtnProductos
         '
-        Me.Bu.Location = New System.Drawing.Point(12, 229)
-        Me.Bu.Name = "Bu"
-        Me.Bu.Size = New System.Drawing.Size(242, 44)
-        Me.Bu.TabIndex = 5
-        Me.Bu.Text = "..."
-        Me.Bu.UseVisualStyleBackColor = True
+        Me.BtnProductos.Location = New System.Drawing.Point(12, 229)
+        Me.BtnProductos.Name = "BtnProductos"
+        Me.BtnProductos.Size = New System.Drawing.Size(242, 44)
+        Me.BtnProductos.TabIndex = 5
+        Me.BtnProductos.Text = "Productos"
+        Me.BtnProductos.UseVisualStyleBackColor = True
         '
         'BienvenidoToolStrip
         '
@@ -122,7 +122,7 @@ Partial Class MenuGeneral
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(266, 281)
         Me.Controls.Add(Me.BienvenidoToolStrip)
-        Me.Controls.Add(Me.Bu)
+        Me.Controls.Add(Me.BtnProductos)
         Me.Controls.Add(Me.B)
         Me.Controls.Add(Me.BtnManCli)
         Me.Controls.Add(Me.BtnManEmp)
@@ -140,7 +140,7 @@ Partial Class MenuGeneral
     Friend WithEvents BtnManEmp As Button
     Friend WithEvents BtnManCli As Button
     Friend WithEvents B As Button
-    Friend WithEvents Bu As Button
+    Friend WithEvents BtnProductos As Button
     Friend WithEvents BienvenidoToolStrip As ToolStrip
     Friend WithEvents ToolStripLabel1 As ToolStripDropDownButton
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem

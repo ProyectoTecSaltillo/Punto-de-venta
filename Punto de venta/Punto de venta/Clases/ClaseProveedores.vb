@@ -1,4 +1,5 @@
 ﻿Public Class ClaseProveedores
+
     Private id_proveedor As String
     Private razonSocial As String
     Private pais As String
