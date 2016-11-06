@@ -58,4 +58,12 @@ Public Class Login
         End If
         cont = cont + 1
     End Sub
+
+    Private Sub BtnExit_MouseHover(sender As Object, e As EventArgs) Handles BtnExit.MouseHover
+        BtnExit.Image = (My.Resources.x2_tamaño)
+    End Sub
+
+    Private Sub BtnExit_MouseLeave(sender As Object, e As EventArgs) Handles BtnExit.MouseLeave
+        BtnExit.Image = (My.Resources.X_Tamaño)
+    End Sub
 End Class

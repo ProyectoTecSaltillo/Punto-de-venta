@@ -63,6 +63,7 @@ Partial Class Login
         'TxtEmail
         '
         Me.TxtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtEmail.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtEmail.Location = New System.Drawing.Point(276, 185)
         Me.TxtEmail.Name = "TxtEmail"
         Me.TxtEmail.Size = New System.Drawing.Size(148, 13)
@@ -108,16 +109,20 @@ Partial Class Login
         'BtnExit
         '
         Me.BtnExit.BackColor = System.Drawing.Color.Transparent
-        Me.BtnExit.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.X
         Me.BtnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnExit.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.BtnExit.FlatAppearance.BorderSize = 0
+        Me.BtnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.BtnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnExit.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.BtnExit.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnExit.Image = Global.Punto_de_venta.My.Resources.Resources.X_Tamaño
         Me.BtnExit.Location = New System.Drawing.Point(646, -3)
         Me.BtnExit.Name = "BtnExit"
         Me.BtnExit.Size = New System.Drawing.Size(31, 37)
         Me.BtnExit.TabIndex = 8
-        Me.BtnExit.UseVisualStyleBackColor = False
+        Me.BtnExit.UseMnemonic = False
+        Me.BtnExit.UseVisualStyleBackColor = True
         '
         'Login
         '
@@ -125,7 +130,7 @@ Partial Class Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.Silver
-        Me.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.ppt5B47_pptm__Autoguardado_
+        Me.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.ppt5B471
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(680, 460)
         Me.Controls.Add(Me.BtnExit)
