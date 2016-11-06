@@ -26,6 +26,8 @@ Partial Class MtnProveedores
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.TxtCorreo = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TxtProveedor = New System.Windows.Forms.TextBox()
         Me.TxtProveedor = New System.Windows.Forms.TextBox()
         Me.ComboColonia = New System.Windows.Forms.ComboBox()
         Me.ComboCiudad = New System.Windows.Forms.ComboBox()
@@ -92,6 +94,22 @@ Partial Class MtnProveedores
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(14, 23)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(70, 13)
+        Me.Label10.TabIndex = 20
+        Me.Label10.Text = "Id proveedor:"
+        '
+        'TxtProveedor
+        '
+        Me.TxtProveedor.Location = New System.Drawing.Point(91, 16)
+        Me.TxtProveedor.Name = "TxtProveedor"
+        Me.TxtProveedor.Size = New System.Drawing.Size(120, 20)
+        Me.TxtProveedor.TabIndex = 21
         '
         'TxtProveedor
         '
@@ -235,6 +253,9 @@ Partial Class MtnProveedores
         Me.BtnInicio.Name = "BtnInicio"
         Me.BtnInicio.Size = New System.Drawing.Size(55, 50)
         Me.BtnInicio.TabIndex = 13
+        Me.BtnInicio.Text = "Inicio"
+        Me.BtnInicio.UseVisualStyleBackColor = True
+        '
         Me.BtnInicio.UseVisualStyleBackColor = False
         '
         'BtnExit

@@ -78,6 +78,9 @@
                 strSql = "SELECT max(id_ciudad) as Columna FROM " & ciudad & ";"
             Case colonia
                 strSql = "SELECT max(id_colonia) as Columna FROM " & colonia & ";"
+            Case proveedores
+                strSql = "SELECT max(id_proveedor) as Columna FROM " & proveedores & ";"
+
             Case usuarios
                 strSql = "SELECT max(id_usuario) as Columna FROM " & usuarios & ";"
             Case clientes
@@ -90,7 +93,7 @@
         Try
             xDT = xCnx.objetoDataAdapter(strSql)
             id = CStr(xDT.Rows(0)("Columna"))
-            cnx.Close()
+            'cnx.Close()
             Return id
         Catch
         End Try

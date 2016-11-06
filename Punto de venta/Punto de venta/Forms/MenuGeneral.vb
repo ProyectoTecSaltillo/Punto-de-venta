@@ -40,4 +40,9 @@
         FrmProductos.Show()
         Me.Hide()
     End Sub
+
+    Private Sub B_Click(sender As Object, e As EventArgs) Handles B.Click
+        MtnProveedores.Show()
+        Me.Hide()
+    End Sub
 End Class

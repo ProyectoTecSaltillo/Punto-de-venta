@@ -67,7 +67,7 @@ Partial Class MenuGeneral
         Me.B.Name = "B"
         Me.B.Size = New System.Drawing.Size(242, 44)
         Me.B.TabIndex = 4
-        Me.B.Text = "..."
+        Me.B.Text = "Mantenimiento proveedores"
         Me.B.UseVisualStyleBackColor = True
         '
         'BtnProductos
