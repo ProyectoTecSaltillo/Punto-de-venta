@@ -26,8 +26,6 @@ Partial Class MtnProveedores
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.TxtCorreo = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        'Me.Label10 = New System.Windows.Forms.Label()
-        Me.TxtProveedor = New System.Windows.Forms.TextBox()
         Me.TxtProveedor = New System.Windows.Forms.TextBox()
         Me.ComboColonia = New System.Windows.Forms.ComboBox()
         Me.ComboCiudad = New System.Windows.Forms.ComboBox()
@@ -53,7 +51,7 @@ Partial Class MtnProveedores
         Me.TxtRazonSocial.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtRazonSocial.Location = New System.Drawing.Point(367, 53)
         Me.TxtRazonSocial.Name = "TxtRazonSocial"
-        Me.TxtRazonSocial.Size = New System.Drawing.Size(182, 18)
+        Me.TxtRazonSocial.Size = New System.Drawing.Size(182, 15)
         Me.TxtRazonSocial.TabIndex = 2
         '
         'TxtTelefono
@@ -62,7 +60,7 @@ Partial Class MtnProveedores
         Me.TxtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtTelefono.Location = New System.Drawing.Point(80, 53)
         Me.TxtTelefono.Name = "TxtTelefono"
-        Me.TxtTelefono.Size = New System.Drawing.Size(176, 18)
+        Me.TxtTelefono.Size = New System.Drawing.Size(176, 15)
         Me.TxtTelefono.TabIndex = 4
         '
         'TxtCorreo
@@ -71,7 +69,7 @@ Partial Class MtnProveedores
         Me.TxtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtCorreo.Location = New System.Drawing.Point(77, 84)
         Me.TxtCorreo.Name = "TxtCorreo"
-        Me.TxtCorreo.Size = New System.Drawing.Size(179, 18)
+        Me.TxtCorreo.Size = New System.Drawing.Size(179, 15)
         Me.TxtCorreo.TabIndex = 6
         '
         'GroupBox1
@@ -85,7 +83,7 @@ Partial Class MtnProveedores
         Me.GroupBox1.Controls.Add(Me.TxtCorreo)
         Me.GroupBox1.Controls.Add(Me.TxtRazonSocial)
         Me.GroupBox1.Controls.Add(Me.TxtTelefono)
-        Me.GroupBox1.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(23, 23)
         Me.GroupBox1.Name = "GroupBox1"
@@ -94,22 +92,6 @@ Partial Class MtnProveedores
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos"
-        '
-        'Label10
-        '
-        'Me.Label10.AutoSize = True
-        'Me.Label10.Location = New System.Drawing.Point(14, 23)
-        'Me.Label10.Name = "Label10"
-        'Me.Label10.Size = New System.Drawing.Size(70, 13)
-        'Me.Label10.TabIndex = 20
-        'Me.Label10.Text = "Id proveedor:"
-        '
-        'TxtProveedor
-        '
-        Me.TxtProveedor.Location = New System.Drawing.Point(91, 16)
-        Me.TxtProveedor.Name = "TxtProveedor"
-        Me.TxtProveedor.Size = New System.Drawing.Size(120, 20)
-        Me.TxtProveedor.TabIndex = 21
         '
         'TxtProveedor
         '
@@ -128,7 +110,7 @@ Partial Class MtnProveedores
         Me.ComboColonia.FormattingEnabled = True
         Me.ComboColonia.Location = New System.Drawing.Point(332, 136)
         Me.ComboColonia.Name = "ComboColonia"
-        Me.ComboColonia.Size = New System.Drawing.Size(121, 25)
+        Me.ComboColonia.Size = New System.Drawing.Size(121, 24)
         Me.ComboColonia.TabIndex = 19
         '
         'ComboCiudad
@@ -138,7 +120,7 @@ Partial Class MtnProveedores
         Me.ComboCiudad.FormattingEnabled = True
         Me.ComboCiudad.Location = New System.Drawing.Point(332, 109)
         Me.ComboCiudad.Name = "ComboCiudad"
-        Me.ComboCiudad.Size = New System.Drawing.Size(121, 25)
+        Me.ComboCiudad.Size = New System.Drawing.Size(121, 24)
         Me.ComboCiudad.TabIndex = 18
         '
         'ComboEstado
@@ -148,7 +130,7 @@ Partial Class MtnProveedores
         Me.ComboEstado.FormattingEnabled = True
         Me.ComboEstado.Location = New System.Drawing.Point(119, 140)
         Me.ComboEstado.Name = "ComboEstado"
-        Me.ComboEstado.Size = New System.Drawing.Size(107, 25)
+        Me.ComboEstado.Size = New System.Drawing.Size(107, 24)
         Me.ComboEstado.TabIndex = 17
         '
         'ComboPais
@@ -158,7 +140,7 @@ Partial Class MtnProveedores
         Me.ComboPais.FormattingEnabled = True
         Me.ComboPais.Location = New System.Drawing.Point(105, 112)
         Me.ComboPais.Name = "ComboPais"
-        Me.ComboPais.Size = New System.Drawing.Size(121, 25)
+        Me.ComboPais.Size = New System.Drawing.Size(121, 24)
         Me.ComboPais.TabIndex = 12
         '
         'GroupBox2
@@ -166,7 +148,7 @@ Partial Class MtnProveedores
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.TxtTelefonoR)
         Me.GroupBox2.Controls.Add(Me.TxtNombreR)
-        Me.GroupBox2.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(23, 201)
         Me.GroupBox2.Name = "GroupBox2"
@@ -182,7 +164,7 @@ Partial Class MtnProveedores
         Me.TxtTelefonoR.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtTelefonoR.Location = New System.Drawing.Point(368, 39)
         Me.TxtTelefonoR.Name = "TxtTelefonoR"
-        Me.TxtTelefonoR.Size = New System.Drawing.Size(182, 18)
+        Me.TxtTelefonoR.Size = New System.Drawing.Size(182, 15)
         Me.TxtTelefonoR.TabIndex = 12
         '
         'TxtNombreR
@@ -191,7 +173,7 @@ Partial Class MtnProveedores
         Me.TxtNombreR.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtNombreR.Location = New System.Drawing.Point(92, 38)
         Me.TxtNombreR.Name = "TxtNombreR"
-        Me.TxtNombreR.Size = New System.Drawing.Size(180, 18)
+        Me.TxtNombreR.Size = New System.Drawing.Size(180, 15)
         Me.TxtNombreR.TabIndex = 10
         '
         'BtnGuardaP
@@ -254,8 +236,6 @@ Partial Class MtnProveedores
         Me.BtnInicio.Size = New System.Drawing.Size(55, 50)
         Me.BtnInicio.TabIndex = 13
         Me.BtnInicio.Text = "Inicio"
-        Me.BtnInicio.UseVisualStyleBackColor = True
-        '
         Me.BtnInicio.UseVisualStyleBackColor = False
         '
         'BtnExit
@@ -290,6 +270,7 @@ Partial Class MtnProveedores
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MtnProveedores"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " Mantenimiento Proveedores"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
