@@ -181,8 +181,6 @@
 
     End Sub
 
-
-
     Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
         MenuGeneral.Show()
         Me.Close()
@@ -190,5 +188,45 @@
 
     Private Sub MtnProveedores_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         MenuGeneral.Show()
+    End Sub
+
+    Private Sub BtnExit_MouseHover(sender As Object, e As EventArgs) Handles BtnExit.MouseHover
+        BtnExit.Image = (My.Resources.x2_tamaño)
+    End Sub
+
+    Private Sub BtnExit_MouseLeave(sender As Object, e As EventArgs) Handles BtnExit.MouseLeave
+        BtnExit.Image = (My.Resources.X_Tamaño)
+    End Sub
+
+    Private Sub BtnInicio_MouseHover(sender As Object, e As EventArgs) Handles BtnInicio.MouseHover
+        BtnInicio.Image = (My.Resources.BotonMenu2_tamaño)
+    End Sub
+
+    Private Sub BtnInicio_MouseLeave(sender As Object, e As EventArgs) Handles BtnInicio.MouseLeave
+        BtnInicio.Image = (My.Resources.BotonMenu_tamaño)
+    End Sub
+
+    Private Sub BtnGuardaP_MouseHover(sender As Object, e As EventArgs) Handles BtnGuardaP.MouseHover
+        BtnGuardaP.Image = (My.Resources.Guardar2_tamaño)
+    End Sub
+
+    Private Sub BtnGuardaP_MouseLeave(sender As Object, e As EventArgs) Handles BtnGuardaP.MouseLeave
+        BtnGuardaP.Image = (My.Resources.Guardar_Tamaño)
+    End Sub
+
+    Private Sub BtnLimpiaP_MouseHover(sender As Object, e As EventArgs) Handles BtnLimpiaP.MouseHover
+        BtnLimpiaP.Image = (My.Resources.Limpiar2_tamaño)
+    End Sub
+
+    Private Sub BtnLimpiaP_MouseLeave(sender As Object, e As EventArgs) Handles BtnLimpiaP.MouseLeave
+        BtnLimpiaP.Image = (My.Resources.Limpiar_tamaño)
+    End Sub
+
+    Private Sub BtnEliminaP_MouseHover(sender As Object, e As EventArgs) Handles BtnEliminaP.MouseHover
+        BtnEliminaP.Image = (My.Resources.Eliminar2_tamaño)
+    End Sub
+
+    Private Sub BtnEliminaP_MouseLeave(sender As Object, e As EventArgs) Handles BtnEliminaP.MouseLeave
+        BtnEliminaP.Image = (My.Resources.Eliminar_tamaño)
     End Sub
 End Class
