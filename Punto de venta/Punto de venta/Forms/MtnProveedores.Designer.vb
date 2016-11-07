@@ -270,6 +270,7 @@ Partial Class MtnProveedores
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MtnProveedores"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " Mantenimiento Proveedores"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

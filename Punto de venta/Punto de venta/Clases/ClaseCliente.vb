@@ -83,9 +83,9 @@
         Return MyBase.getId(clientes)
     End Function
 
-    Public Overloads Function elimina()
-        Return MyBase.elimina(clientes)
-    End Function
+    'Public Overloads Function elimina()
+    '    Return MyBase.elimina(clientes)
+    'End Function
 
     Public Overloads Sub actualiza(ByVal idCliente As String, ByVal nombre As String, ByVal paterno As String, ByVal materno As String, ByVal edad As String, ByVal rfc As String,
                        ByVal curp As String, ByVal sexo As String, ByVal email As String, ByVal telefono As String, ByVal numExt As String,

@@ -1,8 +1,8 @@
 ﻿Public Class MenuGeneral
     Private Sub MenuGeneral_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ToolStripLabel1.Text = "Bienvenido " & session.Item(1)
+        ToolStripLabel1.Text = session.Item(1)
         If session.Item(6) <> 1 Then
-            Bu.Visible = False
+            BtnProductos.Visible = False
             B.Visible = False
         End If
     End Sub
@@ -33,6 +33,11 @@
     End Sub
     Private Sub BtnManCli_Click(sender As Object, e As EventArgs) Handles BtnManCli.Click
         MtnClientes.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub BtnProductos_Click(sender As Object, e As EventArgs) Handles BtnProductos.Click
+        FrmProductos.Show()
         Me.Hide()
     End Sub
 

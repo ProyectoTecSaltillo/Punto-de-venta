@@ -85,6 +85,10 @@
                 strSql = "SELECT max(id_usuario) as Columna FROM " & usuarios & ";"
             Case clientes
                 strSql = "SELECT MAX(id_cliente) AS Columna FROM " & clientes & ";"
+            Case proveedores
+                strSql = "SELECT MAX(id_proveedor) AS Columna FROM " & proveedores & ";"
+            Case productos
+                strSql = "SELECT MAX(id_producto) AS Columna FROM " & productos & ";"
         End Select
         Try
             xDT = xCnx.objetoDataAdapter(strSql)
@@ -103,19 +107,21 @@
         Dim xDT As DataTable
         Select Case (tabla)
             Case pais
-                strSql = "SELECT id_pais as Columna FROM " & pais & " WHERE nombre='" & nombre & "';"
+                strSql = "SELECT id_pais as Columna FROM " & pais & " WHERE nombre = '" & nombre & "';"
             Case estado
-                strSql = "SELECT id_estado as Columna FROM " & estado & " WHERE nombre='" & nombre & "';"
+                strSql = "SELECT id_estado as Columna FROM " & estado & " WHERE nombre = '" & nombre & "';"
             Case ciudad
-                strSql = "SELECT id_ciudad as Columna FROM " & ciudad & " WHERE nombre='" & nombre & "';"
+                strSql = "SELECT id_ciudad as Columna FROM " & ciudad & " WHERE nombre = '" & nombre & "';"
             Case colonia
-                strSql = "SELECT id_colonia as Columna FROM " & colonia & " WHERE nombre='" & nombre & "';"
-            Case proveedores
-                strSql = "select id_proveedores as columna from " & proveedores & " where nombre =" & nombre & "';"
+                strSql = "SELECT id_colonia as Columna FROM " & colonia & " WHERE nombre = '" & nombre & "';"
             Case usuarios
-                strSql = "SELECT id_usuario as Columna FROM " & usuarios & " WHERE CONCAT( nombre, ' ', paterno, ' ', materno ) ='" & nombre & "';"
+                strSql = "SELECT id_usuario as Columna FROM " & usuarios & " WHERE CONCAT( nombre, ' ', paterno, ' ', materno ) = '" & nombre & "';"
             Case clientes
                 strSql = "SELECT id_cliente as Columna FROM " & clientes & " WHERE CONCAT( nombre, ' ', paterno, ' ', materno ) = '" & nombre & "';"
+            Case proveedores
+                strSql = "SELECT id_proveedor as Columna FROM " & proveedores & " WHERE CONCAT( nombre, ' ', paterno, ' ', materno ) = '" & nombre & "';"
+            Case productos
+                strSql = "SELECT id_producto as Columna FROM " & productos & " WHERE nombre = '" & nombre & "';"
         End Select
         Try
             xDT = xCnx.objetoDataAdapter(strSql)
@@ -173,17 +179,21 @@
         Dim xDT As DataTable
         Select Case (tabla)
             Case pais
-                strSQL = "SELECT nombre FROM " & pais & " WHERE id_pais= " & id & ";"
+                strSQL = "SELECT nombre FROM " & pais & " WHERE id_pais = " & id & ";"
             Case estado
-                strSQL = "SELECT nombre FROM " & estado & " WHERE id_estado= " & id & ";"
+                strSQL = "SELECT nombre FROM " & estado & " WHERE id_estado = " & id & ";"
             Case ciudad
-                strSQL = "SELECT nombre FROM " & colonia & " WHERE id_ciudad= " & id & ";"
+                strSQL = "SELECT nombre FROM " & colonia & " WHERE id_ciudad = " & id & ";"
             Case colonia
-                strSQL = "SELECT nombre FROM " & colonia & " WHERE id_colonia= " & id & ";"
+                strSQL = "SELECT nombre FROM " & colonia & " WHERE id_colonia = " & id & ";"
             Case usuarios
                 strSQL = "SELECT CONCAT( nombre, ' ', paterno, ' ', materno ) as nombre FROM usuarios WHERE id_usuario = " & id & ";"
             Case clientes
-                strSQL = "SELECT CONCAT( nombre, ' ', paterno, ' ', materno ) AS nombre FROM clientes WHERE id_cliente = " & id & ";"
+                strSQL = "SELECT CONCAT( nombre, ' ', paterno, ' ', materno ) as nombre FROM clientes WHERE id_cliente = " & id & ";"
+            Case proveedores
+                strSQL = "SELECT CONCAT( nombre, ' ', paterno, ' ', materno ) as nombre FROM proveedores WHERE id_proveedor = " & id & ";"
+            Case productos
+                strSQL = "SELECT nombre FROM " & productos & " WHERE id_producto = " & id & ";"
         End Select
         xDT = xCnx.objetoDataAdapter(strSQL)
         nombre = CStr(xDT.Rows(0)("nombre"))

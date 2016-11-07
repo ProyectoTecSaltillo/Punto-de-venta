@@ -88,6 +88,8 @@
     <Compile Include="Clases\ClasePais.vb" />
     <Compile Include="Clases\ClasePaises.vb" />
     <Compile Include="Clases\ClasePrinc.vb" />
+    <Compile Include="Clases\ClaseProductos.vb" />
+    <Compile Include="Clases\ClaseProv.vb" />
     <Compile Include="Clases\ClaseProveedores.vb" />
     <Compile Include="Conexión\conexion.vb" />
     <Compile Include="Forms\FrmPais.Designer.vb">
@@ -101,6 +103,12 @@
     </Compile>
     <Compile Include="Forms\FrmPaises.Designer.vb">
       <DependentUpon>FrmPaises.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmProductos.Designer.vb">
+      <DependentUpon>FrmProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmProductos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Login.Designer.vb">
@@ -168,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmPaises.resx">
       <DependentUpon>FrmPaises.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmProductos.resx">
+      <DependentUpon>FrmProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
@@ -238,13 +249,7 @@
     <None Include="Resources\close_7.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\X.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Fondo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BotonMenu.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BotonMenu2.png" />
@@ -269,6 +274,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x2-Tamaño.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ppt5B47.pptm [Autoguardado]1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X_Tamaño.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x2_tamaño.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonMenu_tamaño.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BotonMenu2_tamaño.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliminar_tamaño.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliminar2_tamaño.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guardar_Tamaño.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guardar2_tamaño.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Limpiar_tamaño.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Limpiar2_tamaño.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PnatallaPerfilCaliz.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaPerfil.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaPerfill.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
