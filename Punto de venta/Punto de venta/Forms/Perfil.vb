@@ -39,4 +39,20 @@
         MenuGeneral.Show()
         Me.Close()
     End Sub
+
+    Private Sub BtnBack_MouseHover(sender As Object, e As EventArgs) Handles BtnBack.MouseHover
+        BtnBack.Image = (My.Resources.BotonMenu2_tamaño)
+    End Sub
+
+    Private Sub BtnBack_MouseLeave(sender As Object, e As EventArgs) Handles BtnBack.MouseLeave
+        BtnBack.Image = (My.Resources.BotonMenu_tamaño)
+    End Sub
+
+    Private Sub BtnSalir_MouseHover(sender As Object, e As EventArgs) Handles BtnSalir.MouseHover
+        BtnSalir.Image = (My.Resources.x2_tamaño)
+    End Sub
+
+    Private Sub BtnSalir_MouseLeave(sender As Object, e As EventArgs) Handles BtnSalir.MouseLeave
+        BtnSalir.Image = (My.Resources.X_Tamaño)
+    End Sub
 End Class

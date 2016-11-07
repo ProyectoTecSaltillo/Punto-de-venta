@@ -169,7 +169,7 @@ Partial Class Perfil
         Me.BtnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGuardar.Image = Global.Punto_de_venta.My.Resources.Resources.Guardar_Tamaño
-        Me.BtnGuardar.Location = New System.Drawing.Point(175, 226)
+        Me.BtnGuardar.Location = New System.Drawing.Point(288, 226)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(60, 60)
         Me.BtnGuardar.TabIndex = 18
@@ -177,12 +177,17 @@ Partial Class Perfil
         '
         'BtnSalir
         '
-        Me.BtnSalir.Location = New System.Drawing.Point(241, 255)
+        Me.BtnSalir.BackColor = System.Drawing.Color.Transparent
+        Me.BtnSalir.FlatAppearance.BorderSize = 0
+        Me.BtnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.BtnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.BtnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSalir.Image = Global.Punto_de_venta.My.Resources.Resources.X_Tamaño
+        Me.BtnSalir.Location = New System.Drawing.Point(317, -2)
         Me.BtnSalir.Name = "BtnSalir"
-        Me.BtnSalir.Size = New System.Drawing.Size(99, 23)
+        Me.BtnSalir.Size = New System.Drawing.Size(31, 37)
         Me.BtnSalir.TabIndex = 19
-        Me.BtnSalir.Text = "Salir"
-        Me.BtnSalir.UseVisualStyleBackColor = True
+        Me.BtnSalir.UseVisualStyleBackColor = False
         '
         'Perfil
         '

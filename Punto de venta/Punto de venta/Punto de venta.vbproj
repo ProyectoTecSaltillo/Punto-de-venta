@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4140472C-9BAD-4B2F-82CC-76D318505ED4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Punto_de_venta.My.MyApplication</StartupObject>
+    <StartupObject>Punto_de_venta.Login</StartupObject>
     <RootNamespace>Punto_de_venta</RootNamespace>
     <AssemblyName>Punto de venta</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -283,9 +283,6 @@
     <None Include="Resources\ProveedoresCaliz3.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PantallaProveedores.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Guardar.png" />
   </ItemGroup>
   <ItemGroup>
@@ -313,6 +310,12 @@
     <None Include="Resources\x2_tamaño.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\PnatallaPerfilCaliz.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaPerfil.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\BotonMenu_tamaño.png" />
   </ItemGroup>
   <ItemGroup>
@@ -334,16 +337,16 @@
     <None Include="Resources\Limpiar_tamaño.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\PantallaPerfill.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PantallaProveedores.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Limpiar2_tamaño.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PnatallaPerfilCaliz.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PantallaPerfil.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PantallaPerfill.jpg" />
+    <None Include="Resources\login.mp4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
