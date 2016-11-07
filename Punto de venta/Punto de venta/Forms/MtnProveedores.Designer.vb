@@ -26,7 +26,7 @@ Partial Class MtnProveedores
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.TxtCorreo = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label10 = New System.Windows.Forms.Label()
+        'Me.Label10 = New System.Windows.Forms.Label()
         Me.TxtProveedor = New System.Windows.Forms.TextBox()
         Me.TxtProveedor = New System.Windows.Forms.TextBox()
         Me.ComboColonia = New System.Windows.Forms.ComboBox()
@@ -97,12 +97,12 @@ Partial Class MtnProveedores
         '
         'Label10
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(14, 23)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(70, 13)
-        Me.Label10.TabIndex = 20
-        Me.Label10.Text = "Id proveedor:"
+        'Me.Label10.AutoSize = True
+        'Me.Label10.Location = New System.Drawing.Point(14, 23)
+        'Me.Label10.Name = "Label10"
+        'Me.Label10.Size = New System.Drawing.Size(70, 13)
+        'Me.Label10.TabIndex = 20
+        'Me.Label10.Text = "Id proveedor:"
         '
         'TxtProveedor
         '
