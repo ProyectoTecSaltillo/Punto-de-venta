@@ -45,4 +45,14 @@
         MtnProveedores.Show()
         Me.Hide()
     End Sub
+
+    Private Sub btnDev_Click(sender As Object, e As EventArgs) Handles btnDev.Click
+        Me.Hide()
+        Devoluciones.Show()
+    End Sub
+
+    Private Sub BtnReportes_Click(sender As Object, e As EventArgs) Handles BtnReportes.Click
+        Me.Hide()
+        Reportes.Show()
+    End Sub
 End Class

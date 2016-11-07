@@ -80,7 +80,6 @@
                 strSql = "SELECT max(id_colonia) as Columna FROM " & colonia & ";"
             Case proveedores
                 strSql = "SELECT max(id_proveedor) as Columna FROM " & proveedores & ";"
-
             Case usuarios
                 strSql = "SELECT max(id_usuario) as Columna FROM " & usuarios & ";"
             Case clientes
@@ -89,6 +88,8 @@
                 strSql = "SELECT MAX(id_proveedor) AS Columna FROM " & proveedores & ";"
             Case productos
                 strSql = "SELECT MAX(id_producto) AS Columna FROM " & productos & ";"
+            Case devolucion
+                strSql = "SELECT MAX(id_devolucion) AS Columna FROM " & devolucion & ";"
         End Select
         Try
             xDT = xCnx.objetoDataAdapter(strSql)

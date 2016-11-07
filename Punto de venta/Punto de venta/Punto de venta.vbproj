@@ -91,7 +91,14 @@
     <Compile Include="Clases\ClaseProductos.vb" />
     <Compile Include="Clases\ClaseProv.vb" />
     <Compile Include="Clases\ClaseProveedores.vb" />
+    <Compile Include="Clases\Devolucion.vb" />
     <Compile Include="Conexión\conexion.vb" />
+    <Compile Include="Forms\Devoluciones.Designer.vb">
+      <DependentUpon>Devoluciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Devoluciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FrmPais.Designer.vb">
       <DependentUpon>FrmPais.vb</DependentUpon>
     </Compile>
@@ -147,6 +154,12 @@
     <Compile Include="Forms\MtnEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Reportes.Designer.vb">
+      <DependentUpon>Reportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulos\Globales.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -171,6 +184,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\Devoluciones.resx">
+      <DependentUpon>Devoluciones.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmPais.resx">
       <DependentUpon>FrmPais.vb</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MtnEmpleados.resx">
       <DependentUpon>MtnEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reportes.resx">
+      <DependentUpon>Reportes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
