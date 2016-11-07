@@ -51,7 +51,7 @@ Partial Class MtnProveedores
         Me.TxtRazonSocial.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtRazonSocial.Location = New System.Drawing.Point(367, 53)
         Me.TxtRazonSocial.Name = "TxtRazonSocial"
-        Me.TxtRazonSocial.Size = New System.Drawing.Size(182, 18)
+        Me.TxtRazonSocial.Size = New System.Drawing.Size(182, 15)
         Me.TxtRazonSocial.TabIndex = 2
         '
         'TxtTelefono
@@ -60,7 +60,7 @@ Partial Class MtnProveedores
         Me.TxtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtTelefono.Location = New System.Drawing.Point(80, 53)
         Me.TxtTelefono.Name = "TxtTelefono"
-        Me.TxtTelefono.Size = New System.Drawing.Size(176, 18)
+        Me.TxtTelefono.Size = New System.Drawing.Size(176, 15)
         Me.TxtTelefono.TabIndex = 4
         '
         'TxtCorreo
@@ -69,7 +69,7 @@ Partial Class MtnProveedores
         Me.TxtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtCorreo.Location = New System.Drawing.Point(77, 84)
         Me.TxtCorreo.Name = "TxtCorreo"
-        Me.TxtCorreo.Size = New System.Drawing.Size(179, 18)
+        Me.TxtCorreo.Size = New System.Drawing.Size(179, 15)
         Me.TxtCorreo.TabIndex = 6
         '
         'GroupBox1
@@ -83,7 +83,7 @@ Partial Class MtnProveedores
         Me.GroupBox1.Controls.Add(Me.TxtCorreo)
         Me.GroupBox1.Controls.Add(Me.TxtRazonSocial)
         Me.GroupBox1.Controls.Add(Me.TxtTelefono)
-        Me.GroupBox1.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(23, 23)
         Me.GroupBox1.Name = "GroupBox1"
@@ -110,7 +110,7 @@ Partial Class MtnProveedores
         Me.ComboColonia.FormattingEnabled = True
         Me.ComboColonia.Location = New System.Drawing.Point(332, 136)
         Me.ComboColonia.Name = "ComboColonia"
-        Me.ComboColonia.Size = New System.Drawing.Size(121, 25)
+        Me.ComboColonia.Size = New System.Drawing.Size(121, 24)
         Me.ComboColonia.TabIndex = 19
         '
         'ComboCiudad
@@ -120,7 +120,7 @@ Partial Class MtnProveedores
         Me.ComboCiudad.FormattingEnabled = True
         Me.ComboCiudad.Location = New System.Drawing.Point(332, 109)
         Me.ComboCiudad.Name = "ComboCiudad"
-        Me.ComboCiudad.Size = New System.Drawing.Size(121, 25)
+        Me.ComboCiudad.Size = New System.Drawing.Size(121, 24)
         Me.ComboCiudad.TabIndex = 18
         '
         'ComboEstado
@@ -130,7 +130,7 @@ Partial Class MtnProveedores
         Me.ComboEstado.FormattingEnabled = True
         Me.ComboEstado.Location = New System.Drawing.Point(119, 140)
         Me.ComboEstado.Name = "ComboEstado"
-        Me.ComboEstado.Size = New System.Drawing.Size(107, 25)
+        Me.ComboEstado.Size = New System.Drawing.Size(107, 24)
         Me.ComboEstado.TabIndex = 17
         '
         'ComboPais
@@ -140,7 +140,7 @@ Partial Class MtnProveedores
         Me.ComboPais.FormattingEnabled = True
         Me.ComboPais.Location = New System.Drawing.Point(105, 112)
         Me.ComboPais.Name = "ComboPais"
-        Me.ComboPais.Size = New System.Drawing.Size(121, 25)
+        Me.ComboPais.Size = New System.Drawing.Size(121, 24)
         Me.ComboPais.TabIndex = 12
         '
         'GroupBox2
@@ -148,7 +148,7 @@ Partial Class MtnProveedores
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.Controls.Add(Me.TxtTelefonoR)
         Me.GroupBox2.Controls.Add(Me.TxtNombreR)
-        Me.GroupBox2.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
         Me.GroupBox2.Location = New System.Drawing.Point(23, 201)
         Me.GroupBox2.Name = "GroupBox2"
@@ -164,7 +164,7 @@ Partial Class MtnProveedores
         Me.TxtTelefonoR.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtTelefonoR.Location = New System.Drawing.Point(368, 39)
         Me.TxtTelefonoR.Name = "TxtTelefonoR"
-        Me.TxtTelefonoR.Size = New System.Drawing.Size(182, 18)
+        Me.TxtTelefonoR.Size = New System.Drawing.Size(182, 15)
         Me.TxtTelefonoR.TabIndex = 12
         '
         'TxtNombreR
@@ -173,51 +173,45 @@ Partial Class MtnProveedores
         Me.TxtNombreR.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtNombreR.Location = New System.Drawing.Point(92, 38)
         Me.TxtNombreR.Name = "TxtNombreR"
-        Me.TxtNombreR.Size = New System.Drawing.Size(180, 18)
+        Me.TxtNombreR.Size = New System.Drawing.Size(180, 15)
         Me.TxtNombreR.TabIndex = 10
         '
         'BtnGuardaP
         '
         Me.BtnGuardaP.BackColor = System.Drawing.Color.Transparent
+        Me.BtnGuardaP.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.Guardar
         Me.BtnGuardaP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnGuardaP.FlatAppearance.BorderSize = 0
-        Me.BtnGuardaP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.BtnGuardaP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BtnGuardaP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnGuardaP.Image = Global.Punto_de_venta.My.Resources.Resources.Guardar_Tamaño
-        Me.BtnGuardaP.Location = New System.Drawing.Point(429, 455)
+        Me.BtnGuardaP.Location = New System.Drawing.Point(433, 460)
         Me.BtnGuardaP.Name = "BtnGuardaP"
-        Me.BtnGuardaP.Size = New System.Drawing.Size(60, 60)
+        Me.BtnGuardaP.Size = New System.Drawing.Size(40, 40)
         Me.BtnGuardaP.TabIndex = 9
         Me.BtnGuardaP.UseVisualStyleBackColor = False
         '
         'BtnLimpiaP
         '
         Me.BtnLimpiaP.BackColor = System.Drawing.Color.Transparent
+        Me.BtnLimpiaP.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.Limpiar
         Me.BtnLimpiaP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnLimpiaP.FlatAppearance.BorderSize = 0
-        Me.BtnLimpiaP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.BtnLimpiaP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BtnLimpiaP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnLimpiaP.Image = Global.Punto_de_venta.My.Resources.Resources.Limpiar_tamaño
-        Me.BtnLimpiaP.Location = New System.Drawing.Point(480, 455)
+        Me.BtnLimpiaP.Location = New System.Drawing.Point(490, 460)
         Me.BtnLimpiaP.Name = "BtnLimpiaP"
-        Me.BtnLimpiaP.Size = New System.Drawing.Size(60, 60)
-        Me.BtnLimpiaP.TabIndex = 9
+        Me.BtnLimpiaP.Size = New System.Drawing.Size(40, 40)
+        Me.BtnLimpiaP.TabIndex = 10
         Me.BtnLimpiaP.UseVisualStyleBackColor = False
         '
         'BtnEliminaP
         '
         Me.BtnEliminaP.BackColor = System.Drawing.Color.Transparent
+        Me.BtnEliminaP.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.Eliminar
         Me.BtnEliminaP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnEliminaP.FlatAppearance.BorderSize = 0
-        Me.BtnEliminaP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.BtnEliminaP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BtnEliminaP.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEliminaP.Image = Global.Punto_de_venta.My.Resources.Resources.Eliminar_tamaño
-        Me.BtnEliminaP.Location = New System.Drawing.Point(530, 455)
+        Me.BtnEliminaP.Location = New System.Drawing.Point(547, 460)
         Me.BtnEliminaP.Name = "BtnEliminaP"
-        Me.BtnEliminaP.Size = New System.Drawing.Size(60, 60)
+        Me.BtnEliminaP.Size = New System.Drawing.Size(40, 40)
         Me.BtnEliminaP.TabIndex = 11
         Me.BtnEliminaP.UseVisualStyleBackColor = False
         '
@@ -232,29 +226,26 @@ Partial Class MtnProveedores
         'BtnInicio
         '
         Me.BtnInicio.BackColor = System.Drawing.Color.Transparent
+        Me.BtnInicio.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.BotonMenu2
         Me.BtnInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnInicio.FlatAppearance.BorderSize = 0
-        Me.BtnInicio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.BtnInicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BtnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnInicio.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnInicio.Image = Global.Punto_de_venta.My.Resources.Resources.BotonMenu_tamaño
         Me.BtnInicio.Location = New System.Drawing.Point(20, 455)
         Me.BtnInicio.Name = "BtnInicio"
-        Me.BtnInicio.Size = New System.Drawing.Size(55, 55)
-        Me.BtnInicio.TabIndex = 14
+        Me.BtnInicio.Size = New System.Drawing.Size(55, 50)
+        Me.BtnInicio.TabIndex = 13
+        Me.BtnInicio.Text = "Inicio"
         Me.BtnInicio.UseVisualStyleBackColor = False
         '
         'BtnExit
         '
         Me.BtnExit.BackColor = System.Drawing.Color.Transparent
+        Me.BtnExit.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.X
         Me.BtnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BtnExit.FlatAppearance.BorderSize = 0
-        Me.BtnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.BtnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnExit.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnExit.Image = Global.Punto_de_venta.My.Resources.Resources.X_Tamaño
+        Me.BtnExit.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.BtnExit.Location = New System.Drawing.Point(592, -3)
         Me.BtnExit.Name = "BtnExit"
         Me.BtnExit.Size = New System.Drawing.Size(31, 37)
@@ -268,13 +259,13 @@ Partial Class MtnProveedores
         Me.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.PantallaProveedores
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(625, 518)
-        Me.Controls.Add(Me.BtnLimpiaP)
         Me.Controls.Add(Me.BtnExit)
         Me.Controls.Add(Me.BtnInicio)
         Me.Controls.Add(Me.DGVproveedores)
         Me.Controls.Add(Me.BtnEliminaP)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.BtnLimpiaP)
         Me.Controls.Add(Me.BtnGuardaP)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

@@ -23,7 +23,7 @@ Partial Class MtnClientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.BtnEliminar = New System.Windows.Forms.Button()
-        Me.BtnModificar = New System.Windows.Forms.Button()
+        Me.BtnActualizar = New System.Windows.Forms.Button()
         Me.BtnAgregar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TxtCalle = New System.Windows.Forms.TextBox()
@@ -62,6 +62,7 @@ Partial Class MtnClientes
         Me.NumEdad = New System.Windows.Forms.NumericUpDown()
         Me.Masculino = New System.Windows.Forms.RadioButton()
         Me.Femenino = New System.Windows.Forms.RadioButton()
+        Me.BtnAdd = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.NumEdad, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,18 +78,19 @@ Partial Class MtnClientes
         Me.BtnEliminar.Text = "Eliminar"
         Me.BtnEliminar.UseVisualStyleBackColor = True
         '
-        'BtnModificar
+        'BtnActualizar
         '
-        Me.BtnModificar.Location = New System.Drawing.Point(406, 315)
-        Me.BtnModificar.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnModificar.Name = "BtnModificar"
-        Me.BtnModificar.Size = New System.Drawing.Size(112, 33)
-        Me.BtnModificar.TabIndex = 20
-        Me.BtnModificar.Text = "Modificar"
-        Me.BtnModificar.UseVisualStyleBackColor = True
+        Me.BtnActualizar.Location = New System.Drawing.Point(406, 315)
+        Me.BtnActualizar.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnActualizar.Name = "BtnActualizar"
+        Me.BtnActualizar.Size = New System.Drawing.Size(112, 33)
+        Me.BtnActualizar.TabIndex = 20
+        Me.BtnActualizar.Text = "Actulizar"
+        Me.BtnActualizar.UseVisualStyleBackColor = True
         '
         'BtnAgregar
         '
+        Me.BtnAgregar.Enabled = False
         Me.BtnAgregar.Location = New System.Drawing.Point(279, 364)
         Me.BtnAgregar.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnAgregar.Name = "BtnAgregar"
@@ -337,6 +339,7 @@ Partial Class MtnClientes
         '
         'ComboID
         '
+        Me.ComboID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboID.FormattingEnabled = True
         Me.ComboID.Location = New System.Drawing.Point(59, 47)
         Me.ComboID.Margin = New System.Windows.Forms.Padding(2)
@@ -356,6 +359,7 @@ Partial Class MtnClientes
         '
         'ComboNombre
         '
+        Me.ComboNombre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboNombre.FormattingEnabled = True
         Me.ComboNombre.Location = New System.Drawing.Point(59, 23)
         Me.ComboNombre.Margin = New System.Windows.Forms.Padding(2)
@@ -470,11 +474,21 @@ Partial Class MtnClientes
         Me.Femenino.Text = "Femenino"
         Me.Femenino.UseVisualStyleBackColor = True
         '
+        'BtnAdd
+        '
+        Me.BtnAdd.Location = New System.Drawing.Point(406, 33)
+        Me.BtnAdd.Name = "BtnAdd"
+        Me.BtnAdd.Size = New System.Drawing.Size(74, 50)
+        Me.BtnAdd.TabIndex = 25
+        Me.BtnAdd.Text = "Agregar cliente"
+        Me.BtnAdd.UseVisualStyleBackColor = True
+        '
         'MtnClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(529, 412)
+        Me.Controls.Add(Me.BtnAdd)
         Me.Controls.Add(Me.Femenino)
         Me.Controls.Add(Me.Masculino)
         Me.Controls.Add(Me.NumEdad)
@@ -486,7 +500,7 @@ Partial Class MtnClientes
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.BtnEliminar)
-        Me.Controls.Add(Me.BtnModificar)
+        Me.Controls.Add(Me.BtnActualizar)
         Me.Controls.Add(Me.BtnAgregar)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -505,7 +519,7 @@ Partial Class MtnClientes
     End Sub
 
     Friend WithEvents BtnEliminar As Button
-    Friend WithEvents BtnModificar As Button
+    Friend WithEvents BtnActualizar As Button
     Friend WithEvents BtnAgregar As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents TxtCalle As TextBox
@@ -544,4 +558,5 @@ Partial Class MtnClientes
     Friend WithEvents NumEdad As NumericUpDown
     Friend WithEvents Femenino As RadioButton
     Friend WithEvents Masculino As RadioButton
+    Friend WithEvents BtnAdd As Button
 End Class

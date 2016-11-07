@@ -88,6 +88,8 @@
     <Compile Include="Clases\ClasePais.vb" />
     <Compile Include="Clases\ClasePaises.vb" />
     <Compile Include="Clases\ClasePrinc.vb" />
+    <Compile Include="Clases\ClaseProductos.vb" />
+    <Compile Include="Clases\ClaseProv.vb" />
     <Compile Include="Clases\ClaseProveedores.vb" />
     <Compile Include="Conexión\conexion.vb" />
     <Compile Include="Forms\FrmPais.Designer.vb">
@@ -101,6 +103,12 @@
     </Compile>
     <Compile Include="Forms\FrmPaises.Designer.vb">
       <DependentUpon>FrmPaises.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmProductos.Designer.vb">
+      <DependentUpon>FrmProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmProductos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Login.Designer.vb">
@@ -168,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmPaises.resx">
       <DependentUpon>FrmPaises.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmProductos.resx">
+      <DependentUpon>FrmProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

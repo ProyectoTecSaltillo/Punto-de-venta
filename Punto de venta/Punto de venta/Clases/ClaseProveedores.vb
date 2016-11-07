@@ -1,23 +1,24 @@
 ﻿Public Class ClaseProveedores
-    Private id_proveedor As String
+    Private id_proveedor As Integer
     Private razonSocial As String
-    Private pais As String
-    Private estado As String
-    Private ciudad As String
-    Private colonia As String
+    Private pais As Integer
+    Private estado As Integer
+    Private ciudad As Integer
+    Private colonia As Integer
     Private nombre As String
     Private correo As String
     Private telefono As String
     Private tel_repr As String
 
     Public Sub New()
-        id_proveedor = ""
+        'Dim pro As New ClasePrinc
+        id_proveedor = 0 'pro.getId(proveedores)
         razonSocial = ""
-        pais = ""
-        estado = ""
-        ciudad = ""
-        colonia = ""
-        nombre = ""
+        pais = 0
+        estado = 0
+        ciudad = 0
+        colonia = 0
+        nombre = "" 'pro.getSetNombre
         correo = ""
         telefono = ""
         tel_repr = ""
@@ -118,50 +119,44 @@
             tel_repr = Value
         End Set
     End Property
-
-    Public Sub PoblarDataGridProveedores(ByVal DGVproveedores As DataGridView)
-        DGVproveedores.DataSource = consultaTodosProveedores()
-        DGVproveedores.Refresh()
-
-    End Sub
     Public Function consultaTodosProveedores() As Object
         Dim strSQL As String
         Dim xCnx As New conexion
 
-        strSQL = "SELECT id_proveedor, razon social, correo, nombre, telefono, telefono_representante, paises.nombre as Pais, estados.nombre as Estado, ciudades.nombre as Ciudad, colonias.nombre as Colonia," &
-            "correo , telefono, telefono_representante from " &
-            "paises, estados, ciudades, colonias, proveedores where " &
-            "paises.id_pais = estados.id_pais and estados.id_pais = ciudades.id_pais and estados.id_estado = ciudades.id_estado and ciudades.id_pais = colonias.id_pais and " &
-            "ciudades.id_Estado = colonias.id_estado and ciudades.id_ciudad = colonias.id_ciudad and colonias.id_pais = proveedores.id_pais and colonias.id_estado = proveedores.id_Estado and " &
-            "colonias.id_ciudad = proveedores.id_ciudad and colonias.id_colonia= proveedores.id_colonia order by id_proveedor asc"
+        strSQL = "SELECT * from proveedores order by id_proveedor asc"
         consultaTodosProveedores = xCnx.objetoDataAdapter(strSQL)
+        cnx.Close()
     End Function
-    Public Sub eliminaProveedor()
+
+    Public Sub PoblarDataGridProveedores(ByVal DGVproveedores As DataGridView)
+        DGVproveedores.DataSource = consultaTodosProveedores()
+        DGVproveedores.Refresh()
+        cnx.Close()
+
+    End Sub
+
+    Public Sub eliminaProveedor(ByVal id_proveedor As Integer, ByVal idPais As String, ByVal idEstado As String, idCiudad As String, ByVal idColonia As String, ByVal razonSocial As String, ByVal nombre As String, ByVal correo As String, ByVal telefono As String, ByVal tel_repr As String)
         Dim strSql As String
         Dim xCnx As New conexion
+        If id_proveedor <> 0 And razonSocial <> "" And telefono <> "" And correo <> "" And idPais <> "" And idEstado <> "" And idCiudad <> "" And idColonia <> "" And
+         nombre <> "" And tel_repr <> "" Then
 
-        If id_proveedor <> "" And razonSocial <> "" And pais <> "" And estado <> "" And ciudad <> "" And colonia <> "" And
-            nombre <> "" And correo <> "" And telefono <> "" And tel_repr <> "" Then
-            strSql = "DELETE FROM proveedores WHERE id_proveedor='" & id_proveedor & "' and id_pais=(select id_pais from paises where nombre='" & pais & "') and id_estado=(select id_estado from paises p, estados e where p.id_pais= e.id_pais and p.nombre='" & pais & "' and e.nombre='" & estado & "') and " &
-                     "id_ciudad=(select id_ciudad from paises, estados, ciudades where paises.id_pais = estados.id_pais and estados.id_pais = ciudades.id_pais and estados.id_estado = ciudades.id_estado and paises.nombre='" & pais & "' and estados.nombre='" & estado & "' and ciudades.nombre= '" & ciudad & "') and id_colonia=(select id_colonia from paises, estados, ciudades, colonias where paises.id_pais = estados.id_pais and estados.id_pais = ciudades.id_pais and estados.id_estado = ciudades.id_estado and ciudades.id_pais = colonias.id_pais and ciudades.id_estado = colonias.id_estado and ciudades.id_ciudad = colonias.id_ciudad and paises.nombre='" & pais & "' and estados.nombre='" & estado & "' and ciudades.nombre= '" & ciudad & "' and colonia.nombre='" & colonia & "') " &
-                     "and nombre='" & nombre & "' " &
-                " and correo= '" & correo & "' and telefono= '" & telefono & "' and  telefono_representante='" & tel_repr
-
-
+            strSql = "Delete from proveedores where id_proveedor=" & id_proveedor
             xCnx.objetoCommand(strSql)
             MessageBox.Show("Registro Eliminado")
         Else
-            MsgBox("Faltan datos del proveedor!!", MsgBoxStyle.Critical, "ATENCIÓN!!")
+            MsgBox("Faltan datos del proveedor!!", MsgBoxStyle.Critical, "ATENCION!!")
         End If
+        cnx.Close()
+
     End Sub
 
-    Public Function consultaUnProveedor() As Boolean
+    Public Function consultaUnProveedor(ByVal idp As String) As Boolean
         Dim strSQL As String
         Dim xCnx As New conexion
         Dim xDT As DataTable
 
-        strSQL = "SELECT * FROM proveedores " &
-                 "WHERE id_proveedor='" & id_proveedor & "'"
+        strSQL = "select * from proveedores where id_proveedor =" & idp
 
         consultaUnProveedor = False
 
@@ -172,44 +167,209 @@
                 id_proveedor = ""
             Else
                 id_proveedor = CStr(xDT.Rows(0)("id_proveedor"))
+
             End If
 
             consultaUnProveedor = True
 
         End If
+        cnx.Close()
     End Function
 
-    Public Sub insertaProveedor()
+    Public Sub insertaProveedor(ByVal id_proveedor As Integer, ByVal idPais As String, ByVal idEstado As String, idCiudad As String, ByVal idColonia As String, ByVal razonSocial As String, ByVal nombre As String, ByVal correo As String, ByVal telefono As String, ByVal tel_repr As String)
         Dim strSql As String
         Dim xCnx As New conexion
+        Dim pr As New ClasePrinc
+        Dim numero As Integer = getIdPais(idPais)
+        Dim numEst As Integer = getIdEstado(idEstado)
+        Dim numCiu As Integer = getIdCiudad(idCiudad)
+        Dim numCol As Integer = getIdColonia(idColonia)
 
-
-        If id_proveedor <> "" And razonSocial <> "" And pais <> "" And estado <> "" And ciudad <> "" And colonia <> "" And
-         nombre <> "" And correo <> "" And telefono <> "" And tel_repr <> "" Then
-            'Realiza inserción de datos
-            strSql = "INSERT INTO proveedores " &
-                     "VALUES('" & id_proveedor & "',(select id_pais from paises where nombre='" & pais & "'),(select id_estado from paises p, estados e where p.id_pais= e.id_pais and p.nombre='" & pais & "' and e.nombre='" & estado & "')," &
-                     "(select id_ciudad from paises, estados, ciudades where paises.id_pais = estados.id_pais and estados.id_pais = ciudades.id_pais and estados.id_estado = ciudades.id_estado and paises.nombre='" & pais & "' and estados.nombre='" & estado & "' and ciudades.nombre= '" & ciudad & "'),(select id_colonia from paises, estados, ciudades, colonias where paises.id_pais = estados.id_pais and estados.id_pais = ciudades.id_pais and estados.id_estado = ciudades.id_estado and ciudades.id_pais = colonias.id_pais and ciudades.id_estado = colonias.id_estado and ciudades.id_ciudad = colonias.id_ciudad and paises.nombre='" & pais & "' and estados.nombre='" & estado & "' and ciudades.nombre= '" & ciudad & "' and colonias.nombre='" & colonia & "')," &
-                     "'" & nombre & "','" & correo & "','" & telefono & "','" & tel_repr & "')"
+        If id_proveedor <> 0 And razonSocial <> "" And telefono <> "" And correo <> "" And idPais <> "" And idEstado <> "" And idCiudad <> "" And idColonia <> "" And
+         nombre <> "" And tel_repr <> "" Then
+            'Realiza inserción de dato
+            strSql = "insert into proveedores(id_proveedor, id_pais, id_estado, id_ciudad, id_colonia, razon_social, nombre_representante, correo, telefono, telefono_representante)" &
+                " values (" & id_proveedor & "," & numero & "," & numEst & "," & numCiu & "," & numCol & ",'" & razonSocial & "','" & nombre & "', '" & correo & "', '" & telefono & "', " & tel_repr & ")"
             xCnx.objetoCommand(strSql)
         Else
             MsgBox("Faltan datos del proveedor!!", MsgBoxStyle.Critical, "ATENCIÓN!!")
         End If
+        cnx.Close()
     End Sub
     Public Sub actualizaProveedor()
         Dim strSql As String
         Dim xCnx As New conexion
 
-        If id_proveedor <> "" And razonSocial <> "" And pais <> "" And estado <> "" And ciudad <> "" And colonia <> "" And
-           nombre <> "" And correo <> "" And telefono <> "" And tel_repr <> "" Then
-            strSql = "UPDATE proveedores set id_proveedor='" & id_proveedor & "',id_pais=(select id_pais from paises where nombre='" & pais & "'), id_estado=(select id_estado from paises, estados where paises.id_pais= estados.id_pais and paises.nombre='" & pais & "' and estados.nombre='" & estado & "')," &
-                     "id_ciudad = ( select id_ciudad from paises, estados, ciudades where paises.id_pais = estados.id_pais and estados.id_pais = ciudades.id_pais and estados.id_estado = ciudades.id_estado and paises.nombre='" & pais & "' and estados.nombre='" & estado & "' and ciudades.nombre= '" & ciudad & "'), id_colonia = (select id_colonia from paises, estados, ciudades, colonias where paises.id_pais = estados.id_pais and estados.id_pais = ciudades.id_pais and estados.id_estado = ciudades.id_estado and ciudades.id_pais = colonias.id_pais and ciudades.id_estado = colonias.id_estado and ciudades.id_ciudad = colonias.id_ciudad and paises.nombre='" & pais & "' and estados.nombre='" & estado & "' and ciudades.nombre= '" & ciudad & "' and colonias.nombre='" & colonia & "')" &
-                     ", nombre='" & nombre & "', " &
-                "correo='" & correo & "',telefono='" & telefono & "',telefono_representante='" & tel_repr & "' where id_proveedor='" & id_proveedor & "'"
+        If id_proveedor <> 0 And razonSocial <> "" And telefono <> "" And correo <> "" And idPais <> 0 And idEstado <> 0 And idCiudad <> 0 And idColonia <> 0 And
+         nombre <> "" And tel_repr <> "" Then
+
+            strSql = "UPDATE proveedores set id_proveedor='" & id_proveedor & "',id_pais=" & idPais & ",id_estado=" & idEstado & ",id_ciudad=" & idCiudad & ",id_colonia=" & idColonia & ", razon_social=" & razonSocial & ", nombre=" & nombre & ", correo=" & correo & ",telefono=" & telefono & ", telefono_representante=" & tel_repr & "
+            where id_proveedor='" & id_proveedor & "'"
 
             xCnx.objetoCommand(strSql)
         Else
             MsgBox("Faltan datos del proveedor!!", MsgBoxStyle.Critical, "ATENCIÓN!!")
         End If
+        cnx.Close()
     End Sub
+    Public Sub PoblamCmBxPais(ByVal CmbBxPais As ComboBox)
+        Dim strSql As String
+        Dim xCnx As New conexion
+
+        strSql = "select id_pais, nombre from paises"
+        CmbBxPais.DataSource = xCnx.objetoDataAdapter(strSql)
+
+        CmbBxPais.DisplayMember = "nombre"
+        CmbBxPais.ValueMember = "id_pais"
+        CmbBxPais.Refresh()
+        cnx.Close()
+    End Sub
+    Public Sub PoblamCmBxEstado(ByVal CmbBxEstado As ComboBox, ByVal idPais As Integer)
+        Dim strSql As String
+        Dim xCnx As New conexion
+
+        strSql = "select id_estado, nombre from estados where id_pais='" & idPais
+        CmbBxEstado.DataSource = xCnx.objetoDataAdapter(strSql)
+
+        CmbBxEstado.DisplayMember = "nombre"
+        CmbBxEstado.ValueMember = "id_estado"
+        CmbBxEstado.Refresh()
+        cnx.Close()
+    End Sub
+    Public Sub PoblamCmBxCiudades(ByVal CmbBxCiudades As ComboBox, ByVal idPais As Integer, ByVal idEstado As Integer)
+
+        Dim strSql As String
+        Dim xCnx As New conexion
+
+        strSql = "select id_ciudad, nombre from estados where id_pais='" & idPais & "and id_estado=" & idEstado
+        CmbBxCiudades.DataSource = xCnx.objetoDataAdapter(strSql)
+
+        CmbBxCiudades.DisplayMember = "nombre"
+        CmbBxCiudades.ValueMember = "id_ciudad"
+        CmbBxCiudades.Refresh()
+        cnx.Close()
+    End Sub
+    Public Sub PoblaCmBxColonias(ByVal CmbBxColonias As ComboBox, ByVal idPais As Integer, ByVal idEstado As Integer, ByVal idCiudad As Integer)
+
+        Dim strSql As String
+        Dim xCnx As New conexion
+
+        strSql = "select id_ciudad, nombre from estados where id_pais='" & idPais & "and id_estado=" & idEstado & "and id_ciudad=" & idCiudad
+        CmbBxColonias.DataSource = xCnx.objetoDataAdapter(strSql)
+
+        CmbBxColonias.DisplayMember = "nombre"
+        CmbBxColonias.ValueMember = "id_ciudad"
+        CmbBxColonias.Refresh()
+        cnx.Close()
+    End Sub
+
+    Public Function getIdPais(ByVal nombre_pais As String) As Integer
+        cnx.Close()
+        Dim xCnx As New conexion
+        Dim dr As DataRow
+        Dim dt As DataTable
+        Dim pais As String
+        Dim id As Integer
+
+        If (nombre_pais <> "") Then
+
+            pais = "Select id_pais from paises where nombre='" & nombre_pais & "'"
+            Try
+                dt = xCnx.objetoDataAdapter(pais)
+                If dt.Rows.Count > 0 Then
+                    dr = dt.Rows(0)
+                    id = dr("id_pais")
+                Else
+                    MsgBox("No hay datos")
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        End If
+        Return id
+        cnx.Close()
+    End Function
+    Public Function getIdEstado(ByVal nombre_estado As String) As Integer
+        cnx.Close()
+        Dim xCnx As New conexion
+        Dim dr As DataRow
+        Dim dt As DataTable
+        Dim pais As String
+        Dim id As Integer
+
+        If (nombre_estado <> "") Then
+
+            pais = "Select id_estado from estados where nombre='" & nombre_estado & "'"
+            Try
+                dt = xCnx.objetoDataAdapter(pais)
+                If dt.Rows.Count > 0 Then
+                    dr = dt.Rows(0)
+                    id = dr("id_estado")
+                Else
+                    MsgBox("No hay datos")
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        End If
+        Return id
+        cnx.Close()
+    End Function
+    Public Function getIdCiudad(ByVal nombre_ciudad As String) As Integer
+        cnx.Close()
+        Dim xCnx As New conexion
+        Dim dr As DataRow
+        Dim dt As DataTable
+        Dim pais As String
+        Dim id As Integer
+
+        If (nombre_ciudad <> "") Then
+
+            pais = "Select id_ciudad from ciudades where nombre='" & nombre_ciudad & "'"
+            Try
+                dt = xCnx.objetoDataAdapter(pais)
+                If dt.Rows.Count > 0 Then
+                    dr = dt.Rows(0)
+                    id = dr("id_ciudad")
+                Else
+                    MsgBox("No hay datos")
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        End If
+        Return id
+        cnx.Close()
+    End Function
+    Public Function getIdColonia(ByVal nombre_colonia As String) As Integer
+        cnx.Close()
+        Dim xCnx As New conexion
+        Dim dr As DataRow
+        Dim dt As DataTable
+        Dim pais As String
+        Dim id As Integer
+
+        If (nombre_colonia <> "") Then
+
+            pais = "Select id_colonia from colonias where nombre='" & nombre_colonia & "'"
+            Try
+                dt = xCnx.objetoDataAdapter(pais)
+                If dt.Rows.Count > 0 Then
+                    dr = dt.Rows(0)
+                    id = dr("id_colonia")
+                Else
+                    MsgBox("No hay datos")
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        End If
+        Return id
+        cnx.Close()
+    End Function
+
 End Class

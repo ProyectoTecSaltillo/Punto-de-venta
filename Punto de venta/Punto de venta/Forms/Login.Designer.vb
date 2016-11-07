@@ -22,16 +22,13 @@ Partial Class Login
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtEmail = New System.Windows.Forms.TextBox()
         Me.TxtPsw = New System.Windows.Forms.TextBox()
         Me.BtnEntrar = New System.Windows.Forms.Button()
-        Me.VideoLogin = New AxWMPLib.AxWindowsMediaPlayer()
         Me.BtnExit = New System.Windows.Forms.Button()
-        CType(Me.VideoLogin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -63,23 +60,20 @@ Partial Class Login
         'TxtEmail
         '
         Me.TxtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TxtEmail.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtEmail.Location = New System.Drawing.Point(276, 185)
+        Me.TxtEmail.Location = New System.Drawing.Point(263, 185)
         Me.TxtEmail.Name = "TxtEmail"
-        Me.TxtEmail.Size = New System.Drawing.Size(148, 13)
+        Me.TxtEmail.Size = New System.Drawing.Size(169, 13)
         Me.TxtEmail.TabIndex = 4
-        Me.TxtEmail.Visible = False
         '
         'TxtPsw
         '
         Me.TxtPsw.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtPsw.Enabled = False
-        Me.TxtPsw.Location = New System.Drawing.Point(274, 234)
+        Me.TxtPsw.Location = New System.Drawing.Point(263, 234)
         Me.TxtPsw.Name = "TxtPsw"
-        Me.TxtPsw.Size = New System.Drawing.Size(148, 13)
+        Me.TxtPsw.Size = New System.Drawing.Size(169, 13)
         Me.TxtPsw.TabIndex = 5
         Me.TxtPsw.UseSystemPasswordChar = True
-        Me.TxtPsw.Visible = False
         '
         'BtnEntrar
         '
@@ -87,42 +81,28 @@ Partial Class Login
         Me.BtnEntrar.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.BtnEntrar.FlatAppearance.BorderSize = 0
         Me.BtnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEntrar.Font = New System.Drawing.Font("Segoe WP", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEntrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEntrar.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.BtnEntrar.Location = New System.Drawing.Point(350, 286)
+        Me.BtnEntrar.Location = New System.Drawing.Point(365, 273)
         Me.BtnEntrar.Name = "BtnEntrar"
         Me.BtnEntrar.Size = New System.Drawing.Size(85, 26)
         Me.BtnEntrar.TabIndex = 6
         Me.BtnEntrar.Text = "Sing In"
         Me.BtnEntrar.UseVisualStyleBackColor = False
-        Me.BtnEntrar.Visible = False
-        '
-        'VideoLogin
-        '
-        Me.VideoLogin.Enabled = True
-        Me.VideoLogin.Location = New System.Drawing.Point(0, 0)
-        Me.VideoLogin.Name = "VideoLogin"
-        Me.VideoLogin.OcxState = CType(resources.GetObject("VideoLogin.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.VideoLogin.Size = New System.Drawing.Size(680, 460)
-        Me.VideoLogin.TabIndex = 7
         '
         'BtnExit
         '
         Me.BtnExit.BackColor = System.Drawing.Color.Transparent
+        Me.BtnExit.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.X
         Me.BtnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnExit.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.BtnExit.FlatAppearance.BorderSize = 0
-        Me.BtnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
-        Me.BtnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnExit.ForeColor = System.Drawing.Color.Transparent
-        Me.BtnExit.Image = Global.Punto_de_venta.My.Resources.Resources.X_Tamaño
+        Me.BtnExit.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.BtnExit.Location = New System.Drawing.Point(646, -3)
         Me.BtnExit.Name = "BtnExit"
         Me.BtnExit.Size = New System.Drawing.Size(31, 37)
         Me.BtnExit.TabIndex = 8
-        Me.BtnExit.UseMnemonic = False
-        Me.BtnExit.UseVisualStyleBackColor = True
+        Me.BtnExit.UseVisualStyleBackColor = False
         '
         'Login
         '
@@ -130,7 +110,7 @@ Partial Class Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.Silver
-        Me.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.ppt5B471
+        Me.BackgroundImage = Global.Punto_de_venta.My.Resources.Resources.ppt5B47_pptm__Autoguardado_
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(680, 460)
         Me.Controls.Add(Me.BtnExit)
@@ -140,13 +120,11 @@ Partial Class Login
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.VideoLogin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
-        CType(Me.VideoLogin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -158,6 +136,5 @@ Partial Class Login
     Friend WithEvents TxtEmail As TextBox
     Friend WithEvents TxtPsw As TextBox
     Friend WithEvents BtnEntrar As Button
-    Friend WithEvents VideoLogin As AxWMPLib.AxWindowsMediaPlayer
     Friend WithEvents BtnExit As Button
 End Class
