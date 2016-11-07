@@ -62,17 +62,6 @@
 
 
             Try
-                'proveedor.getSetId_proveedor = TxtProveedor.Text
-                'proveedor.getSetRazonSocial = TxtRazonSocial.Text
-                'proveedor.getSetTelefono = TxtTelefono.Text
-                'proveedor.getSetCorreo = TxtCorreo.Text
-                'proveedor.getSetPais = ComboPais.SelectedItem.ToString
-                'proveedor.getSetEstado = ComboEstado.SelectedItem.ToString
-                'proveedor.getSetCiudad = ComboCiudad.SelectedItem.ToString
-                'proveedor.getSetColonia = ComboColonia.SelectedItem.ToString
-                'proveedor.getSetNombre = TxtNombreR.Text
-                'proveedor.getSetTelefonoRepresentante = TxtTelefonoR.Text
-
 
                 proveedor.eliminaProveedor(TxtProveedor.Text, ComboPais.Text, ComboEstado.Text, ComboCiudad.Text, ComboColonia.Text, TxtRazonSocial.Text,
                                            TxtNombreR.Text, TxtCorreo.Text, TxtTelefono.Text, TxtTelefonoR.Text)
@@ -158,6 +147,7 @@
     Private Sub DGVProveedores_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVproveedores.CellClick
         Dim renglon As Integer
         Dim proveedor As New ClaseProveedores
+        Dim pais As String
         renglon = DGVproveedores.CurrentCellAddress.Y
 
         TxtProveedor.Text = DGVproveedores.Rows(renglon).Cells(0).Value
@@ -167,17 +157,20 @@
         TxtTelefono.Text = DGVproveedores.Rows(renglon).Cells(8).Value
         TxtTelefonoR.Text = DGVproveedores.Rows(renglon).Cells(9).Value
 
-        ComboPais.SelectedValue = DGVproveedores.Rows(renglon).Cells(1).Value
-        proveedor.PoblamCmBxPais(ComboPais)
+        ComboPais.Text = DGVproveedores.Rows(renglon).Cells(1).Value
 
-        ComboEstado.SelectedValue = DGVproveedores.Rows(renglon).Cells(2).Value
-        proveedor.PoblamCmBxEstado(ComboEstado, DGVproveedores.Rows(renglon).Cells(1).Value)
+        'ComboPais.Text = proveedor.getNombrePais(DGVproveedores.Rows(renglon).Cells(1).Value)
+        'ComboPais.SelectedValue = DGVproveedores.Rows(renglon).Cells(1).Value
+        'proveedor.PoblamCmBxPais(ComboPais)
 
-        ComboCiudad.SelectedValue = DGVproveedores.Rows(renglon).Cells(3).Value
-        proveedor.PoblamCmBxCiudades(ComboEstado, DGVproveedores.Rows(renglon).Cells(1).Value, DGVproveedores.Rows(renglon).Cells(2).Value)
+        'ComboEstado.SelectedValue = DGVproveedores.Rows(renglon).Cells(2).Value
+        'proveedor.PoblamCmBxEstado(ComboEstado, DGVproveedores.Rows(renglon).Cells(1).Value)
 
-        ComboColonia.SelectedValue = DGVproveedores.Rows(renglon).Cells(4).Value
-        proveedor.PoblaCmBxColonias(ComboEstado, DGVproveedores.Rows(renglon).Cells(1).Value, DGVproveedores.Rows(renglon).Cells(2).Value, DGVproveedores.Rows(renglon).Cells(3).Value)
+        'ComboCiudad.SelectedValue = DGVproveedores.Rows(renglon).Cells(3).Value
+        'proveedor.PoblamCmBxCiudades(ComboEstado, DGVproveedores.Rows(renglon).Cells(1).Value, DGVproveedores.Rows(renglon).Cells(2).Value)
+
+        'ComboColonia.SelectedValue = DGVproveedores.Rows(renglon).Cells(4).Value
+        'proveedor.PoblaCmBxColonias(ComboEstado, DGVproveedores.Rows(renglon).Cells(1).Value, DGVproveedores.Rows(renglon).Cells(2).Value, DGVproveedores.Rows(renglon).Cells(3).Value)
 
     End Sub
 
@@ -186,4 +179,6 @@
     Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
         Me.Close()
     End Sub
+
+
 End Class
