@@ -13,12 +13,27 @@
     Public Sub New(ByVal nuevoid As Integer)
         MyBase.New(nuevoid)
     End Sub
+    Public Sub poblarCombo(ByVal ComboCo As ComboBox)
+        Dim ds As DataTable
+        ds = consultaTodos()
+        ComboCo.ValueMember = ds.Columns(0).ToString()
+        ComboCo.DataSource = ds
+        ComboCo.Refresh()
+    End Sub
     Public Function consultaTodosPorProveedor(ByVal id_proveedor As Integer) As DataTable
         Dim strSQL As String
         Dim xCnx As New conexion
 
         strSQL = "SELECT nombre FROM productos WHERE id_proveedor = " & id_proveedor & ";"
         consultaTodosPorProveedor = xCnx.objetoDataAdapter(strSQL)
+        cnx.Close()
+    End Function
+    Public Function consultaTodos() As DataTable
+        Dim strSQL As String
+        Dim xCnx As New conexion
+
+        strSQL = "SELECT nombre FROM productos ;"
+        consultaTodos = xCnx.objetoDataAdapter(strSQL)
         cnx.Close()
     End Function
 
@@ -37,6 +52,20 @@
         strSQL = "SELECT id_producto FROM productos WHERE id_proveedor = " & id_proveedor & ";"
         consultaProductosID = xCnx.objetoDataAdapter(strSQL)
         cnx.Close()
+    End Function
+
+    Public Function getProveedor() As String
+        Dim strSQL As String
+        Dim xCnx As New conexion
+        Dim ds As DataTable
+        Dim prov As String = Nothing
+        strSQL = "SELECT id_proveedor FROM productos WHERE id_producto = " & id & ";"
+        ds = xCnx.objetoDataAdapter(strSQL)
+        If ds.Rows.Count = 1 Then
+            prov = CStr(ds.Rows(0)("id_proveedor"))
+        End If
+        cnx.Close()
+        Return prov
     End Function
 
     Public Sub poblarComboID(ByVal ComboID As ComboBox, ByVal id_proveedor As Integer)
