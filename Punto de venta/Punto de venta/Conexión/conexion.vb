@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class conexion
     Public Sub New()
-        cnx.ConnectionString = "server=localhost; user=root; password=123; database=clase1"
+        cnx.ConnectionString = "server=localhost; user=adminVentas; password=ventas; database=clase1"
         If cnx.State <> ConnectionState.Open Then
             Try
                 cnx.Open()
