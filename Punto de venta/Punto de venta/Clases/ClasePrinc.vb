@@ -90,11 +90,13 @@
                 strSql = "SELECT MAX(id_producto) AS Columna FROM " & productos & ";"
             Case devolucion
                 strSql = "SELECT MAX(id_devolucion) AS Columna FROM " & devolucion & ";"
+            Case ventas
+                strSql = "SELECT MAX(id_venta) AS Columna FROM " & ventas & ";"
         End Select
         Try
             xDT = xCnx.objetoDataAdapter(strSql)
             id = CStr(xDT.Rows(0)("Columna"))
-            'cnx.Close()
+            cnx.Close()
             Return id
         Catch
         End Try

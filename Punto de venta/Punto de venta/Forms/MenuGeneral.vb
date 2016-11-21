@@ -55,4 +55,9 @@
         Me.Hide()
         Reportes.Show()
     End Sub
+
+    Private Sub BtnVentas_Click(sender As Object, e As EventArgs) Handles BtnVentas.Click
+        Me.Hide()
+        Venta.Show()
+    End Sub
 End Class
