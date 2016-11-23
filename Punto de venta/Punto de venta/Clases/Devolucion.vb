@@ -20,4 +20,31 @@
         MessageBox.Show("Registro insertado!")
         cnx.Close()
     End Sub
+    Public Sub PoblarDataGrid(ByVal DGV As DataGridView)
+        DGV.DataSource = consultaTodos()
+        DGV.Refresh()
+        cnx.Close()
+    End Sub
+    Public Function consultaTodos() As DataTable
+        Dim strSQL As String
+        Dim xCnx As New conexion
+
+        strSQL = "SELECT * FROM Devoluciones ORDER BY fecha ASC;"
+        consultaTodos = xCnx.objetoDataAdapter(strSQL)
+        cnx.Close()
+    End Function
+    Public Sub PoblarDataGridConFecha(ByVal DGV As DataGridView, ByVal Inicio As String, ByVal fin As String)
+        DGV.DataSource = consultaTodosEntreFecha(Inicio, fin)
+        DGV.Refresh()
+        cnx.Close()
+    End Sub
+    Public Function consultaTodosEntreFecha(ByVal Inicio As String, ByVal fin As String) As DataTable
+        Dim strSQL As String
+        Dim xCnx As New conexion
+
+        strSQL = "SELECT * FROM Devoluciones WHERE fecha between '" & CStr(Inicio) & "' AND '" & CStr(fin) & "'  ORDER BY fecha ASC;"
+        consultaTodosEntreFecha = xCnx.objetoDataAdapter(strSQL)
+        cnx.Close()
+    End Function
+
 End Class

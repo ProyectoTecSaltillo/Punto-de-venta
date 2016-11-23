@@ -91,6 +91,7 @@
     <Compile Include="Clases\ClaseProductos.vb" />
     <Compile Include="Clases\ClaseProv.vb" />
     <Compile Include="Clases\ClaseProveedores.vb" />
+    <Compile Include="Clases\ClaseVenta.vb" />
     <Compile Include="Clases\Devolucion.vb" />
     <Compile Include="Conexión\conexion.vb" />
     <Compile Include="Forms\Devoluciones.Designer.vb">
