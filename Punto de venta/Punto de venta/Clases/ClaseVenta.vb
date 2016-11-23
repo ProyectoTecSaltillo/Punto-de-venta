@@ -98,8 +98,5 @@
         Return MyBase.getNombre(clientes)
     End Function
 
-    Public Overloads Function getId()
-        Return MyBase.getId(clientes)
-    End Function
 
 End Class

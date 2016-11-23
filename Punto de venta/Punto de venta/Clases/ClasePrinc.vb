@@ -197,6 +197,8 @@
                 strSQL = "SELECT CONCAT( nombre, ' ', paterno, ' ', materno ) as nombre FROM proveedores WHERE id_proveedor = " & id & ";"
             Case productos
                 strSQL = "SELECT nombre FROM " & productos & " WHERE id_producto = " & id & ";"
+            Case ventas
+                strSQL = "SELECT nombre FROM " & ventas & " WHERE id_producto = " & id & ";"
         End Select
         xDT = xCnx.objetoDataAdapter(strSQL)
         nombre = CStr(xDT.Rows(0)("nombre"))

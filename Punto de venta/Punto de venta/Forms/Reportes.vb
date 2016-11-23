@@ -1,4 +1,5 @@
 ﻿Public Class Reportes
+
     Private Sub FechaFin_LostFocus(sender As Object, e As EventArgs) Handles FechaFin.LostFocus
         FechaInicio.MaxDate = FechaFin.Value.Date
     End Sub
@@ -14,7 +15,10 @@
     End Sub
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
         If ComboSel.Text = "Ventas" Then
-
+            Dim Venta As New ClaseVenta
+            Dim fechain As Date = FechaInicio.Text
+            Dim fechafi As Date = FechaFin.Text
+            Venta.PoblarDataGridConFecha(DGV, Format(fechain, "yyyy-MM-dd"), Format(fechafi, "yyyy-MM-dd"))
         ElseIf ComboSel.Text = "Devoluciones" Then
             Dim devol As New ClaseDevolucion
             Dim fechain As Date = FechaInicio.Text
@@ -26,5 +30,10 @@
             Dim fechafi As Date = FechaFin.Text
             Prod.PoblarDataGridConFecha(DGV, Format(fechain, "yyyy-MM-dd"), Format(fechafi, "yyyy-MM-dd"))
         End If
+    End Sub
+
+    Private Sub Reportes_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        MenuGeneral.Show()
+
     End Sub
 End Class

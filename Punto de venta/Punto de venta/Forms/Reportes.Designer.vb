@@ -78,7 +78,7 @@ Partial Class Reportes
         '
         Me.ComboSel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboSel.FormattingEnabled = True
-        Me.ComboSel.Items.AddRange(New Object() {"Ventas", "Compras", "Devoluciones", "Productos"})
+        Me.ComboSel.Items.AddRange(New Object() {"Ventas", "Devoluciones", "Productos"})
         Me.ComboSel.Location = New System.Drawing.Point(357, 28)
         Me.ComboSel.Name = "ComboSel"
         Me.ComboSel.Size = New System.Drawing.Size(175, 24)
