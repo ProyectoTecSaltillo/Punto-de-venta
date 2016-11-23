@@ -147,7 +147,7 @@
     Private Sub DGVProveedores_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVproveedores.CellClick
         Dim renglon As Integer
         Dim proveedor As New ClaseProveedores
-        Dim pais As String
+        'Dim pais As String
         renglon = DGVproveedores.CurrentCellAddress.Y
 
         TxtProveedor.Text = DGVproveedores.Rows(renglon).Cells(0).Value
