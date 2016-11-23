@@ -18,17 +18,17 @@
             Dim Venta As New ClaseVenta
             Dim fechain As Date = FechaInicio.Text
             Dim fechafi As Date = FechaFin.Text
-            Venta.PoblarDataGridConFecha(DGV, Format(fechain, "yyyy-MM-dd"), Format(fechafi, "yyyy-MM-dd"))
+            Venta.PoblarDataGridConFecha(DGV, Format(fechain, "yyyy-MM-dd") & " 00:00:00", Format(fechafi, "yyyy-MM-dd") & " 23:59:59")
         ElseIf ComboSel.Text = "Devoluciones" Then
             Dim devol As New ClaseDevolucion
             Dim fechain As Date = FechaInicio.Text
             Dim fechafi As Date = FechaFin.Text
-            devol.PoblarDataGridConFecha(DGV, Format(fechain, "yyyy-MM-dd"), Format(fechafi, "yyyy-MM-dd"))
+            devol.PoblarDataGridConFecha(DGV, Format(fechain, "yyyy-MM-dd") & " 00:00:00", Format(fechafi, "yyyy-MM-dd") & " 23:59:59")
         ElseIf ComboSel.Text = "Productos" Then
             Dim Prod As New ClaseProductos
             Dim fechain As Date = FechaInicio.Text
             Dim fechafi As Date = FechaFin.Text
-            Prod.PoblarDataGridConFecha(DGV, Format(fechain, "yyyy-MM-dd"), Format(fechafi, "yyyy-MM-dd"))
+            Prod.PoblarDataGridConFecha(DGV, Format(fechain, "yyyy-MM-dd") & " 00:00:00", Format(fechafi, "yyyy-MM-dd") & " 23:59:59")
         End If
     End Sub
 

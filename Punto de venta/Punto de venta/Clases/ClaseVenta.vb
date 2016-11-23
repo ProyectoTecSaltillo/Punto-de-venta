@@ -79,7 +79,7 @@
         Dim strSQL As String
         Dim xCnx As New conexion
 
-        strSQL = "SELECT * FROM Ventas WHERE fecha between '" & CStr(Inicio) & "' AND '" & CStr(fin) & "'  ORDER BY fecha ASC;"
+        strSQL = "SELECT * FROM ventas WHERE fecha between '" & CStr(Inicio) & "' AND '" & CStr(fin) & "'  ORDER BY fecha ASC;"
         consultaTodosEntreFecha = xCnx.objetoDataAdapter(strSQL)
         cnx.Close()
     End Function
@@ -87,7 +87,7 @@
     Public Sub inserta(ByVal id_empleado As Integer, ByVal id_cliente As Integer, ByVal importe As Integer,
                        ByVal pago As String, ByVal id_producto As Integer, ByVal piezas As Integer)
         Dim strSql As String
-        strSql = "INSERT INTO ventas(id_venta, id_empleado, id_cliente, importe, pago, id_producto, piezas) VALUES(" & AutoIncrement(ventas) & "," & id_empleado & "," & id_cliente & "," &
+        strSql = "INSERT INTO ventas(id_venta, id_usuario, id_cliente, importe, pago, id_producto, piezas) VALUES(" & AutoIncrement(ventas) & "," & id_empleado & "," & id_cliente & "," &
                     importe & ",'" & pago & "'," & id_producto & "," & piezas & ");"
         Dim xCnx As New conexion
         xCnx.objetoCommand(strSql)
