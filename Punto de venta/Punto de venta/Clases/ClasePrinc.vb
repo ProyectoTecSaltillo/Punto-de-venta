@@ -194,7 +194,7 @@
             Case clientes
                 strSQL = "SELECT CONCAT( nombre, ' ', paterno, ' ', materno ) as nombre FROM clientes WHERE id_cliente = " & id & ";"
             Case proveedores
-                strSQL = "SELECT CONCAT( nombre, ' ', paterno, ' ', materno ) as nombre FROM proveedores WHERE id_proveedor = " & id & ";"
+                strSQL = "SELECT nombre_representante as nombre FROM proveedores WHERE id_proveedor = " & id & ";"
             Case productos
                 strSQL = "SELECT nombre FROM " & productos & " WHERE id_producto = " & id & ";"
             Case ventas

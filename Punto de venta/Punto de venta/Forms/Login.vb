@@ -4,12 +4,12 @@ Imports AxWMPLib
 
 Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        With VideoLogin
-            Dim archivo As String = Replace(AppDomain.CurrentDomain.BaseDirectory(), "bin\Debug\", "Resources\Login.mp4")
-            If My.Computer.FileSystem.FileExists(archivo) = True Then
-                .URL = archivo
-            End If
-        End With
+        'With VideoLogin
+        '    Dim archivo As String = Replace(AppDomain.CurrentDomain.BaseDirectory(), "bin\Debug\", "Resources\Login.mp4")
+        '    If My.Computer.FileSystem.FileExists(archivo) = True Then
+        '        .URL = archivo
+        '    End If
+        'End With
         TxtEmail.Focus()
     End Sub
 
@@ -38,7 +38,7 @@ Public Class Login
         cnx.Close()
     End Sub
 
-    Private Sub TxtUser_TextChanged(sender As Object, e As EventArgs) Handles TxtEmail.TextChanged, TextBox1.TextChanged
+    Private Sub TxtUser_TextChanged(sender As Object, e As EventArgs) Handles TxtEmail.TextChanged
         If (Trim(TxtEmail.Text) <> "") Then
             TxtPsw.Enabled = True
         Else
@@ -46,7 +46,7 @@ Public Class Login
         End If
     End Sub
 
-    Private Sub TxtPsw_TextChanged(sender As Object, e As EventArgs) Handles TxtPsw.TextChanged, TextBox2.TextChanged
+    Private Sub TxtPsw_TextChanged(sender As Object, e As EventArgs) Handles TxtPsw.TextChanged
         TxtPsw.PasswordChar = "*"
     End Sub
 
@@ -55,12 +55,12 @@ Public Class Login
     End Sub
 
     Dim cont As Integer = 0
-    Private Sub VideoLogin_PlayStateChange(sender As Object, e As _WMPOCXEvents_PlayStateChangeEvent) Handles VideoLogin.PlayStateChange
+    Private Sub VideoLogin_PlayStateChange(sender As Object, e As _WMPOCXEvents_PlayStateChangeEvent)
         If cont = 5 Then
             TxtEmail.Visible = True
             BtnEntrar.Visible = True
             TxtPsw.Visible = True
-            VideoLogin.Visible = False
+            'VideoLogin.Visible = False
         End If
         cont = cont + 1
 

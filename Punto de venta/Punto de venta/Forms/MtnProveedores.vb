@@ -22,6 +22,7 @@
         ComboEstado.Text = "Seleccione..."
         ComboCiudad.Text = "Seleccione..."
         ComboColonia.Text = "Seleccione..."
+        cnx.Close()
         estados.poblarCombo(ComboEstado, paises.getId(pais))
     End Sub
     Private Sub ComboEstado_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboEstado.SelectedIndexChanged
@@ -149,29 +150,33 @@
         Dim proveedor As New ClaseProveedores
         'Dim pais As String
         renglon = DGVproveedores.CurrentCellAddress.Y
+        Try
+            TxtProveedor.Text = DGVproveedores.Rows(renglon).Cells(0).Value
+            TxtRazonSocial.Text = DGVproveedores.Rows(renglon).Cells(5).Value
+            TxtNombreR.Text = DGVproveedores.Rows(renglon).Cells(6).Value
+            TxtCorreo.Text = DGVproveedores.Rows(renglon).Cells(7).Value
+            TxtTelefono.Text = DGVproveedores.Rows(renglon).Cells(8).Value
+            TxtTelefonoR.Text = DGVproveedores.Rows(renglon).Cells(9).Value
 
-        TxtProveedor.Text = DGVproveedores.Rows(renglon).Cells(0).Value
-        TxtRazonSocial.Text = DGVproveedores.Rows(renglon).Cells(5).Value
-        TxtNombreR.Text = DGVproveedores.Rows(renglon).Cells(6).Value
-        TxtCorreo.Text = DGVproveedores.Rows(renglon).Cells(7).Value
-        TxtTelefono.Text = DGVproveedores.Rows(renglon).Cells(8).Value
-        TxtTelefonoR.Text = DGVproveedores.Rows(renglon).Cells(9).Value
+            ComboPais.Text = proveedor.getNombrePais(DGVproveedores.Rows(renglon).Cells(1).Value)
+            ComboEstado.Text = proveedor.getNombreEdo(DGVproveedores.Rows(renglon).Cells(2).Value)
+            ComboColonia.Text = proveedor.getNombreCol(DGVproveedores.Rows(renglon).Cells(4).Value)
+            ComboCiudad.Text = proveedor.getNombreCiud(DGVproveedores.Rows(renglon).Cells(3).Value)
+            'ComboPais.Text = proveedor.getNombrePais(DGVproveedores.Rows(renglon).Cells(1).Value)
+            'ComboPais.SelectedValue = DGVproveedores.Rows(renglon).Cells(1).Value
+            'proveedor.PoblamCmBxPais(ComboPais)
 
-        ComboPais.Text = DGVproveedores.Rows(renglon).Cells(1).Value
+            'ComboEstado.SelectedValue = DGVproveedores.Rows(renglon).Cells(2).Value
+            'proveedor.PoblamCmBxEstado(ComboEstado, DGVproveedores.Rows(renglon).Cells(1).Value)
 
-        'ComboPais.Text = proveedor.getNombrePais(DGVproveedores.Rows(renglon).Cells(1).Value)
-        'ComboPais.SelectedValue = DGVproveedores.Rows(renglon).Cells(1).Value
-        'proveedor.PoblamCmBxPais(ComboPais)
+            'ComboCiudad.SelectedValue = DGVproveedores.Rows(renglon).Cells(3).Value
+            'proveedor.PoblamCmBxCiudades(ComboEstado, DGVproveedores.Rows(renglon).Cells(1).Value, DGVproveedores.Rows(renglon).Cells(2).Value)
 
-        'ComboEstado.SelectedValue = DGVproveedores.Rows(renglon).Cells(2).Value
-        'proveedor.PoblamCmBxEstado(ComboEstado, DGVproveedores.Rows(renglon).Cells(1).Value)
+            'ComboColonia.SelectedValue = DGVproveedores.Rows(renglon).Cells(4).Value
+            'proveedor.PoblaCmBxColonias(ComboEstado, DGVproveedores.Rows(renglon).Cells(1).Value, DGVproveedores.Rows(renglon).Cells(2).Value, DGVproveedores.Rows(renglon).Cells(3).Value)
+        Catch
 
-        'ComboCiudad.SelectedValue = DGVproveedores.Rows(renglon).Cells(3).Value
-        'proveedor.PoblamCmBxCiudades(ComboEstado, DGVproveedores.Rows(renglon).Cells(1).Value, DGVproveedores.Rows(renglon).Cells(2).Value)
-
-        'ComboColonia.SelectedValue = DGVproveedores.Rows(renglon).Cells(4).Value
-        'proveedor.PoblaCmBxColonias(ComboEstado, DGVproveedores.Rows(renglon).Cells(1).Value, DGVproveedores.Rows(renglon).Cells(2).Value, DGVproveedores.Rows(renglon).Cells(3).Value)
-
+        End Try
     End Sub
 
     Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click

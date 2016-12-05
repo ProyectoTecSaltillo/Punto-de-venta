@@ -262,7 +262,114 @@
         CmbBxColonias.Refresh()
         cnx.Close()
     End Sub
+    Public Function getNombrePais(ByVal idpaisaux As String) As String
+        cnx.Close()
+        Dim xCnx As New conexion
+        Dim dr As DataRow
+        Dim dt As DataTable
+        Dim pais As String
+        Dim id As String
 
+        If (idpaisaux <> "") Then
+
+            pais = "Select nombre from paises where id_pais ='" & idpaisaux & "'"
+            Try
+                dt = xCnx.objetoDataAdapter(pais)
+                If dt.Rows.Count > 0 Then
+                    dr = dt.Rows(0)
+                    id = dr("nombre")
+                Else
+                    MsgBox("No hay datos")
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        End If
+        Return id
+        cnx.Close()
+    End Function
+    Public Function getNombreEdo(ByVal idedoaux As String) As String
+        cnx.Close()
+        Dim xCnx As New conexion
+        Dim dr As DataRow
+        Dim dt As DataTable
+        Dim pais As String
+        Dim id As String
+
+        If (idedoaux <> "") Then
+
+            pais = "Select nombre from estados where id_estado ='" & idedoaux & "'"
+            Try
+                dt = xCnx.objetoDataAdapter(pais)
+                If dt.Rows.Count > 0 Then
+                    dr = dt.Rows(0)
+                    id = dr("nombre")
+                Else
+                    MsgBox("No hay datos")
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        End If
+        Return id
+        cnx.Close()
+    End Function
+    Public Function getNombreCol(ByVal idcolaux As String) As String
+        cnx.Close()
+        Dim xCnx As New conexion
+        Dim dr As DataRow
+        Dim dt As DataTable
+        Dim pais As String
+        Dim id As String
+
+        If (idcolaux <> "") Then
+
+            pais = "Select nombre from colonias where id_colonia ='" & idcolaux & "'"
+            Try
+                dt = xCnx.objetoDataAdapter(pais)
+                If dt.Rows.Count > 0 Then
+                    dr = dt.Rows(0)
+                    id = dr("nombre")
+                Else
+                    MsgBox("No hay datos")
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        End If
+        Return id
+        cnx.Close()
+    End Function
+    Public Function getNombreCiud(ByVal idciudaux As String) As String
+        cnx.Close()
+        Dim xCnx As New conexion
+        Dim dr As DataRow
+        Dim dt As DataTable
+        Dim pais As String
+        Dim id As String
+
+        If (idciudaux <> "") Then
+
+            pais = "Select nombre from ciudades where id_ciudad ='" & idciudaux & "'"
+            Try
+                dt = xCnx.objetoDataAdapter(pais)
+                If dt.Rows.Count > 0 Then
+                    dr = dt.Rows(0)
+                    id = dr("nombre")
+                Else
+                    MsgBox("No hay datos")
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+        End If
+        Return id
+        cnx.Close()
+    End Function
     Public Function getIdPais(ByVal nombre_pais As String) As Integer
         cnx.Close()
         Dim xCnx As New conexion
@@ -371,4 +478,5 @@
         Return id
         cnx.Close()
     End Function
+
 End Class

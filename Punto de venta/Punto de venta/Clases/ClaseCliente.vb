@@ -64,11 +64,11 @@
 
     Public Sub inserta(ByVal nombre As String, ByVal paterno As String, ByVal materno As String, ByVal edad As String, ByVal rfc As String,
                        ByVal curp As String, ByVal sexo As String, ByVal email As String, ByVal telefono As String, ByVal numExt As String,
-                       ByVal calle As String, ByVal idColonia As String)
+                       ByVal calle As String, ByVal idpais As String, ByVal idestado As String, ByVal idciudad As String, ByVal idColonia As String)
         Dim strSql As String
         strSql = "INSERT INTO clientes VALUES(" & AutoIncrement(clientes) & ",'" & nombre & "','" & paterno & "','" & materno & "','" & edad & "','" &
                                                 rfc & "','" & curp & "','" & sexo & "','" & email & "','" & telefono & "','" & numExt & "','" &
-                                               calle & "'," & idColonia & ");"
+                                               calle & "','" & idpais & "','" & idestado & "','" & idciudad & "','" & idColonia & "');"
         Dim xCnx As New conexion
         xCnx.objetoCommand(strSql)
         MessageBox.Show("Cliente registrado!")

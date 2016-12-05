@@ -55,9 +55,12 @@
             Or TxtCalle.Text = "" Or colonias.getId(colonia) = Nothing Then
             MsgBox("No puedes registrar un cliente con campos vacíos")
         Else
+            Dim Ciudades As New ClaseCliente(ComboCiudad.Text)
+            Dim Paises As New ClaseCliente(ComboPais.Text)
+            Dim Estados As New ClaseCliente(ComboEstado.Text)
             Dim clientes As New ClaseCliente()
             clientes.inserta(TxtNombre.Text, TxtPat.Text, TxtMat.Text, NumEdad.Text, TxtRfc.Text, TxtCurp.Text,
-                         sexo, TxtEmail.Text, TxtTel.Text, TxtExt.Text, TxtCalle.Text, colonias.getId(colonia))
+                         sexo, TxtEmail.Text, TxtTel.Text, TxtExt.Text, TxtCalle.Text, Paises.getId(pais), Estados.getId(estado), Ciudades.getId(ciudad), colonias.getId(colonia))
             clientes.poblarComboID(ComboID)
             clientes.poblarComboN(ComboNombre)
         End If

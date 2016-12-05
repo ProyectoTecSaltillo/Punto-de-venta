@@ -93,7 +93,7 @@
 
     Public Sub inserta(ByVal nombre As String, ByVal descripcion As String, ByVal id_proveedor As Integer, ByVal id_empleado As Integer, ByVal precioVenta As String, ByVal precioCompra As String, ByVal observacion As String)
         Dim strSql As String
-        strSql = "INSERT INTO productos VALUES(" & AutoIncrement(productos) & ",'" & nombre & "','" & descripcion & "'," & id_proveedor & "," & id_empleado & "," &
+        strSql = "INSERT INTO productos (id_producto,nombre,descripcion,id_proveedor,id_empleado,precioVenta,precioCompra,observacion) VALUES(" & AutoIncrement(productos) & ",'" & nombre & "','" & descripcion & "'," & id_proveedor & "," & id_empleado & "," &
                                                 precioVenta & "," & precioCompra & ",'" & observacion & "');"
         Dim xCnx As New conexion
         xCnx.objetoCommand(strSql)

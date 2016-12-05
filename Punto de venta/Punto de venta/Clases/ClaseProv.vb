@@ -25,7 +25,7 @@
         Dim strSQL As String
         Dim xCnx As New conexion
 
-        strSQL = "SELECT CONCAT( nombre, ' ', paterno, ' ', materno ) AS nombre FROM proveedores ORDER BY nombre ASC;"
+        strSQL = "SELECT nombre_representante AS nombre FROM proveedores ORDER BY nombre ASC;"
         consultaTodos = xCnx.objetoDataAdapter(strSQL)
         cnx.Close()
     End Function
